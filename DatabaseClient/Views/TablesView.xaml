@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="DatabaseClient.Views.TablesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatabaseClient.Views"
+            mc:Ignorable="d">
+    <Grid>
+        <TabControl Height="auto" Margin="30" Width="auto" Background="Beige" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TabItem Header="Wrzeciona">
+                <Grid Background="DimGray">
+                    <DataGrid Name="gridWrzeciono" Margin="10" RenderTransformOrigin="0.486,0.494">
+                        <DataGrid.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Pink"/>
+                        </DataGrid.Resources>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wytaczadła">
+                <Grid Background="DimGray">
+                    <DataGrid Name="gridWytaczadlo" Margin="10" RenderTransformOrigin="0.486,0.494"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Dokumenty">
+                <Grid Background="DimGray">
+                    <DataGrid Name="gridDokument" Margin="10" RenderTransformOrigin="0.486,0.494"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
