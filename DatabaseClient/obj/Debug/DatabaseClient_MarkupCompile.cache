@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\
+C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\
 DatabaseClient
 none
 false
 DEBUG;TRACE
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
+C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
 62077404853
-
-201026617598
-14-799888181
+2271185433
+30-1372775726
+19-724108189
 MainWindow.xaml;Views\AddDocumentView.xaml;Views\DodajLozyskoView.xaml;Views\DodajWytaczadloView.xaml;Views\SearchView.xaml;Views\TablesView.xaml;
 
-False
+True
 

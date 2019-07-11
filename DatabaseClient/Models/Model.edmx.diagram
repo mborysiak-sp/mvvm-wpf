@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0e59f10c196435499bb87a3e163e95f" Name="Diagram1">
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.dokument_wrzeciono" Width="1.5" PointX="3.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.dokument_wytaczadlo" Width="1.5" PointX="0.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.lozysko" Width="1.5" PointX="6.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.wrzeciono" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.wytaczadlo" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.wytaczadlo_lozysko" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.wszystkie_dokumenty" Width="1.5" PointX="9.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WrzecionaIWytaczadłaModel.wytaczadlo_z_lozyskiem" Width="1.5" PointX="9.5" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="WrzecionaIWytaczadłaModel.FK_id_wrzeciono" ManuallyRouted="false" />
+        <AssociationConnector Association="WrzecionaIWytaczadłaModel.FK__dokument___id_wy__57FD0775" ManuallyRouted="false" />
+        <AssociationConnector Association="WrzecionaIWytaczadłaModel.FK__wytaczadl__id_lo__52442E1F" ManuallyRouted="false" />
+        <AssociationConnector Association="WrzecionaIWytaczadłaModel.FK__wytaczadl__id_wy__515009E6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
