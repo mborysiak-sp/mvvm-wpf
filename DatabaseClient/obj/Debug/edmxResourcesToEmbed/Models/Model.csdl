@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WrzecionaIWytaczadłaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dokument_wrzeciono">
+    <Key>
+      <PropertyRef Name="id_dokument_wrzeciono" />
+    </Key>
+    <Property Name="id_dokument_wrzeciono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data_wystawienia" Type="DateTime" Precision="0" />
+    <Property Name="termin" Type="Int32" Nullable="false" />
+    <Property Name="uwagi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_wrzeciono" Type="Int32" />
+    <NavigationProperty Name="wrzeciono" Relationship="Self.FK_id_wrzeciono" FromRole="dokument_wrzeciono" ToRole="wrzeciono" />
+  </EntityType>
+  <EntityType Name="dokument_wytaczadlo">
+    <Key>
+      <PropertyRef Name="id_dokument_wytaczadlo" />
+    </Key>
+    <Property Name="id_dokument_wytaczadlo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data_wystawienia" Type="DateTime" Precision="0" />
+    <Property Name="termin" Type="Int32" Nullable="false" />
+    <Property Name="uwagi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_wytaczadlo" Type="Int32" />
+    <NavigationProperty Name="wytaczadlo" Relationship="Self.FK__dokument___id_wy__57FD0775" FromRole="dokument_wytaczadlo" ToRole="wytaczadlo" />
+  </EntityType>
+  <EntityType Name="lozysko">
+    <Key>
+      <PropertyRef Name="id_lozysko" />
+    </Key>
+    <Property Name="id_lozysko" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="wytaczadlo_lozysko" Relationship="Self.FK__wytaczadl__id_lo__52442E1F" FromRole="lozysko" ToRole="wytaczadlo_lozysko" />
+  </EntityType>
+  <EntityType Name="wrzeciono">
+    <Key>
+      <PropertyRef Name="id_wrzeciono" />
+    </Key>
+    <Property Name="id_wrzeciono" Type="Int32" Nullable="false" />
+    <Property Name="typ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nr_seryjny" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_zlomowania" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dokument_wrzeciono" Relationship="Self.FK_id_wrzeciono" FromRole="wrzeciono" ToRole="dokument_wrzeciono" />
+  </EntityType>
+  <EntityType Name="wytaczadlo">
+    <Key>
+      <PropertyRef Name="id_wytaczadlo" />
+    </Key>
+    <Property Name="id_wytaczadlo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nr_rysunku" Type="Int32" />
+    <Property Name="data_zlomowania" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dokument_wytaczadlo" Relationship="Self.FK__dokument___id_wy__57FD0775" FromRole="wytaczadlo" ToRole="dokument_wytaczadlo" />
+    <NavigationProperty Name="wytaczadlo_lozysko" Relationship="Self.FK__wytaczadl__id_wy__515009E6" FromRole="wytaczadlo" ToRole="wytaczadlo_lozysko" />
+  </EntityType>
+  <EntityType Name="wytaczadlo_lozysko">
+    <Key>
+      <PropertyRef Name="id_wytaczadlo_lozysko" />
+    </Key>
+    <Property Name="id_wytaczadlo_lozysko" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_wytaczadlo" Type="Int32" />
+    <Property Name="id_lozysko" Type="Int32" />
+    <NavigationProperty Name="lozysko" Relationship="Self.FK__wytaczadl__id_lo__52442E1F" FromRole="wytaczadlo_lozysko" ToRole="lozysko" />
+    <NavigationProperty Name="wytaczadlo" Relationship="Self.FK__wytaczadl__id_wy__515009E6" FromRole="wytaczadlo_lozysko" ToRole="wytaczadlo" />
+  </EntityType>
+  <EntityType Name="wszystkie_dokumenty">
+    <Key>
+      <PropertyRef Name="termin" />
+      <PropertyRef Name="wymaga_atestu" />
+      <PropertyRef Name="typ" />
+    </Key>
+    <Property Name="data_wystawienia" Type="DateTime" Precision="0" />
+    <Property Name="termin" Type="Int32" Nullable="false" />
+    <Property Name="pozostałe_dni" Type="Int32" />
+    <Property Name="wymaga_atestu" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="wytaczadlo_z_lozyskiem">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="typ_wytaczadła" />
+      <PropertyRef Name="typ_łozyska" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="typ_wytaczadła" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numer_rysunku" Type="Int32" />
+    <Property Name="typ_łozyska" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_złomowania" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_id_wrzeciono">
+    <End Role="wrzeciono" Type="Self.wrzeciono" Multiplicity="0..1" />
+    <End Role="dokument_wrzeciono" Type="Self.dokument_wrzeciono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wrzeciono">
+        <PropertyRef Name="id_wrzeciono" />
+      </Principal>
+      <Dependent Role="dokument_wrzeciono">
+        <PropertyRef Name="id_wrzeciono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__dokument___id_wy__57FD0775">
+    <End Role="wytaczadlo" Type="Self.wytaczadlo" Multiplicity="0..1" />
+    <End Role="dokument_wytaczadlo" Type="Self.dokument_wytaczadlo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Principal>
+      <Dependent Role="dokument_wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__wytaczadl__id_lo__52442E1F">
+    <End Role="lozysko" Type="Self.lozysko" Multiplicity="0..1" />
+    <End Role="wytaczadlo_lozysko" Type="Self.wytaczadlo_lozysko" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lozysko">
+        <PropertyRef Name="id_lozysko" />
+      </Principal>
+      <Dependent Role="wytaczadlo_lozysko">
+        <PropertyRef Name="id_lozysko" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__wytaczadl__id_wy__515009E6">
+    <End Role="wytaczadlo" Type="Self.wytaczadlo" Multiplicity="0..1" />
+    <End Role="wytaczadlo_lozysko" Type="Self.wytaczadlo_lozysko" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Principal>
+      <Dependent Role="wytaczadlo_lozysko">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dokument_wrzeciono" EntityType="Self.dokument_wrzeciono" />
+    <EntitySet Name="dokument_wytaczadlo" EntityType="Self.dokument_wytaczadlo" />
+    <EntitySet Name="lozysko" EntityType="Self.lozysko" />
+    <EntitySet Name="wrzeciono" EntityType="Self.wrzeciono" />
+    <EntitySet Name="wytaczadlo" EntityType="Self.wytaczadlo" />
+    <EntitySet Name="wytaczadlo_lozysko" EntityType="Self.wytaczadlo_lozysko" />
+    <EntitySet Name="wszystkie_dokumenty" EntityType="Self.wszystkie_dokumenty" />
+    <EntitySet Name="wytaczadlo_z_lozyskiem" EntityType="Self.wytaczadlo_z_lozyskiem" />
+    <AssociationSet Name="FK_id_wrzeciono" Association="Self.FK_id_wrzeciono">
+      <End Role="wrzeciono" EntitySet="wrzeciono" />
+      <End Role="dokument_wrzeciono" EntitySet="dokument_wrzeciono" />
+    </AssociationSet>
+    <AssociationSet Name="FK__dokument___id_wy__57FD0775" Association="Self.FK__dokument___id_wy__57FD0775">
+      <End Role="wytaczadlo" EntitySet="wytaczadlo" />
+      <End Role="dokument_wytaczadlo" EntitySet="dokument_wytaczadlo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__wytaczadl__id_lo__52442E1F" Association="Self.FK__wytaczadl__id_lo__52442E1F">
+      <End Role="lozysko" EntitySet="lozysko" />
+      <End Role="wytaczadlo_lozysko" EntitySet="wytaczadlo_lozysko" />
+    </AssociationSet>
+    <AssociationSet Name="FK__wytaczadl__id_wy__515009E6" Association="Self.FK__wytaczadl__id_wy__515009E6">
+      <End Role="wytaczadlo" EntitySet="wytaczadlo" />
+      <End Role="wytaczadlo_lozysko" EntitySet="wytaczadlo_lozysko" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

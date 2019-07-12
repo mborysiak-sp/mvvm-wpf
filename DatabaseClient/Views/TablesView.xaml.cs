@@ -25,24 +25,43 @@ namespace DatabaseClient.Views
         public TablesView()
         {
             InitializeComponent();
-            FillDataGridWrzeciono();
+            //FillDataGridWrzeciono();
             FillDataGridWytaczadlo();
-            FillDataGridDokument();
+            //FillDataGridDokument();
         }
         private void FillDataGridWytaczadlo()
         {
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            string ConString = string.Empty;
+            try
+            {
+                ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
             {
-                CmdString = "SELECT * FROM wytaczadlo_z_lozyskiem";
-                SqlCommand cmd = new SqlCommand(CmdString, con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Wytaczadlo");
-                sda.Fill(dt);
-                gridWytaczadlo.ItemsSource = dt.DefaultView;
+                try
+                {
+                    con.Open();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                    CmdString = "SELECT * FROM wytaczadlo_z_lozyskiem";
+                    SqlCommand cmd = new SqlCommand(CmdString, con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable("Wytaczadlo");
+                    sda.Fill(dt);
+                    gridWytaczadlo.ItemsSource = dt.DefaultView;
+
+
             }
         }
+        /*
         private void FillDataGridWrzeciono()
         {
             string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
@@ -53,8 +72,22 @@ namespace DatabaseClient.Views
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Wrzeciono");
-                sda.Fill(dt);
-                gridWrzeciono.ItemsSource = dt.DefaultView;
+                try
+                {
+                    sda.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                try
+                {
+                    gridWrzeciono.ItemsSource = dt.DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }   
             }
         }
         private void FillDataGridDokument()
@@ -67,9 +100,24 @@ namespace DatabaseClient.Views
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Dokument");
-                sda.Fill(dt);
-                gridDokument.ItemsSource = dt.DefaultView;
+                try
+                {
+                    sda.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                try
+                {
+                    gridWrzeciono.ItemsSource = dt.DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
+            */
         }
     }
-}
+

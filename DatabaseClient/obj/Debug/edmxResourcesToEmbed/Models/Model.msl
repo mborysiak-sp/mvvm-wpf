@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WrzecionaIWytaczadłaModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="dokument_wrzeciono">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.dokument_wrzeciono">
+        <MappingFragment StoreEntitySet="dokument_wrzeciono">
+          <ScalarProperty Name="id_dokument_wrzeciono" ColumnName="id_dokument_wrzeciono" />
+          <ScalarProperty Name="data_wystawienia" ColumnName="data_wystawienia" />
+          <ScalarProperty Name="termin" ColumnName="termin" />
+          <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+          <ScalarProperty Name="id_wrzeciono" ColumnName="id_wrzeciono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dokument_wytaczadlo">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.dokument_wytaczadlo">
+        <MappingFragment StoreEntitySet="dokument_wytaczadlo">
+          <ScalarProperty Name="id_dokument_wytaczadlo" ColumnName="id_dokument_wytaczadlo" />
+          <ScalarProperty Name="data_wystawienia" ColumnName="data_wystawienia" />
+          <ScalarProperty Name="termin" ColumnName="termin" />
+          <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+          <ScalarProperty Name="id_wytaczadlo" ColumnName="id_wytaczadlo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lozysko">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.lozysko">
+        <MappingFragment StoreEntitySet="lozysko">
+          <ScalarProperty Name="id_lozysko" ColumnName="id_lozysko" />
+          <ScalarProperty Name="typ" ColumnName="typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wrzeciono">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wrzeciono">
+        <MappingFragment StoreEntitySet="wrzeciono">
+          <ScalarProperty Name="id_wrzeciono" ColumnName="id_wrzeciono" />
+          <ScalarProperty Name="typ" ColumnName="typ" />
+          <ScalarProperty Name="nr_seryjny" ColumnName="nr_seryjny" />
+          <ScalarProperty Name="data_zlomowania" ColumnName="data_zlomowania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wytaczadlo">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo">
+        <MappingFragment StoreEntitySet="wytaczadlo">
+          <ScalarProperty Name="id_wytaczadlo" ColumnName="id_wytaczadlo" />
+          <ScalarProperty Name="typ" ColumnName="typ" />
+          <ScalarProperty Name="nr_rysunku" ColumnName="nr_rysunku" />
+          <ScalarProperty Name="data_zlomowania" ColumnName="data_zlomowania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wytaczadlo_lozysko">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo_lozysko">
+        <MappingFragment StoreEntitySet="wytaczadlo_lozysko">
+          <ScalarProperty Name="id_wytaczadlo_lozysko" ColumnName="id_wytaczadlo_lozysko" />
+          <ScalarProperty Name="id_wytaczadlo" ColumnName="id_wytaczadlo" />
+          <ScalarProperty Name="id_lozysko" ColumnName="id_lozysko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wszystkie_dokumenty">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wszystkie_dokumenty">
+        <MappingFragment StoreEntitySet="wszystkie_dokumenty">
+          <ScalarProperty Name="data_wystawienia" ColumnName="data wystawienia" />
+          <ScalarProperty Name="termin" ColumnName="termin" />
+          <ScalarProperty Name="pozostałe_dni" ColumnName="pozostałe dni" />
+          <ScalarProperty Name="wymaga_atestu" ColumnName="wymaga atestu" />
+          <ScalarProperty Name="typ" ColumnName="typ" />
+          <ScalarProperty Name="numer" ColumnName="numer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wytaczadlo_z_lozyskiem">
+      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo_z_lozyskiem">
+        <MappingFragment StoreEntitySet="wytaczadlo_z_lozyskiem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="typ_wytaczadła" ColumnName="typ wytaczadła" />
+          <ScalarProperty Name="numer_rysunku" ColumnName="numer rysunku" />
+          <ScalarProperty Name="typ_łozyska" ColumnName="typ łozyska" />
+          <ScalarProperty Name="data_złomowania" ColumnName="data złomowania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

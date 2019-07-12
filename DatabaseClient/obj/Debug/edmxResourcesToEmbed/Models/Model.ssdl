@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WrzecionaIWytaczadłaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dokument_wrzeciono">
+    <Key>
+      <PropertyRef Name="id_dokument_wrzeciono" />
+    </Key>
+    <Property Name="id_dokument_wrzeciono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data_wystawienia" Type="date" />
+    <Property Name="termin" Type="int" Nullable="false" />
+    <Property Name="uwagi" Type="varchar" MaxLength="255" />
+    <Property Name="id_wrzeciono" Type="int" />
+  </EntityType>
+  <EntityType Name="dokument_wytaczadlo">
+    <Key>
+      <PropertyRef Name="id_dokument_wytaczadlo" />
+    </Key>
+    <Property Name="id_dokument_wytaczadlo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data_wystawienia" Type="date" />
+    <Property Name="termin" Type="int" Nullable="false" />
+    <Property Name="uwagi" Type="varchar" MaxLength="255" />
+    <Property Name="id_wytaczadlo" Type="int" />
+  </EntityType>
+  <EntityType Name="lozysko">
+    <Key>
+      <PropertyRef Name="id_lozysko" />
+    </Key>
+    <Property Name="id_lozysko" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typ" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wrzeciono">
+    <Key>
+      <PropertyRef Name="id_wrzeciono" />
+    </Key>
+    <Property Name="id_wrzeciono" Type="int" Nullable="false" />
+    <Property Name="typ" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nr_seryjny" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="data_zlomowania" Type="datetime" />
+  </EntityType>
+  <EntityType Name="wytaczadlo">
+    <Key>
+      <PropertyRef Name="id_wytaczadlo" />
+    </Key>
+    <Property Name="id_wytaczadlo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typ" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nr_rysunku" Type="int" />
+    <Property Name="data_zlomowania" Type="datetime" />
+  </EntityType>
+  <EntityType Name="wytaczadlo_lozysko">
+    <Key>
+      <PropertyRef Name="id_wytaczadlo_lozysko" />
+    </Key>
+    <Property Name="id_wytaczadlo_lozysko" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_wytaczadlo" Type="int" />
+    <Property Name="id_lozysko" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WrzecionaIWytaczadła.dbo.wszystkie_dokumenty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="wszystkie_dokumenty">
+    <Key>
+      <PropertyRef Name="termin" />
+      <PropertyRef Name="wymaga atestu" />
+      <PropertyRef Name="typ" />
+    </Key>
+    <Property Name="data wystawienia" Type="date" />
+    <Property Name="termin" Type="int" Nullable="false" />
+    <Property Name="pozostałe dni" Type="int" />
+    <Property Name="wymaga atestu" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="typ" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="numer" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WrzecionaIWytaczadła.dbo.wytaczadlo_z_lozyskiem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="wytaczadlo_z_lozyskiem">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="typ wytaczadła" />
+      <PropertyRef Name="typ łozyska" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="typ wytaczadła" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="numer rysunku" Type="int" />
+    <Property Name="typ łozyska" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="data złomowania" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__dokument___id_wy__57FD0775">
+    <End Role="wytaczadlo" Type="Self.wytaczadlo" Multiplicity="0..1" />
+    <End Role="dokument_wytaczadlo" Type="Self.dokument_wytaczadlo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Principal>
+      <Dependent Role="dokument_wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__wytaczadl__id_lo__52442E1F">
+    <End Role="lozysko" Type="Self.lozysko" Multiplicity="0..1" />
+    <End Role="wytaczadlo_lozysko" Type="Self.wytaczadlo_lozysko" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lozysko">
+        <PropertyRef Name="id_lozysko" />
+      </Principal>
+      <Dependent Role="wytaczadlo_lozysko">
+        <PropertyRef Name="id_lozysko" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__wytaczadl__id_wy__515009E6">
+    <End Role="wytaczadlo" Type="Self.wytaczadlo" Multiplicity="0..1" />
+    <End Role="wytaczadlo_lozysko" Type="Self.wytaczadlo_lozysko" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wytaczadlo">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Principal>
+      <Dependent Role="wytaczadlo_lozysko">
+        <PropertyRef Name="id_wytaczadlo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_id_wrzeciono">
+    <End Role="wrzeciono" Type="Self.wrzeciono" Multiplicity="0..1" />
+    <End Role="dokument_wrzeciono" Type="Self.dokument_wrzeciono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wrzeciono">
+        <PropertyRef Name="id_wrzeciono" />
+      </Principal>
+      <Dependent Role="dokument_wrzeciono">
+        <PropertyRef Name="id_wrzeciono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WrzecionaIWytaczadłaModelStoreContainer">
+    <EntitySet Name="dokument_wrzeciono" EntityType="Self.dokument_wrzeciono" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dokument_wytaczadlo" EntityType="Self.dokument_wytaczadlo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lozysko" EntityType="Self.lozysko" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wrzeciono" EntityType="Self.wrzeciono" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wytaczadlo" EntityType="Self.wytaczadlo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wytaczadlo_lozysko" EntityType="Self.wytaczadlo_lozysko" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wszystkie_dokumenty" EntityType="Self.wszystkie_dokumenty" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [wszystkie_dokumenty].[data wystawienia] AS [data wystawienia], 
+    [wszystkie_dokumenty].[termin] AS [termin], 
+    [wszystkie_dokumenty].[pozostałe dni] AS [pozostałe dni], 
+    [wszystkie_dokumenty].[wymaga atestu] AS [wymaga atestu], 
+    [wszystkie_dokumenty].[typ] AS [typ], 
+    [wszystkie_dokumenty].[numer] AS [numer]
+    FROM [dbo].[wszystkie_dokumenty] AS [wszystkie_dokumenty]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="wytaczadlo_z_lozyskiem" EntityType="Self.wytaczadlo_z_lozyskiem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [wytaczadlo_z_lozyskiem].[ID] AS [ID], 
+    [wytaczadlo_z_lozyskiem].[typ wytaczadła] AS [typ wytaczadła], 
+    [wytaczadlo_z_lozyskiem].[numer rysunku] AS [numer rysunku], 
+    [wytaczadlo_z_lozyskiem].[typ łozyska] AS [typ łozyska], 
+    [wytaczadlo_z_lozyskiem].[data złomowania] AS [data złomowania]
+    FROM [dbo].[wytaczadlo_z_lozyskiem] AS [wytaczadlo_z_lozyskiem]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__dokument___id_wy__57FD0775" Association="Self.FK__dokument___id_wy__57FD0775">
+      <End Role="wytaczadlo" EntitySet="wytaczadlo" />
+      <End Role="dokument_wytaczadlo" EntitySet="dokument_wytaczadlo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__wytaczadl__id_lo__52442E1F" Association="Self.FK__wytaczadl__id_lo__52442E1F">
+      <End Role="lozysko" EntitySet="lozysko" />
+      <End Role="wytaczadlo_lozysko" EntitySet="wytaczadlo_lozysko" />
+    </AssociationSet>
+    <AssociationSet Name="FK__wytaczadl__id_wy__515009E6" Association="Self.FK__wytaczadl__id_wy__515009E6">
+      <End Role="wytaczadlo" EntitySet="wytaczadlo" />
+      <End Role="wytaczadlo_lozysko" EntitySet="wytaczadlo_lozysko" />
+    </AssociationSet>
+    <AssociationSet Name="FK_id_wrzeciono" Association="Self.FK_id_wrzeciono">
+      <End Role="wrzeciono" EntitySet="wrzeciono" />
+      <End Role="dokument_wrzeciono" EntitySet="dokument_wrzeciono" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

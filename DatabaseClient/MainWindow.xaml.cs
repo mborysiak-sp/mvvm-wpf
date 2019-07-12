@@ -28,6 +28,7 @@ namespace DatabaseClient
         {
             InitializeComponent();
         }
+       
         private void MenuTabele_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new TablesViewModel();

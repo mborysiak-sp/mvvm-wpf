@@ -46,3 +46,9 @@ C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\View
 C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\SearchView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\AddDocumentView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\AddDocumentView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\EntityFramework.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\EntityFramework.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient_Content.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.csproj.CopyComplete

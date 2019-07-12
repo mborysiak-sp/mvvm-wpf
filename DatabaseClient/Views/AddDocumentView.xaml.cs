@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -26,10 +27,11 @@ namespace DatabaseClient.Views
         {
             InitializeComponent();
         }
+
         private void AddDocument(object sender, RoutedEventArgs e)
         {
             string conString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            int idDetail;
+            int idDetail = -1;
             string sql = string.Empty;
             string sql2 = string.Empty;
             if (comboboxDetail.Text == "wytaczadlo")
@@ -43,28 +45,73 @@ namespace DatabaseClient.Views
                 sql = "SELECT id_wrzeciono FROM wrzeciono WHERE typ = @type AND nr_seryjny = @number";
                 sql2 = "INSERT INTO dokument_wrzeciono (data_wystawienia, termin, id_wrzeciono) VALUES (GETDATE(), @termin, @idDetail)";
             }
-                using (SqlConnection con = new SqlConnection(conString))
+            using (SqlConnection con = new SqlConnection(conString))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
                 using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("type", textboxAddDocumentType.Text);
                     cmd.Parameters.AddWithValue("number", textboxAddDocumentNumber.Text);
-                    idDetail = Convert.ToInt32(cmd.ExecuteScalar());
+                    try
+                    {
+                        idDetail = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
-                con.Close();
+                try
+                {
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
+
             using (SqlConnection con = new SqlConnection(conString))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
                 using (SqlCommand cmd = new SqlCommand(sql2, con))
                 {
                     cmd.Parameters.AddWithValue("termin", textboxAddDocumentDue.Text);
                     cmd.Parameters.AddWithValue("idDetail", idDetail);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
                 MessageBox.Show("Wprowadzono wytaczadło");
-                con.Close();
+                try
+                {
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
             }
         }
     }
