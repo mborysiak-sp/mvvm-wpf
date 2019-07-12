@@ -104,6 +104,7 @@
     <Compile Include="Models\wytaczadlo_z_lozyskiem.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\TestConnection.cs" />
     <Compile Include="ViewModels\AddDocumentViewModel.cs" />
     <Compile Include="ViewModels\DodajLozyskoViewModel.cs" />
     <Compile Include="ViewModels\DodajWytaczadloViewModel.cs" />

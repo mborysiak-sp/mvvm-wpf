@@ -24,41 +24,28 @@ namespace DatabaseClient.Views
     {
         public TablesView()
         {
+            //var connectionTest = new Services.TestConnection();
             InitializeComponent();
             //FillDataGridWrzeciono();
             FillDataGridWytaczadlo();
             //FillDataGridDokument();
         }
+
         private void FillDataGridWytaczadlo()
         {
+            
             string ConString = string.Empty;
-            try
-            {
                 ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
             {
-                try
-                {
                     con.Open();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
                     CmdString = "SELECT * FROM wytaczadlo_z_lozyskiem";
                     SqlCommand cmd = new SqlCommand(CmdString, con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable("Wytaczadlo");
                     sda.Fill(dt);
                     gridWytaczadlo.ItemsSource = dt.DefaultView;
-
-
             }
         }
         /*
