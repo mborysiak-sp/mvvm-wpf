@@ -16,6 +16,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using DatabaseClient.ViewModels;
+using GalaSoft.MvvmLight.Messaging;
+using DatabaseClient.Messages;
+using System.Windows.Media.Animation;
 
 namespace DatabaseClient
 {
@@ -27,28 +30,43 @@ namespace DatabaseClient
         public MainWindow()
         {
             InitializeComponent();
+            Style = (Style)FindResource(typeof(Window));
+            Messenger.Default.Register<NavigateMessage>(this, (action) => ShowUserControl(action));
+            Messenger.Default.Register<UserMessage>(this, (action) => ReceiveUserMessage(action));
+            this.DataContext = new MainWindowViewModel();
         }
-       
-        private void MenuTabele_Click(object sender, RoutedEventArgs e)
+        
+        private void ReceiveUserMessage(UserMessage msg)
         {
-            DataContext = new TablesViewModel();
+            UIMessage.Opacity = 1;
+            UIMessage.Text = msg.Message;
+            Storyboard sb = (Storyboard)this.FindResource("FadeUIMessage");
+            sb.Begin();
         }
-        private void MenuFormularzeDodajWytaczadlo_Click(object sender, RoutedEventArgs e)
+        private void ShowUserControl(NavigateMessage nm)
         {
-            DataContext = new DodajWytaczadloViewModel();
+            EditFrame.Content = nm.View;
         }
-        private void MenuFormularzeDodajLozysko_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new DodajLozyskoViewModel();
-        }
-        private void MenuSearch_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new SearchViewModel();
-        }
-        private void MenuFormularzeDodajDokument_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new AddDocumentViewModel();
-        }
+        //private void MenuTabele_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new SpindlesViewModel();
+        //}
+        //private void MenuFormularzeDodajWytaczadlo_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new AddBoringBarViewModel();
+        //}
+        //private void MenuFormularzeDodajLozysko_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new AddBearingViewModel();
+        //}
+        //private void MenuSearch_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new SearchViewModel();
+        //}
+        //private void MenuFormularzeDodajDokument_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new AddDocumentViewModel();
+        //}
     }
 }
 

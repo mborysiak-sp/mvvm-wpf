@@ -1,9 +1,11 @@
-﻿C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\GeneratedInternalTypeHelper.g.cs
+﻿
 
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\MainWindow.xaml;;
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\AddDocumentView.xaml;;
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\DodajLozyskoView.xaml;;
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\DodajWytaczadloView.xaml;;
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\SearchView.xaml;;
-FC:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\TablesView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\MainWindow.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Support\Throbber.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\AddDocumentView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\AddBearingView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\AddBoringBarView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\SearchView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\SpindlesView.xaml;;
+Fc:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\Views\TablesView.xaml;;
 

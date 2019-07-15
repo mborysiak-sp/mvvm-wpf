@@ -10,6 +10,17 @@
             <TabItem Header="Wrzeciona">
                 <Grid Background="DimGray">
                     <DataGrid Name="gridWrzeciono" Margin="10" RenderTransformOrigin="0.486,0.494">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id_wrzeciono}"/>
+                            <DataGridTextColumn Header="Typ" Binding="{Binding typ}"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Złomuj" Command="Delete"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
                         <DataGrid.Resources>
                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Pink"/>
                         </DataGrid.Resources>
@@ -23,7 +34,14 @@
             </TabItem>
             <TabItem Header="Dokumenty">
                 <Grid Background="DimGray">
-                    <DataGrid Name="gridDokument" Margin="10" RenderTransformOrigin="0.486,0.494"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="gridDokument" Margin="10" RenderTransformOrigin="0.486,0.494" Grid.Row="0" Grid.Column="0"/>
+
                 </Grid>
             </TabItem>
         </TabControl>

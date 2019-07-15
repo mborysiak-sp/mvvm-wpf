@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WrzecionaIWytaczadłaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="dokument_wrzeciono">
     <Key>
       <PropertyRef Name="id_dokument_wrzeciono" />
@@ -134,7 +134,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DataEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="dokument_wrzeciono" EntityType="Self.dokument_wrzeciono" />
     <EntitySet Name="dokument_wytaczadlo" EntityType="Self.dokument_wytaczadlo" />
     <EntitySet Name="lozysko" EntityType="Self.lozysko" />

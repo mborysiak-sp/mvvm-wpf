@@ -22,61 +22,64 @@ namespace DatabaseClient.Views
     /// </summary>
     public partial class TablesView : UserControl
     {
+        BoringSpindlesEntities Data = new BoringSpindlesEntities();
         public TablesView()
         {
             //var connectionTest = new Services.TestConnection();
             InitializeComponent();
-            //FillDataGridWrzeciono();
+            FillDataGridWrzeciono();
             FillDataGridWytaczadlo();
-            //FillDataGridDokument();
+            FillDataGridDokument();
         }
 
         private void FillDataGridWytaczadlo()
         {
-            
+
             string ConString = string.Empty;
-                ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
             {
-                    con.Open();
-                    CmdString = "SELECT * FROM wytaczadlo_z_lozyskiem";
-                    SqlCommand cmd = new SqlCommand(CmdString, con);
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable("Wytaczadlo");
-                    sda.Fill(dt);
-                    gridWytaczadlo.ItemsSource = dt.DefaultView;
-            }
-        }
-        /*
-        private void FillDataGridWrzeciono()
-        {
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            string CmdString = string.Empty;
-            using (SqlConnection con = new SqlConnection(ConString))
-            {
-                CmdString = "SELECT id_wrzeciono AS 'ID', typ, nr_seryjny AS 'numer seryjny' FROM wrzeciono";
+                con.Open();
+                CmdString = "SELECT * FROM wytaczadlo_z_lozyskiem";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Wrzeciono");
-                try
-                {
-                    sda.Fill(dt);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-                try
-                {
-                    gridWrzeciono.ItemsSource = dt.DefaultView;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }   
+                DataTable dt = new DataTable("Wytaczadlo");
+                sda.Fill(dt);
+                gridWytaczadlo.ItemsSource = dt.DefaultView;
             }
         }
+        private void FillDataGridWrzeciono()
+        {
+            var data = from r in Data.spindle select r;
+            //gridWrzeciono.ItemsSource = data.ToList();
+            //string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            //string CmdString = string.Empty;
+            //using (SqlConnection con = new SqlConnection(ConString))
+            //{
+            //    CmdString = "SELECT id_wrzeciono AS 'ID', typ, nr_seryjny AS 'numer seryjny' FROM wrzeciono";
+            //    SqlCommand cmd = new SqlCommand(CmdString, con);
+            //    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            //    DataTable dt = new DataTable("Wrzeciono");
+            //    try
+            //    {
+            //        sda.Fill(dt);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            //    }
+            //    try
+            //    {
+            //        gridWrzeciono.ItemsSource = dt.DefaultView;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            //    }
+            //}
+        }
+
         private void FillDataGridDokument()
         {
             string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
@@ -87,24 +90,15 @@ namespace DatabaseClient.Views
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Dokument");
-                try
-                {
                     sda.Fill(dt);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-                try
-                {
-                    gridWrzeciono.ItemsSource = dt.DefaultView;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                    gridDokument.ItemsSource = dt.DefaultView;
             }
-            */
+        }
+        
+        private void DeleteDetail()
+        {
+            //object item = gridWrzeciono.SelectedItem;
         }
     }
+}
 

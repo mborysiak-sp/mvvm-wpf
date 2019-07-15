@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BoringSpindlesModelStoreContainer" CdmEntityContainer="BoringSpindlesEntities">
+    <EntitySetMapping Name="bearing">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.bearing">
+        <MappingFragment StoreEntitySet="bearing">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boring_bar">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar">
+        <MappingFragment StoreEntitySet="boring_bar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="oridnal_number" ColumnName="oridnal_number" />
+          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boring_bar_bearing">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_bearing">
+        <MappingFragment StoreEntitySet="boring_bar_bearing">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_boring_bar" ColumnName="id_boring_bar" />
+          <ScalarProperty Name="id_bearing" ColumnName="id_bearing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="document_boring_bar">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.document_boring_bar">
+        <MappingFragment StoreEntitySet="document_boring_bar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="day_count" ColumnName="day_count" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="id_boring_bar" ColumnName="id_boring_bar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="document_spindle">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.document_spindle">
+        <MappingFragment StoreEntitySet="document_spindle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="day_count" ColumnName="day_count" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="id_spindle" ColumnName="id_spindle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spindle">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.spindle">
+        <MappingFragment StoreEntitySet="spindle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="all_documents">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.all_documents">
+        <MappingFragment StoreEntitySet="all_documents">
+          <ScalarProperty Name="data_wydania" ColumnName="data_wydania" />
+          <ScalarProperty Name="ważne_przez" ColumnName="ważne przez" />
+          <ScalarProperty Name="pozostałe_dni" ColumnName="pozostałe dni" />
+          <ScalarProperty Name="wymaga_atestu" ColumnName="wymaga atestu" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="numer" ColumnName="numer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boring_bar_with_bearing">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_with_bearing">
+        <MappingFragment StoreEntitySet="boring_bar_with_bearing">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="model_wytaczadła" ColumnName="model_wytaczadła" />
+          <ScalarProperty Name="numer" ColumnName="numer" />
+          <ScalarProperty Name="model_łożyska" ColumnName="model_łożyska" />
+          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

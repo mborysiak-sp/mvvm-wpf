@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="518b356e894c468ebd54162098c5c137" Name="Diagram1">
+        <EntityTypeShape EntityType="BoringSpindlesModel.bearing" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar_bearing" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.document_boring_bar" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.document_spindle" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.spindle" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.all_documents" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar_with_bearing" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_be__6CF8245B" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_bo__6C040022" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__document___id_bo__72B0FDB1" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK_id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

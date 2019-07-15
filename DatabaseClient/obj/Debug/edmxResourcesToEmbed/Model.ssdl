@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BoringSpindlesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bearing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="boring_bar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="oridnal_number" Type="int" />
+    <Property Name="scrapping_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="boring_bar_bearing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_boring_bar" Type="int" />
+    <Property Name="id_bearing" Type="int" />
+  </EntityType>
+  <EntityType Name="document_boring_bar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issue_date" Type="date" />
+    <Property Name="day_count" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" />
+    <Property Name="id_boring_bar" Type="int" />
+  </EntityType>
+  <EntityType Name="document_spindle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issue_date" Type="date" />
+    <Property Name="day_count" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" />
+    <Property Name="id_spindle" Type="int" />
+  </EntityType>
+  <EntityType Name="spindle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="serial_number" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="scrapping_date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="all_documents">
+    <Key>
+      <PropertyRef Name="ważne przez" />
+      <PropertyRef Name="model" />
+    </Key>
+    <Property Name="data_wydania" Type="date" />
+    <Property Name="ważne przez" Type="int" Nullable="false" />
+    <Property Name="pozostałe dni" Type="int" />
+    <Property Name="wymaga atestu" Type="bit" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="numer" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="boring_bar_with_bearing">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="model_wytaczadła" />
+      <PropertyRef Name="model_łożyska" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="model_wytaczadła" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="numer" Type="int" />
+    <Property Name="model_łożyska" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="scrapping_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__boring_ba__id_be__6CF8245B">
+    <End Role="bearing" Type="Self.bearing" Multiplicity="0..1" />
+    <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bearing">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="boring_bar_bearing">
+        <PropertyRef Name="id_bearing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__boring_ba__id_bo__6C040022">
+    <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
+    <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="boring_bar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="boring_bar_bearing">
+        <PropertyRef Name="id_boring_bar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__document___id_bo__72B0FDB1">
+    <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
+    <End Role="document_boring_bar" Type="Self.document_boring_bar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="boring_bar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="document_boring_bar">
+        <PropertyRef Name="id_boring_bar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_id">
+    <End Role="spindle" Type="Self.spindle" Multiplicity="0..1" />
+    <End Role="document_spindle" Type="Self.document_spindle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="spindle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="document_spindle">
+        <PropertyRef Name="id_spindle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BoringSpindlesModelStoreContainer">
+    <EntitySet Name="bearing" EntityType="Self.bearing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="boring_bar" EntityType="Self.boring_bar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="boring_bar_bearing" EntityType="Self.boring_bar_bearing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="document_boring_bar" EntityType="Self.document_boring_bar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="document_spindle" EntityType="Self.document_spindle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="spindle" EntityType="Self.spindle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="all_documents" EntityType="Self.all_documents" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [all_documents].[data_wydania] AS [data_wydania], 
+    [all_documents].[ważne przez] AS [ważne przez], 
+    [all_documents].[pozostałe dni] AS [pozostałe dni], 
+    [all_documents].[wymaga atestu] AS [wymaga atestu], 
+    [all_documents].[model] AS [model], 
+    [all_documents].[numer] AS [numer]
+    FROM [dbo].[all_documents] AS [all_documents]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="boring_bar_with_bearing" EntityType="Self.boring_bar_with_bearing" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [boring_bar_with_bearing].[ID] AS [ID], 
+    [boring_bar_with_bearing].[model_wytaczadła] AS [model_wytaczadła], 
+    [boring_bar_with_bearing].[numer] AS [numer], 
+    [boring_bar_with_bearing].[model_łożyska] AS [model_łożyska], 
+    [boring_bar_with_bearing].[scrapping_date] AS [scrapping_date]
+    FROM [dbo].[boring_bar_with_bearing] AS [boring_bar_with_bearing]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__boring_ba__id_be__6CF8245B" Association="Self.FK__boring_ba__id_be__6CF8245B">
+      <End Role="bearing" EntitySet="bearing" />
+      <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__boring_ba__id_bo__6C040022" Association="Self.FK__boring_ba__id_bo__6C040022">
+      <End Role="boring_bar" EntitySet="boring_bar" />
+      <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__document___id_bo__72B0FDB1" Association="Self.FK__document___id_bo__72B0FDB1">
+      <End Role="boring_bar" EntitySet="boring_bar" />
+      <End Role="document_boring_bar" EntitySet="document_boring_bar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_id" Association="Self.FK_id">
+      <End Role="spindle" EntitySet="spindle" />
+      <End Role="document_spindle" EntitySet="document_spindle" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

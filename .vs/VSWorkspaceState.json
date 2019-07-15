@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DatabaseClient",
+    "\\DatabaseClient\\Support"
   ],
-  "SelectedNode": "\\DatabaseClient.sln",
+  "SelectedNode": "\\DatabaseClient\\Support\\CrudVMBase.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="WrzecionaIWytaczadłaModelStoreContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataEntities">
     <EntitySetMapping Name="dokument_wrzeciono">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.dokument_wrzeciono">
+      <EntityTypeMapping TypeName="DataModel.dokument_wrzeciono">
         <MappingFragment StoreEntitySet="dokument_wrzeciono">
           <ScalarProperty Name="id_dokument_wrzeciono" ColumnName="id_dokument_wrzeciono" />
           <ScalarProperty Name="data_wystawienia" ColumnName="data_wystawienia" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dokument_wytaczadlo">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.dokument_wytaczadlo">
+      <EntityTypeMapping TypeName="DataModel.dokument_wytaczadlo">
         <MappingFragment StoreEntitySet="dokument_wytaczadlo">
           <ScalarProperty Name="id_dokument_wytaczadlo" ColumnName="id_dokument_wytaczadlo" />
           <ScalarProperty Name="data_wystawienia" ColumnName="data_wystawienia" />
@@ -24,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="lozysko">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.lozysko">
+      <EntityTypeMapping TypeName="DataModel.lozysko">
         <MappingFragment StoreEntitySet="lozysko">
           <ScalarProperty Name="id_lozysko" ColumnName="id_lozysko" />
           <ScalarProperty Name="typ" ColumnName="typ" />
@@ -32,7 +32,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="wrzeciono">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wrzeciono">
+      <EntityTypeMapping TypeName="DataModel.wrzeciono">
         <MappingFragment StoreEntitySet="wrzeciono">
           <ScalarProperty Name="id_wrzeciono" ColumnName="id_wrzeciono" />
           <ScalarProperty Name="typ" ColumnName="typ" />
@@ -42,7 +42,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="wytaczadlo">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo">
+      <EntityTypeMapping TypeName="DataModel.wytaczadlo">
         <MappingFragment StoreEntitySet="wytaczadlo">
           <ScalarProperty Name="id_wytaczadlo" ColumnName="id_wytaczadlo" />
           <ScalarProperty Name="typ" ColumnName="typ" />
@@ -52,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="wytaczadlo_lozysko">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo_lozysko">
+      <EntityTypeMapping TypeName="DataModel.wytaczadlo_lozysko">
         <MappingFragment StoreEntitySet="wytaczadlo_lozysko">
           <ScalarProperty Name="id_wytaczadlo_lozysko" ColumnName="id_wytaczadlo_lozysko" />
           <ScalarProperty Name="id_wytaczadlo" ColumnName="id_wytaczadlo" />
@@ -61,7 +61,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="wszystkie_dokumenty">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wszystkie_dokumenty">
+      <EntityTypeMapping TypeName="DataModel.wszystkie_dokumenty">
         <MappingFragment StoreEntitySet="wszystkie_dokumenty">
           <ScalarProperty Name="data_wystawienia" ColumnName="data wystawienia" />
           <ScalarProperty Name="termin" ColumnName="termin" />
@@ -73,7 +73,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="wytaczadlo_z_lozyskiem">
-      <EntityTypeMapping TypeName="WrzecionaIWytaczadłaModel.wytaczadlo_z_lozyskiem">
+      <EntityTypeMapping TypeName="DataModel.wytaczadlo_z_lozyskiem">
         <MappingFragment StoreEntitySet="wytaczadlo_z_lozyskiem">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="typ_wytaczadła" ColumnName="typ wytaczadła" />
