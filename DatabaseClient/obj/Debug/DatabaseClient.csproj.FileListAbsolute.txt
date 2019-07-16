@@ -68,3 +68,4 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Data
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.csproj.CopyComplete
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.exe
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.csprojAssemblyReference.cache

@@ -34,5 +34,7 @@
                 RaisePropertyChanged();
             }
         }
+        protected object theEntity;
+
     }
 }

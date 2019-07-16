@@ -176,7 +176,7 @@ namespace DatabaseClient
                 NotifyErrorsChanged(prop);
             }
         }
-        public void ClearErros()
+        public void ClearErrors()
         {
             List<string> oldErrorProperties = errors.Select(x => x.Key.ToString()).ToList();
             errors.Clear();

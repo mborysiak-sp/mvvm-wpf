@@ -25,9 +25,11 @@ namespace DatabaseClient
 
             ObservableCollection<CommandVM> commands = new ObservableCollection<CommandVM>
             {
-                new CommandVM { CommandDisplay = "Delete", IconGeometry = Application.Current.Resources["DeleteIcon"] as Geometry, Message = new CommandMessage { Command = CommandType.Delete } },
-                new CommandVM { CommandDisplay = "Commit", IconGeometry = Application.Current.Resources["SaveIcon"] as Geometry, Message = new CommandMessage { Command = CommandType.Commit } },
-                new CommandVM { CommandDisplay = "Refresh", IconGeometry = Application.Current.Resources["RefreshIcon"] as Geometry, Message = new CommandMessage { Command = CommandType.Refresh } },
+                new CommandVM{ CommandDisplay="Insert", IconGeometry=Application.Current.Resources["InsertIcon"] as Geometry , Message=new CommandMessage{ Command =CommandType.Insert}},
+                new CommandVM{ CommandDisplay="Edit", IconGeometry=Application.Current.Resources["EditIcon"] as Geometry , Message=new CommandMessage{ Command = CommandType.Edit}},
+                new CommandVM{ CommandDisplay="Delete", IconGeometry=Application.Current.Resources["DeleteIcon"] as Geometry , Message=new CommandMessage{ Command = CommandType.Delete}},
+               // new CommandVM{ CommandDisplay="Commit", IconGeometry=Application.Current.Resources["SaveIcon"] as Geometry , Message=new CommandMessage{ Command = CommandType.Commit}},
+                new CommandVM{ CommandDisplay="Refresh", IconGeometry=Application.Current.Resources["RefreshIcon"] as Geometry , Message=new CommandMessage{ Command = CommandType.Refresh}}
             };
             Commands = commands;
             RaisePropertyChanged("Commands");

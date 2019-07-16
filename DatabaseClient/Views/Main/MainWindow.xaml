@@ -1,8 +1,8 @@
 ﻿<Window x:Class="DatabaseClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:DatabaseClient"
-        Title="MainWindow" Name="myMainWindow" Height="450" Width="800" Background="DimGray">
+        xmlns:local="clr-namespace:DatabaseClient" 
+        Title="DatabaseClient" Height="550" Width="800">
     <Window.Resources>
         <Storyboard x:Key="FadeUIMessage">
             <DoubleAnimation 
@@ -77,4 +77,3 @@
         <ContentControl x:Name="Holder" Grid.Row="1" />
     </Grid>
 </Window>
-    

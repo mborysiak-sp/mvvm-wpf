@@ -11,6 +11,8 @@
         Edit,
         Delete,
         Commit,
-        Refresh
+        Refresh,
+        Quit,
+        None
     }
 }

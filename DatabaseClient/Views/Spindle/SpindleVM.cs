@@ -4,11 +4,22 @@ namespace DatabaseClient
 {
     public class SpindleVM : VMBase
     {
-        public spindle TheSpindle { get; set; }
+        public spindle TheEntity
+        {
+            get
+            {
+                return (spindle)base.theEntity;
+            }
+            set
+            {
+                theEntity = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public SpindleVM()
         {
-            TheSpindle = new spindle();
+            TheEntity = new spindle();
         }
     }
 }

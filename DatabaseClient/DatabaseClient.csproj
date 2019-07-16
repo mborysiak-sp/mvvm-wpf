@@ -110,6 +110,8 @@
     <Compile Include="EntityData\AnError.cs" />
     <Compile Include="EntityData\BaseEntity.cs" />
     <Compile Include="EntityData\PropertyError.cs" />
+    <Compile Include="EntityData\Spindle.metadata.cs" />
+    <Compile Include="ExcludeChar.cs" />
     <Compile Include="Helpers\RoutedEventTrigger.cs" />
     <Compile Include="Messages\CommandMessage.cs" />
     <Compile Include="Messages\InEdit.cs" />
@@ -130,16 +132,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MustEqual.cs" />
     <Compile Include="Services\TestConnection.cs" />
     <Compile Include="EntityData\spindle.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Support\CrudVMBase.cs" />
+    <Compile Include="Support\DataGridRowBehavior.cs" />
     <Compile Include="Support\EditRow.cs" />
     <Compile Include="Support\HourGlass.xaml.cs">
       <DependentUpon>HourGlass.xaml</DependentUpon>
     </Compile>
     <Compile Include="Support\NotifyUIBase.cs" />
+    <Compile Include="Support\ScrollDataGridRowIntoView.cs" />
     <Compile Include="Support\Throbber.xaml.cs">
       <DependentUpon>Throbber.xaml</DependentUpon>
     </Compile>
