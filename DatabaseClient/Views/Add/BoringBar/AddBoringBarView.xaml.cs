@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace DatabaseClient.Views
+namespace DatabaseClient
 {
     /// <summary>
     /// Logika interakcji dla klasy DodajWytaczadloView.xaml
@@ -35,7 +24,7 @@ namespace DatabaseClient.Views
             {
                 con.Open();
                 string sql = "SELECT id_lozysko FROM lozysko WHERE typ = @typ";
-                using(SqlCommand cmd = new SqlCommand(sql, con))
+                using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("typ", dodajWytaczadloLozysko.Text);
                     lozyskoID = Convert.ToInt32(cmd.ExecuteScalar());

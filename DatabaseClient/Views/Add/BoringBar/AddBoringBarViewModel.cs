@@ -1,0 +1,6 @@
+﻿namespace DatabaseClient
+{
+    class AddBoringBarViewModel
+    {
+    }
+}

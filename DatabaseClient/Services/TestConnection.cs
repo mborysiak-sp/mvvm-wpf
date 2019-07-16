@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace DatabaseClient.Services
 {
@@ -31,9 +26,9 @@ namespace DatabaseClient.Services
                 //MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Console.WriteLine("duppa błąd połączenia");
             }
-            }
         }
     }
+}
 
 
 

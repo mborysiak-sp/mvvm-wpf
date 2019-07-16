@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿
+using DatabaseClient.EntityData;
 using DatabaseClient.Messages;
 using GalaSoft.MvvmLight.Messaging;
+using System.Windows;
 
 
-namespace DatabaseClient.Support
+namespace Support
 {
     public class CrudVMBase : NotifyUIBase
     {
@@ -67,7 +64,7 @@ namespace DatabaseClient.Support
             GetData();
             Messenger.Default.Send<UserMessage>(new UserMessage { Message = "Data Refreshed" });
         }
-        
+
         protected virtual void GetData() { }
         protected CrudVMBase()
         {

@@ -1,23 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Configuration;
-using DatabaseClient.ViewModels;
+﻿using DatabaseClient.Messages;
 using GalaSoft.MvvmLight.Messaging;
-using DatabaseClient.Messages;
+using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace DatabaseClient
@@ -33,9 +16,13 @@ namespace DatabaseClient
             Style = (Style)FindResource(typeof(Window));
             Messenger.Default.Register<NavigateMessage>(this, (action) => ShowUserControl(action));
             Messenger.Default.Register<UserMessage>(this, (action) => ReceiveUserMessage(action));
+            Messenger.Default.Register<InEdit>(this, (action) => ReceiveInEditMessage(action));
             this.DataContext = new MainWindowViewModel();
         }
-        
+        private void ReceiveInEditMessage(InEdit inEdit)
+        {
+            CommandTab.IsEnabled = !inEdit.Mode;
+        }
         private void ReceiveUserMessage(UserMessage msg)
         {
             UIMessage.Opacity = 1;
@@ -45,7 +32,8 @@ namespace DatabaseClient
         }
         private void ShowUserControl(NavigateMessage nm)
         {
-            EditFrame.Content = nm.View;
+            CommandTab.SelectedItem = EditTabItem;
+            Holder.Content = nm.View;
         }
         //private void MenuTabele_Click(object sender, RoutedEventArgs e)
         //{

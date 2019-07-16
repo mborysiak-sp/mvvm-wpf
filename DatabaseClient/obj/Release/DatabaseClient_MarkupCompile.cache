@@ -10,11 +10,11 @@ none
 false
 TRACE
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
-10496949688
-2-1881755278
-40-2078325196
+9838639520
+2677356452
+491802227239
 79-1097405964
-Dictionary1.xaml;MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\AddDocumentView.xaml;Views\AddBearingView.xaml;Views\AddBoringBarView.xaml;Views\SearchView.xaml;Views\SpindlesView.xaml;Views\TablesView.xaml;
+Resources\Dictionary1.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Add\Document\AddDocumentView.xaml;Views\Add\Bearing\AddBearingView.xaml;Views\Add\BoringBar\AddBoringBarView.xaml;Views\Search\SearchView.xaml;Views\Spindle\SpindlesView.xaml;
 
-False
+True
 

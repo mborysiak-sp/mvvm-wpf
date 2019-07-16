@@ -49,3 +49,14 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Da
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\DatabaseClient.csproj.CopyComplete
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\DatabaseClient.exe
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\DatabaseClient.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Main\MainWindow.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\Document\AddDocumentView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\Bearing\AddBearingView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\BoringBar\AddBoringBarView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Search\SearchView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Main\MainWindow.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\Document\AddDocumentView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\Bearing\AddBearingView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Add\BoringBar\AddBoringBarView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Search\SearchView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Release\Views\Spindle\SpindlesView.g.cs

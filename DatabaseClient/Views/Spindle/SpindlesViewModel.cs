@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DatabaseClient.EntityData;
+using DatabaseClient.Messages;
+using GalaSoft.MvvmLight.Messaging;
+using Support;
+using System;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using DatabaseClient.Messages;
-using DatabaseClient.Support;
-using DatabaseClient.ViewModels.RowVM;
-using GalaSoft.MvvmLight.Messaging;
 
-namespace DatabaseClient.ViewModels
+namespace DatabaseClient
 {
     public class SpindlesViewModel : CrudVMBase
     {
-        public RowVM.SpindleVM SelectedSpindle { get; set; }
+        public SpindleVM SelectedSpindle { get; set; }
         public ObservableCollection<SpindleVM> Spindles { get; set; }
         public SpindlesViewModel() : base()
         {

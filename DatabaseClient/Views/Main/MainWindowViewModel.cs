@@ -1,17 +1,10 @@
 ﻿using DatabaseClient.Messages;
-using DatabaseClient.Support;
-using DatabaseClient.ViewModels.RowVM;
-using DatabaseClient.Views;
-using System;
-using System.Collections.Generic;
+using Support;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
-namespace DatabaseClient.ViewModels
+namespace DatabaseClient
 {
     public class MainWindowViewModel : NotifyUIBase
     {
