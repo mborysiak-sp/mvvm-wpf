@@ -28,13 +28,12 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
                 <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
                 <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku" />
                 <DataGridTextColumn Binding="{Binding TheEntity.scrapping_date, Mode=TwoWay}"  Header="Data złomowania" />
             </DataGrid.Columns>
         </DataGrid>
-        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}" Loaded="Throbber_Loaded"/>
+        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

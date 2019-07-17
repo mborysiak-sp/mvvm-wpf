@@ -53,7 +53,7 @@
                 </ItemsControl>
             </ScrollViewer>
         </ContentControl>
-        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}" Loaded="Throbber_Loaded"/>
+        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

@@ -162,6 +162,7 @@ namespace DatabaseClient
             ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
             var spindles = await (from s in db.spindle
                                    orderby s.model
+                                   where s.scrapping_date == null
                                    select s).ToListAsync();
 
             foreach (spindle spin in spindles)
