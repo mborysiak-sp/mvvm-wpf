@@ -28,7 +28,7 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" />
+                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
                 <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
                 <DataGridTextColumn Binding="{Binding TheEntity.serial_number, Mode=TwoWay}"  Header="Numer seryjny" />
             </DataGrid.Columns>

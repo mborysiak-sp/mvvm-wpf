@@ -20,6 +20,7 @@ namespace DatabaseClient
         public SpindleVM()
         {
             TheEntity = new spindle();
+            TheEntity.MetaSetUp();
         }
     }
 }

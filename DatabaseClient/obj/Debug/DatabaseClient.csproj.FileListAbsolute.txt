@@ -71,3 +71,7 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Data
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient.csprojAssemblyReference.cache
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.baml

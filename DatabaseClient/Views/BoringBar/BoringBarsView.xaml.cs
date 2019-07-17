@@ -23,6 +23,10 @@ namespace DatabaseClient
         public BoringBarsView()
         {
             InitializeComponent();
+            this.DataContext = new BoringBarsViewModel();
+
         }
+
+
     }
 }

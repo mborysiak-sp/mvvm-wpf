@@ -74,6 +74,7 @@ namespace DatabaseClient
             {
                 if (EditVM.IsNew)
                 {
+                    Console.Out.WriteLine(EditVM.TheEntity.id);
                     EditVM.IsNew = false;
                     Spindles.Add(EditVM);
                     db.spindle.Add(EditVM.TheEntity);
@@ -100,7 +101,7 @@ namespace DatabaseClient
                 await db.SaveChangesAsync();
                 ShowUserMessage("Database Updated");
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
@@ -133,17 +134,17 @@ namespace DatabaseClient
                 ReFocusRow();
             }
         }
-        protected async void ReFocusRow(bool withReload = true)
+        protected void ReFocusRow(bool withReload = true)
         {
-            int id = EditVM.TheEntity.id;
-            SelectedSpindle = null;
-            await db.Entry(EditVM.TheEntity).ReloadAsync();
-            await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            {
-                SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
-                SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
-                SelectedSpindle.TheEntity.ClearErrors();
-            }), DispatcherPriority.ContextIdle);
+            //int id = EditVM.TheEntity.id;
+            //SelectedSpindle = null;
+            ////await db.Entry(EditVM.TheEntity).ReloadAsync();
+            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
+            //{
+            //    SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
+            //    SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
+            //    SelectedSpindle.TheEntity.ClearErrors();
+            //}), DispatcherPriority.ContextIdle);
             IsInEditMode = false;
         }
 

@@ -12,7 +12,7 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class boring_bar
+    public partial class boring_bar : IEntityWithId
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public boring_bar()
@@ -23,7 +23,7 @@ namespace DatabaseClient.EntityData
     
         public int id { get; set; }
         public string model { get; set; }
-        public Nullable<int> oridnal_number { get; set; }
+        public Nullable<int> ordinal_number { get; set; }
         public Nullable<System.DateTime> scrapping_date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

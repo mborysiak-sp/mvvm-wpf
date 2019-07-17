@@ -21,6 +21,7 @@ namespace DatabaseClient
         public BoringBarVM()
         {
             TheEntity = new boring_bar();
+            TheEntity.MetaSetUp();
         }
     }
 }

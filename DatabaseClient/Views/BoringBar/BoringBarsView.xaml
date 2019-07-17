@@ -28,7 +28,7 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" />
+                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
                 <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
                 <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku" />
             </DataGrid.Columns>
@@ -53,7 +53,7 @@
                 </ItemsControl>
             </ScrollViewer>
         </ContentControl>
-        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
+        <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}" Loaded="Throbber_Loaded"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

@@ -21,7 +21,7 @@ namespace DatabaseClient.Services
                     con.Open();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Console.WriteLine("duppa błąd połączenia");

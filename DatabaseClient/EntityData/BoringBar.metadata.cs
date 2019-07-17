@@ -49,8 +49,7 @@ namespace DatabaseClient.EntityData
             [Required(ErrorMessage="Model name required")]
             //[ExcludeChar("X", )]
             [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid model name")]
-            public string Model { get; set; }
-            public int OrdinalNumber { get; set; }
+            public string model { get; set; }
 
             private BoringBarMetadata()
             { }

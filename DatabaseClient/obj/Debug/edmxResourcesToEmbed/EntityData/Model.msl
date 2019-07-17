@@ -14,7 +14,7 @@
         <MappingFragment StoreEntitySet="boring_bar">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="model" ColumnName="model" />
-          <ScalarProperty Name="oridnal_number" ColumnName="oridnal_number" />
+          <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
           <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -56,29 +56,6 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="model" ColumnName="model" />
           <ScalarProperty Name="serial_number" ColumnName="serial_number" />
-          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="all_documents">
-      <EntityTypeMapping TypeName="BoringSpindlesModel.all_documents">
-        <MappingFragment StoreEntitySet="all_documents">
-          <ScalarProperty Name="data_wydania" ColumnName="data_wydania" />
-          <ScalarProperty Name="ważne_przez" ColumnName="ważne przez" />
-          <ScalarProperty Name="pozostałe_dni" ColumnName="pozostałe dni" />
-          <ScalarProperty Name="wymaga_atestu" ColumnName="wymaga atestu" />
-          <ScalarProperty Name="model" ColumnName="model" />
-          <ScalarProperty Name="numer" ColumnName="numer" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="boring_bar_with_bearing">
-      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_with_bearing">
-        <MappingFragment StoreEntitySet="boring_bar_with_bearing">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="model_wytaczadła" ColumnName="model_wytaczadła" />
-          <ScalarProperty Name="numer" ColumnName="numer" />
-          <ScalarProperty Name="model_łożyska" ColumnName="model_łożyska" />
           <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
         </MappingFragment>
       </EntityTypeMapping>

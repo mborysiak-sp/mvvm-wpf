@@ -49,10 +49,10 @@ namespace DatabaseClient.EntityData
             [Required]
             //[ExcludeChar("X", ErrorMessage="No X please")]
             [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid model name")]
-            public string Model { get; set; }
+            public string model { get; set; }
             [Required]
             [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid serial number")]
-            public string SerialNumber { get; set; }
+            public string serial_number { get; set; }
            
             private SpindleMetadata()
             { }

@@ -2,6 +2,6 @@
 {
     public interface IEntityWithId
     {
-        int Id { get; set; }
+        int id { get; set; }
     }
 }

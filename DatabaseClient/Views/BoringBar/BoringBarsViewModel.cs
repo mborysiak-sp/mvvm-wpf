@@ -129,17 +129,17 @@ namespace DatabaseClient
                 ReFocusRow();
             }
         }
-        protected async void ReFocusRow(bool withReload = true)
+        protected void ReFocusRow(bool withReload = true)
         {
-            int id = EditVM.TheEntity.id;
-            SelectedBoringBar = null;
-            await db.Entry(EditVM.TheEntity).ReloadAsync();
-            await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            {
-                SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
-                SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
-                SelectedBoringBar.TheEntity.ClearErrors();
-            }), DispatcherPriority.ContextIdle);
+            //int id = EditVM.TheEntity.id;
+            //SelectedBoringBar = null;
+            //await db.Entry(EditVM.TheEntity).ReloadAsync();
+            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
+            //{
+            //    SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
+            //    SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
+            //    SelectedBoringBar.TheEntity.ClearErrors();
+            //}), DispatcherPriority.ContextIdle);
             IsInEditMode = false;
         }
 
@@ -164,7 +164,7 @@ namespace DatabaseClient
                 _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
             }
             BoringBars = _boringBars;
-            RaisePropertyChanged("Spindles");
+            RaisePropertyChanged("BoringBars");
             ThrobberVisible = Visibility.Collapsed;
         }
     }
