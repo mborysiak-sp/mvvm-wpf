@@ -17,7 +17,9 @@ namespace DatabaseClient
         {
             ObservableCollection<ViewVM> views = new ObservableCollection<ViewVM>
             {
-                new ViewVM { ViewDisplay="Spindles", ViewType = typeof(SpindlesView), ViewModelType = typeof(SpindlesViewModel)}
+                new ViewVM { ViewDisplay="Spindles", ViewType = typeof(SpindlesView), ViewModelType = typeof(SpindlesViewModel)},
+                new ViewVM { ViewDisplay="BoringBars", ViewType = typeof(BoringBarsView), ViewModelType = typeof(BoringBarsViewModel)}
+
             };
             Views = views;
             RaisePropertyChanged("Views");

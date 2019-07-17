@@ -12,25 +12,25 @@ using System.Windows.Threading;
 
 namespace DatabaseClient
 {
-    public class SpindlesViewModel : CrudVMBase
+    public class BoringBarsViewModel : CrudVMBase
     {
-        private SpindleVM selectedSpindle;
-        public SpindleVM SelectedSpindle
+        private BoringBarVM selectedBoringBar;
+        public BoringBarVM SelectedBoringBar
         {
             get
             {
-                return selectedSpindle;
+                return selectedBoringBar;
             }
             set
             {
-                selectedSpindle = value;
+                selectedBoringBar = value;
                 selectedEntity = value;
                 RaisePropertyChanged();
             }
         }
 
-        private SpindleVM editVM;
-        public SpindleVM EditVM
+        private BoringBarVM editVM;
+        public BoringBarVM EditVM
         {
             get
             {
@@ -44,20 +44,20 @@ namespace DatabaseClient
             }
         }
 
-        public ObservableCollection<SpindleVM> Spindles { get; set; }
-        public SpindlesViewModel()
+        public ObservableCollection<BoringBarVM> BoringBars { get; set; }
+        public BoringBarsViewModel()
             : base()
         {
 
         }
         protected override void EditCurrent()
         {
-            EditVM = SelectedSpindle;
+            EditVM = SelectedBoringBar;
             IsInEditMode = true;
         }
         protected override void InsertNew()
         {
-            EditVM = new SpindleVM();
+            EditVM = new BoringBarVM();
             IsInEditMode = true;
         }
         protected override void CommitUpdates()
@@ -75,8 +75,8 @@ namespace DatabaseClient
                 if (EditVM.IsNew)
                 {
                     EditVM.IsNew = false;
-                    Spindles.Add(EditVM);
-                    db.spindle.Add(EditVM.TheEntity);
+                    BoringBars.Add(EditVM);
+                    db.boring_bar.Add(EditVM.TheEntity);
                     UpdateDB();
                 }
                 else if (db.ChangeTracker.HasChanges())
@@ -102,10 +102,6 @@ namespace DatabaseClient
             }
             catch (Exception)
             {
-                if (System.Diagnostics.Debugger.IsAttached)
-                {
-                    ErrorMessage = e.InnerException.GetBaseException().ToString();
-                }
                 ShowUserMessage("There was a problem updating the database");
             }
             ReFocusRow();
@@ -119,9 +115,9 @@ namespace DatabaseClient
             }
             else
             {
-                db.spindle.Remove(SelectedSpindle.TheEntity);
-                Spindles.Remove(SelectedSpindle);
-                RaisePropertyChanged("Spindles");
+                db.boring_bar.Remove(SelectedBoringBar.TheEntity);
+                BoringBars.Remove(SelectedBoringBar);
+                RaisePropertyChanged("BoringBars");
                 CommitUpdates();
                 selectedEntity = null;
             }
@@ -136,21 +132,21 @@ namespace DatabaseClient
         protected async void ReFocusRow(bool withReload = true)
         {
             int id = EditVM.TheEntity.id;
-            SelectedSpindle = null;
+            SelectedBoringBar = null;
             await db.Entry(EditVM.TheEntity).ReloadAsync();
             await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
             {
-                SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
-                SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
-                SelectedSpindle.TheEntity.ClearErrors();
+                SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
+                SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
+                SelectedBoringBar.TheEntity.ClearErrors();
             }), DispatcherPriority.ContextIdle);
             IsInEditMode = false;
         }
 
         private int NumberOfAssignedDocuments()
         {
-            var count = (from row in db.document_spindle
-                         where row.id_spindle == SelectedSpindle.TheEntity.id
+            var count = (from row in db.document_boring_bar
+                         where row.id_boring_bar == SelectedBoringBar.TheEntity.id
                          select row).Count();
             return count;
         }
@@ -158,16 +154,16 @@ namespace DatabaseClient
         {
             ThrobberVisible = Visibility.Visible;
 
-            ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
-            var spindles = await (from s in db.spindle
-                                   orderby s.model
-                                   select s).ToListAsync();
+            ObservableCollection<BoringBarVM> _boringBars = new ObservableCollection<BoringBarVM>();
+            var boringBars = await (from s in db.boring_bar
+                                  orderby s.model
+                                  select s).ToListAsync();
 
-            foreach (spindle spin in spindles)
+            foreach (boring_bar boring in boringBars)
             {
-                _spindles.Add(new SpindleVM { IsNew = false, TheEntity = spin });
+                _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
             }
-            Spindles = _spindles;
+            BoringBars = _boringBars;
             RaisePropertyChanged("Spindles");
             ThrobberVisible = Visibility.Collapsed;
         }
