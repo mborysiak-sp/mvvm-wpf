@@ -3,57 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Support"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              mc:Ignorable="d" 
              d:DesignHeight="40" d:DesignWidth="40"
              >
     <UserControl.Resources>
-        <Storyboard x:Key="SpinIt">
-            <DoubleAnimationUsingKeyFrames 
+
+    	<Storyboard x:Key="SpinIt">
+    		<DoubleAnimationUsingKeyFrames 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)"
                 RepeatBehavior="30x"
                 Storyboard.TargetName="ArcContainer">
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="360"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="360"/>
+    		</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
+
     </UserControl.Resources>
-    <UserControl.Triggers>
+	<UserControl.Triggers>
         <EventTrigger RoutedEvent="UIElement.GotFocus" SourceName="ArcContainer">
             <BeginStoryboard Storyboard="{StaticResource SpinIt}"/>
         </EventTrigger>
     </UserControl.Triggers>
+    <Grid Background="#4CDCD5D5">
     <Grid Height="40" Width="40">
         <ContentControl x:Name="ArcContainer" RenderTransformOrigin="0.5,0.5">
-            <ContentControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ContentControl.RenderTransform>
+        	<ContentControl.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</ContentControl.RenderTransform>
             <ContentControl.Template>
                 <ControlTemplate TargetType="{x:Type ContentControl}">
-                    <Grid>
-                        <Polygon Points="100,0 75,75 100,100 125,75"
-
- Stroke="Black" StrokeThickness="2" Fill="Yellow"/>
-
-                        <Polygon Points="100,100 125,125 100,200 75,125"
-
- Stroke="Yellow" StrokeThickness="2" Fill="Black"/>
-
-                        <Polygon Points="100,100 125,75 200,100 125,125"
-
- Stroke="Red" StrokeThickness="2" Fill="Blue"/>
-
-                        <Polygon Points="100,100 75,125 0,100 75,75"
-
- Stroke="Blue" StrokeThickness="2" Fill="Red"/>
-                    </Grid>
+                    <ed:Arc x:Name="arc" ArcThickness="8" 
+                        EndAngle="380" Height="40" Stretch="None"
+                        StartAngle="200" UseLayoutRounding="False" Width="40" 
+                        RenderTransformOrigin="0.5,0.5">
+                    <ed:Arc.Fill>
+                        <LinearGradientBrush EndPoint="0.5,.85" StartPoint="0.5,0">
+                            <GradientStop Color="CadetBlue"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ed:Arc.Fill>
+                   </ed:Arc>
                 </ControlTemplate>
             </ContentControl.Template>
         </ContentControl>
+    </Grid>
     </Grid>
 </UserControl>
 

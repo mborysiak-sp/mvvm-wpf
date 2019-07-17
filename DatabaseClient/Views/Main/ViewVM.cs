@@ -1,10 +1,13 @@
-﻿using DatabaseClient.Messages;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using System;
-using System.Windows.Controls;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class ViewVM
     {
@@ -17,11 +20,12 @@ namespace DatabaseClient
         {
             Navigate = new RelayCommand(NavigateExecute);
         }
-
         public void NavigateExecute()
         {
-            if (View == null && ViewType != null)
+            if(View == null && ViewType != null)
+            {
                 View = (UserControl)Activator.CreateInstance(ViewType);
+            }
             var msg = new NavigateMessage { View = View, ViewModelType = ViewModelType, ViewType = ViewType };
             Messenger.Default.Send<NavigateMessage>(msg);
         }

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class ExcludeChar : ValidationAttribute
     {
-        public string Chars { get; set; }
+        public string Chars {get;set;}
 
-        public ExcludeChar(string chars)
+        public ExcludeChar(string chars )
             : base("{0} contains invalid characters")
         {
             Chars = chars;

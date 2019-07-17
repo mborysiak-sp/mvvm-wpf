@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interactivity;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class RoutedEventTrigger : EventTriggerBase<DependencyObject>
     {
@@ -13,11 +17,12 @@ namespace DatabaseClient
             {
                 return routedEvent;
             }
-            set
-            {
+            set 
+            { 
                 routedEvent = value;
             }
         }
+
         public RoutedEventTrigger()
         {
         }
@@ -28,7 +33,7 @@ namespace DatabaseClient
             if (behavior != null)
             {
                 associatedElement = ((IAttachedObject)behavior).AssociatedObject as FrameworkElement;
-            }
+            } 
             if (associatedElement == null)
             {
                 throw new ArgumentException("This only works with framework elements");
@@ -40,11 +45,12 @@ namespace DatabaseClient
         }
         void OnRoutedEvent(object sender, RoutedEventArgs args)
         {
-            base.OnEvent(args);
+             base.OnEvent(args);
         }
         protected override string GetEventName()
         {
             return RoutedEvent.Name;
         }
     }
+
 }

@@ -1,16 +1,25 @@
-﻿
-using DatabaseClient;
-using DatabaseClient.EntityData;
-using DatabaseClient.Messages;
-using GalaSoft.MvvmLight.Messaging;
+﻿using System;
+using System.Linq;
+using System.Collections.ObjectModel;
 using System.Windows;
+using System.Data.Entity;
+using GalaSoft.MvvmLight.Messaging;
+using wpf_EntityFramework.EntityData;
 using System.Windows.Media;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Collections;
+using Support;
 
-namespace Support
+namespace wpf_EntityFramework
 {
     public class CrudVMBase : NotifyUIBase
     {
-        protected BoringSpindlesEntities db = new BoringSpindlesEntities();
+        protected SalesContext db = new SalesContext();
         protected object selectedEntity;
         protected object editEntity;
         public CommandVM SaveCmd { get; set; }
@@ -79,8 +88,8 @@ namespace Support
         public string ErrorMessage
         {
             get { return errorMessage; }
-            set
-            {
+            set 
+            { 
                 errorMessage = value;
                 RaisePropertyChanged();
             }
@@ -112,7 +121,7 @@ namespace Support
         protected virtual void RefreshData()
         {
             GetData();
-            Messenger.Default.Send<UserMessage>(new UserMessage { Message = "Data Refreshed" });
+            Messenger.Default.Send<UserMessage>(new UserMessage {Message="Data Refreshed" });
         }
         protected virtual void GetData()
         {

@@ -1,11 +1,15 @@
-﻿using Support;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Support;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class PropertyError : NotifyUIBase
     {
         private string propertyName;
-
         public string PropertyName
         {
             get
@@ -44,5 +48,8 @@ namespace DatabaseClient
                 RaisePropertyChanged();
             }
         }
+        
+        
+        
     }
 }

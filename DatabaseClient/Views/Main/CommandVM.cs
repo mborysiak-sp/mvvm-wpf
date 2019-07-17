@@ -1,15 +1,20 @@
-﻿using DatabaseClient.Messages;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Input;
+using System.Diagnostics;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class CommandVM
     {
         public string CommandDisplay { get; set; }
-        public CommandMessage Message { get; set; }
+        public CommandMessage Message{ get; set; }
         public RelayCommand Send { get; private set; }
         public Geometry IconGeometry { get; set; }
 
@@ -22,11 +27,11 @@ namespace DatabaseClient
             }
             set
             {
-                canExecute = value;
+                canExecute= value;
                 RaiseCanExecuteChanged();
             }
         }
-
+  
         public CommandVM()
         {
             Send = new RelayCommand(() => SendExecute());

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     class MustEqual : ValidationAttribute
     {
@@ -18,7 +18,7 @@ namespace DatabaseClient
         {
             OtherPropertyName = propertyName;
         }
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected  override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             TheObject = validationContext;
             bool validate = IsValid(value);
@@ -46,3 +46,4 @@ namespace DatabaseClient
         }
     }
 }
+

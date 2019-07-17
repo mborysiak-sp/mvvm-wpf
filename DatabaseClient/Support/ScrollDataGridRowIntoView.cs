@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Interactivity;
+using System.Windows.Controls;
+using System.Windows;
+using System.Windows.Input;
+using System.Diagnostics;
 
-namespace DatabaseClient
+
+namespace wpf_EntityFramework
 {
     class ScrollDataGridRowIntoView : Behavior<DataGrid>
     {
@@ -42,3 +46,4 @@ namespace DatabaseClient
         }
     }
 }
+

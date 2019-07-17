@@ -16,41 +16,25 @@
             This will enable (or restore) the CommandManager class which handles
             automatic enabling/disabling of controls based on the CanExecute delegate.</remarks>
         </member>
-        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.#ctor(System.Action,System.Boolean)">
+        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.#ctor(System.Action)">
             <summary>
             Initializes a new instance of the RelayCommand class that 
             can always execute.
             </summary>
-            <param name="execute">The execution logic. IMPORTANT: If the action causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="keepTargetAlive">If true, the target of the Action will
-            be kept as a hard reference, which might cause a memory leak. You should only set this
-            parameter to true if the action is causing a closure. See
-            http://galasoft.ch/s/mvvmweakaction. </param>
+            <param name="execute">The execution logic.</param>
             <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
         </member>
-        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.#ctor(System.Action,System.Func{System.Boolean},System.Boolean)">
+        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
             <summary>
             Initializes a new instance of the RelayCommand class.
             </summary>
-            <param name="execute">The execution logic. IMPORTANT: If the action causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="canExecute">The execution status logic.  IMPORTANT: If the func causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="keepTargetAlive">If true, the target of the Action will
-            be kept as a hard reference, which might cause a memory leak. You should only set this
-            parameter to true if the action is causing a closures. See
-            http://galasoft.ch/s/mvvmweakaction. </param>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
             <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
-        </member>
-        <member name="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand.CanExecuteChanged">
-            <summary>
-            Occurs when changes occur that affect whether the command should execute.
-            </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.RaiseCanExecuteChanged">
             <summary>
-            Raises the <see cref="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand.CanExecuteChanged" /> event.
+            Raises the <see cref="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand.CanExecuteChanged"/> event.
             </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand.CanExecute(System.Object)">
@@ -66,6 +50,11 @@
             </summary>
             <param name="parameter">This parameter will always be ignored.</param>
         </member>
+        <member name="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether the command should execute.
+            </summary>
+        </member>
         <member name="T:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1">
             <summary>
             A generic command whose sole purpose is to relay its functionality to other
@@ -79,41 +68,25 @@
             This will enable (or restore) the CommandManager class which handles
             automatic enabling/disabling of controls based on the CanExecute delegate.</remarks>
         </member>
-        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.#ctor(System.Action{`0},System.Boolean)">
+        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.#ctor(System.Action{`0})">
             <summary>
             Initializes a new instance of the RelayCommand class that 
             can always execute.
             </summary>
-            <param name="execute">The execution logic. IMPORTANT: If the action causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="keepTargetAlive">If true, the target of the Action will
-            be kept as a hard reference, which might cause a memory leak. You should only set this
-            parameter to true if the action is causing a closure. See
-            http://galasoft.ch/s/mvvmweakaction. </param>
+            <param name="execute">The execution logic.</param>
             <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
         </member>
-        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean},System.Boolean)">
+        <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean})">
             <summary>
             Initializes a new instance of the RelayCommand class.
             </summary>
-            <param name="execute">The execution logic. IMPORTANT: If the action causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="canExecute">The execution status logic.  IMPORTANT: If the func causes a closure,
-            you must set keepTargetAlive to true to avoid side effects. </param>
-            <param name="keepTargetAlive">If true, the target of the Action will
-            be kept as a hard reference, which might cause a memory leak. You should only set this
-            parameter to true if the action is causing a closure. See
-            http://galasoft.ch/s/mvvmweakaction. </param>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
             <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
-        </member>
-        <member name="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.CanExecuteChanged">
-            <summary>
-            Occurs when changes occur that affect whether the command should execute.
-            </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.RaiseCanExecuteChanged">
             <summary>
-            Raises the <see cref="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.CanExecuteChanged" /> event.
+            Raises the <see cref="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.CanExecuteChanged"/> event.
             </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.CanExecute(System.Object)">
@@ -131,10 +104,15 @@
             <param name="parameter">Data used by the command. If the command does not require data 
             to be passed, this object can be set to a null reference</param>
         </member>
+        <member name="E:GalaSoft.MvvmLight.CommandWpf.RelayCommand`1.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether the command should execute.
+            </summary>
+        </member>
         <member name="T:GalaSoft.MvvmLight.Command.EventToCommand">
             <summary>
-            This <see cref="T:System.Windows.Interactivity.TriggerAction`1" /> can be
-            used to bind any event on any FrameworkElement to an <see cref="T:System.Windows.Input.ICommand" />.
+            This <see cref="T:System.Windows.Interactivity.TriggerAction`1"/> can be
+            used to bind any event on any FrameworkElement to an <see cref="T:System.Windows.Input.ICommand"/>.
             Typically, this element is used in XAML to connect the attached element
             to a command located in a ViewModel. This trigger can only be attached
             to a FrameworkElement or a class deriving from FrameworkElement.
@@ -142,59 +120,24 @@
             and leave the CommandParameter and CommandParameterValue empty!</para>
             </summary>
         </member>
+        <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameterPropertyName">
+            <summary>
+            The <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter"/> dependency property's name.
+            </summary>
+        </member>
         <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterProperty">
             <summary>
-            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter" /> dependency property
+            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter"/> dependency property
             </summary>
         </member>
         <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.CommandProperty">
             <summary>
-            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command" /> dependency property
+            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command"/> dependency property
             </summary>
         </member>
         <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabledProperty">
             <summary>
-            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled" /> dependency property
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.Command">
-            <summary>
-            Gets or sets the ICommand that this trigger is bound to. This
-            is a DependencyProperty.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter">
-            <summary>
-            Gets or sets an object that will be passed to the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command" />
-            attached to this trigger. This is a DependencyProperty.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterValue">
-            <summary>
-            Gets or sets an object that will be passed to the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command" />
-            attached to this trigger. This property is here for compatibility
-            with the Silverlight version. This is NOT a DependencyProperty.
-            For databinding, use the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter" /> property.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled">
-            <summary>
-            Gets or sets a value indicating whether the attached element must be
-            disabled when the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command" /> property's CanExecuteChanged
-            event fires. If this property is true, and the command's CanExecute 
-            method returns false, the element will be disabled. If this property
-            is false, the element will not be disabled when the command's
-            CanExecute method changes. This is a DependencyProperty.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabledValue">
-            <summary>
-            Gets or sets a value indicating whether the attached element must be
-            disabled when the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command" /> property's CanExecuteChanged
-            event fires. If this property is true, and the command's CanExecute 
-            method returns false, the element will be disabled. This property is here for
-            compatibility with the Silverlight version. This is NOT a DependencyProperty.
-            For databinding, use the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled" /> property.
+            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled"/> dependency property
             </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.Command.EventToCommand.OnAttached">
@@ -218,52 +161,9 @@
             <returns>The command that must be executed when
             this trigger is invoked.</returns>
         </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand">
-            <summary>
-            Specifies whether the EventArgs of the event that triggered this
-            action should be passed to the bound RelayCommand. If this is true,
-            the command should accept arguments of the corresponding
-            type (for example RelayCommand&lt;MouseButtonEventArgs&gt;).
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverter">
-            <summary>
-            Gets or sets a converter used to convert the EventArgs when using
-            <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand"/>. If PassEventArgsToCommand is false,
-            this property is never used.
-            </summary>
-        </member>
-        <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameterPropertyName">
-            <summary>
-            The <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter" /> dependency property's name.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter">
-            <summary>
-            Gets or sets a parameters for the converter used to convert the EventArgs when using
-            <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand"/>. If PassEventArgsToCommand is false,
-            this property is never used. This is a dependency property.
-            </summary>
-        </member>
         <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameterProperty">
             <summary>
-            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter" /> dependency property.
-            </summary>
-        </member>
-        <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.AlwaysInvokeCommandPropertyName">
-            <summary>
-            The <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.AlwaysInvokeCommand" /> dependency property's name.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.AlwaysInvokeCommand">
-            <summary>
-            Gets or sets a value indicating if the command should be invoked even
-            if the attached control is disabled. This is a dependency property.
-            </summary>
-        </member>
-        <member name="F:GalaSoft.MvvmLight.Command.EventToCommand.AlwaysInvokeCommandProperty">
-            <summary>
-            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.AlwaysInvokeCommand" /> dependency property.
+            Identifies the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter"/> dependency property.
             </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.Command.EventToCommand.Invoke">
@@ -279,6 +179,68 @@
             and leave the CommandParameter and CommandParameterValue empty!</para>
             </summary>
             <param name="parameter">The EventArgs of the fired event.</param>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.Command">
+            <summary>
+            Gets or sets the ICommand that this trigger is bound to. This
+            is a DependencyProperty.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter">
+            <summary>
+            Gets or sets an object that will be passed to the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command"/>
+            attached to this trigger. This is a DependencyProperty.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterValue">
+            <summary>
+            Gets or sets an object that will be passed to the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command"/>
+            attached to this trigger. This property is here for compatibility
+            with the Silverlight version. This is NOT a DependencyProperty.
+            For databinding, use the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter"/> property.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled">
+            <summary>
+            Gets or sets a value indicating whether the attached element must be
+            disabled when the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command"/> property's CanExecuteChanged
+            event fires. If this property is true, and the command's CanExecute 
+            method returns false, the element will be disabled. If this property
+            is false, the element will not be disabled when the command's
+            CanExecute method changes. This is a DependencyProperty.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabledValue">
+            <summary>
+            Gets or sets a value indicating whether the attached element must be
+            disabled when the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.Command"/> property's CanExecuteChanged
+            event fires. If this property is true, and the command's CanExecute 
+            method returns false, the element will be disabled. This property is here for
+            compatibility with the Silverlight version. This is NOT a DependencyProperty.
+            For databinding, use the <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled"/> property.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand">
+            <summary>
+            Specifies whether the EventArgs of the event that triggered this
+            action should be passed to the bound RelayCommand. If this is true,
+            the command should accept arguments of the corresponding
+            type (for example RelayCommand&lt;MouseButtonEventArgs&gt;).
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverter">
+            <summary>
+            Gets or sets a converter used to convert the EventArgs when using
+            <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand"/>. If PassEventArgsToCommand is false,
+            this property is never used.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Command.EventToCommand.EventArgsConverterParameter">
+            <summary>
+            Gets or sets a parameters for the converter used to convert the EventArgs when using
+            <see cref="P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand"/>. If PassEventArgsToCommand is false,
+            this property is never used. This is a dependency property.
+            </summary>
         </member>
         <member name="T:GalaSoft.MvvmLight.Command.IEventArgsConverter">
             <summary>
@@ -305,12 +267,6 @@
             Helper class for dispatcher operations on the UI thread.
             </summary>
         </member>
-        <member name="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher">
-            <summary>
-            Gets a reference to the UI thread's dispatcher, after the
-            <see cref="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize" /> method has been called on the UI thread.
-            </summary>
-        </member>
         <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.CheckBeginInvokeOnUI(System.Action)">
             <summary>
             Executes an action on the UI thread. If this method is called
@@ -319,7 +275,7 @@
             on the UI thread's dispatcher and executed asynchronously.
             <para>For additional operations on the UI thread, you can get a
             reference to the UI thread's dispatcher thanks to the property
-            <see cref="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher" /></para>.
+            <see cref="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher"/></para>.
             </summary>
             <param name="action">The action that will be executed on the UI
             thread.</param>
@@ -335,7 +291,7 @@
         <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize">
             <summary>
             This method should be called once on the UI thread to ensure that
-            the <see cref="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher" /> property is initialized.
+            the <see cref="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher"/> property is initialized.
             <para>In a Silverlight application, call this method in the
             Application_Startup event handler, after the MainPage is constructed.</para>
             <para>In WPF, call this method on the static App() constructor.</para>
@@ -344,6 +300,12 @@
         <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Reset">
             <summary>
             Resets the class by deleting the <see cref="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher"/>
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher">
+            <summary>
+            Gets a reference to the UI thread's dispatcher, after the
+            <see cref="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize"/> method has been called on the UI thread.
             </summary>
         </member>
     </members>

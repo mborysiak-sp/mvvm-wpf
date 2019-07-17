@@ -4,11 +4,6 @@
         <name>GalaSoft.MvvmLight.Extras</name>
     </assembly>
     <members>
-        <member name="T:GalaSoft.MvvmLight.Helpers.DesignerLibrary">
-            <summary>
-            Helper class for platform detection.
-            </summary>
-        </member>
         <member name="T:GalaSoft.MvvmLight.Ioc.ISimpleIoc">
             <summary>
             A very simple IOC container with basic functionality needed to register and resolve
@@ -167,11 +162,6 @@
             IOC container implementing the IServiceLocator interface.
             The inspiration for this class is at https://gist.github.com/716137 but it has
             been extended with additional features.
-            </summary>
-        </member>
-        <member name="P:GalaSoft.MvvmLight.Ioc.SimpleIoc.Default">
-            <summary>
-            This class' default instance.
             </summary>
         </member>
         <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.ContainsCreated``1">
@@ -340,10 +330,10 @@
             <summary>
             Gets the service object of the specified type.
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
-            been registered before calling this method.</exception>
             <returns>
             A service object of type <paramref name="serviceType" />.
+            -or- 
+            null if there is no service object of type <paramref name="serviceType" />.
             </returns>
             <param name="serviceType">An object that specifies the type of service object to get.</param>
         </member>
@@ -372,20 +362,11 @@
             Provides a way to get an instance of a given type. If no instance had been instantiated 
             before, a new instance will be created. If an instance had already
             been created, that same instance will be returned.
+            <remarks>
+            If the class has not been registered before, this method
+            returns null!
+            </remarks>
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
-            been registered before calling this method.</exception>
-            <param name="serviceType">The class of which an instance
-            must be returned.</param>
-            <returns>An instance of the given type.</returns>
-        </member>
-        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching(System.Type)">
-            <summary>
-            Provides a way to get an instance of a given type. This method
-            always returns a new instance and doesn't cache it in the IOC container.
-            </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
-            been registered before calling this method.</exception>
             <param name="serviceType">The class of which an instance
             must be returned.</param>
             <returns>An instance of the given type.</returns>
@@ -396,20 +377,11 @@
             to a given key. If no instance had been instantiated with this
             key before, a new instance will be created. If an instance had already
             been created with the same key, that same instance will be returned.
+            <remarks>
+            If the class has not been registered before, this method
+            returns null!
+            </remarks>
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
-            been registered before calling this method.</exception>
-            <param name="serviceType">The class of which an instance must be returned.</param>
-            <param name="key">The key uniquely identifying this instance.</param>
-            <returns>An instance corresponding to the given type and key.</returns>
-        </member>
-        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching(System.Type,System.String)">
-            <summary>
-            Provides a way to get an instance of a given type. This method
-            always returns a new instance and doesn't cache it in the IOC container.
-            </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
-            been registered before calling this method.</exception>
             <param name="serviceType">The class of which an instance must be returned.</param>
             <param name="key">The key uniquely identifying this instance.</param>
             <returns>An instance corresponding to the given type and key.</returns>
@@ -419,20 +391,11 @@
             Provides a way to get an instance of a given type. If no instance had been instantiated 
             before, a new instance will be created. If an instance had already
             been created, that same instance will be returned.
+            <remarks>
+            If the class has not been registered before, this method
+            returns null!
+            </remarks>
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
-            been registered before calling this method.</exception>
-            <typeparam name="TService">The class of which an instance
-            must be returned.</typeparam>
-            <returns>An instance of the given type.</returns>
-        </member>
-        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching``1">
-            <summary>
-            Provides a way to get an instance of a given type. This method
-            always returns a new instance and doesn't cache it in the IOC container.
-            </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
-            been registered before calling this method.</exception>
             <typeparam name="TService">The class of which an instance
             must be returned.</typeparam>
             <returns>An instance of the given type.</returns>
@@ -443,23 +406,19 @@
             to a given key. If no instance had been instantiated with this
             key before, a new instance will be created. If an instance had already
             been created with the same key, that same instance will be returned.
+            <remarks>
+            If the class has not been registered before, this method
+            returns null!
+            </remarks>
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
-            been registered before calling this method.</exception>
             <typeparam name="TService">The class of which an instance must be returned.</typeparam>
             <param name="key">The key uniquely identifying this instance.</param>
             <returns>An instance corresponding to the given type and key.</returns>
         </member>
-        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching``1(System.String)">
+        <member name="P:GalaSoft.MvvmLight.Ioc.SimpleIoc.Default">
             <summary>
-            Provides a way to get an instance of a given type. This method
-            always returns a new instance and doesn't cache it in the IOC container.
+            This class' default instance.
             </summary>
-            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
-            been registered before calling this method.</exception>
-            <typeparam name="TService">The class of which an instance must be returned.</typeparam>
-            <param name="key">The key uniquely identifying this instance.</param>
-            <returns>An instance corresponding to the given type and key.</returns>
         </member>
     </members>
 </doc>

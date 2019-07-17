@@ -1,4 +1,17 @@
-﻿namespace Support
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Support;
+using System.ComponentModel;
+
+using wpf_EntityFramework.EntityData;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+using System.Collections;
+
+namespace Support
 {
     public class VMBase : NotifyUIBase
     {
@@ -12,19 +25,19 @@
                 RaisePropertyChanged();
             }
         }
-
         private bool isSelected = false;
+
         public bool IsSelected
         {
             get { return isSelected; }
-            set
-            {
+            set 
+            { 
                 isSelected = value;
                 RaisePropertyChanged();
             }
         }
+        private bool isDeleted = false;
 
-        public bool isDeleted = false;
         public bool IsDeleted
         {
             get { return isDeleted; }

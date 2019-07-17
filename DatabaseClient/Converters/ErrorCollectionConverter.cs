@@ -1,21 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace DatabaseClient
+namespace wpf_EntityFramework
 {
     public class ErrorCollectionConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null) return null;
             ObservableCollection<string> _Errors = new ObservableCollection<string>();
-            ReadOnlyObservableCollection<ValidationError> errors = (ReadOnlyObservableCollection<ValidationError>)value;
-            foreach (ValidationError err in errors)
+            ReadOnlyObservableCollection<ValidationError> errors= (ReadOnlyObservableCollection<ValidationError>)value;
+            foreach(ValidationError err in errors)
             {
                 _Errors.Add(err.ErrorContent.ToString());
             }
