@@ -13,10 +13,10 @@ namespace DatabaseClient.EntityData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BoringSpindlesEntities : DbContext
+    public partial class BoringSpindlesEntities1 : DbContext
     {
-        public BoringSpindlesEntities()
-            : base("name=BoringSpindlesEntities")
+        public BoringSpindlesEntities1()
+            : base("name=BoringSpindlesEntities1")
         {
         }
     

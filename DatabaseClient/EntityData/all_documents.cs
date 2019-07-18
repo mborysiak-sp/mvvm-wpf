@@ -14,11 +14,11 @@ namespace DatabaseClient.EntityData
     
     public partial class all_documents
     {
-        public Nullable<System.DateTime> data_wydania { get; set; }
-        public int ważne_przez { get; set; }
-        public Nullable<int> pozostałe_dni { get; set; }
-        public Nullable<bool> wymaga_atestu { get; set; }
+        public Nullable<System.DateTime> issue_date { get; set; }
+        public int valid_by { get; set; }
+        public Nullable<int> day_count { get; set; }
+        public Nullable<bool> needs_validation { get; set; }
         public string model { get; set; }
-        public string numer { get; set; }
+        public string number { get; set; }
     }
 }

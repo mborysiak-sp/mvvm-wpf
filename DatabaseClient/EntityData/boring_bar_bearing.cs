@@ -12,7 +12,7 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class boring_bar_bearing : IEntityWithId
+    public partial class boring_bar_bearing
     {
         public int id { get; set; }
         public Nullable<int> id_boring_bar { get; set; }

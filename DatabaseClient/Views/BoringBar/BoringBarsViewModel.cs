@@ -159,7 +159,7 @@ namespace DatabaseClient
                                   orderby s.model
                                   select s).ToListAsync();
 
-            foreach (all_documents boring in boringBars)
+            foreach (boring_bar boring in boringBars)
             {
                 _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
             }

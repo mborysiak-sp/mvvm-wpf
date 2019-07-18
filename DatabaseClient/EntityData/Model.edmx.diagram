@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="193b01baa53c4c96b73735a0e4e6c97c" Name="Diagram1">
+      <Diagram DiagramId="cea3ee6ef6a64c6faf339bd9fd15456c" Name="Diagram1">
         <EntityTypeShape EntityType="BoringSpindlesModel.bearing" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar_bearing" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
@@ -13,9 +13,9 @@
         <EntityTypeShape EntityType="BoringSpindlesModel.spindle" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="BoringSpindlesModel.all_documents" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BoringSpindlesModel.boring_bar_with_bearing" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_be__65E11278" ManuallyRouted="false" />
-        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_bo__64ECEE3F" ManuallyRouted="false" />
-        <AssociationConnector Association="BoringSpindlesModel.FK__document___id_bo__6B99EBCE" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_be__770B9E7A" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__boring_ba__id_bo__76177A41" ManuallyRouted="false" />
+        <AssociationConnector Association="BoringSpindlesModel.FK__document___id_bo__7CC477D0" ManuallyRouted="false" />
         <AssociationConnector Association="BoringSpindlesModel.FK_id" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

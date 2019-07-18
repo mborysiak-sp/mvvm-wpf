@@ -14,6 +14,7 @@ namespace DatabaseClient.EntityData
     
     public partial class spindle
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public spindle()
         {
             this.document_spindle = new HashSet<document_spindle>();
@@ -24,6 +25,7 @@ namespace DatabaseClient.EntityData
         public string serial_number { get; set; }
         public Nullable<System.DateTime> scrapping_date { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<document_spindle> document_spindle { get; set; }
     }
 }

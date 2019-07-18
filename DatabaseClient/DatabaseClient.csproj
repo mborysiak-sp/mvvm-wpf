@@ -168,6 +168,11 @@
     <Compile Include="Views\Add\Document\AddDocumentViewModel.cs" />
     <Compile Include="Views\Add\Bearing\AddBearingViewModel.cs" />
     <Compile Include="Views\Add\BoringBar\AddBoringBarViewModel.cs" />
+    <Compile Include="Views\AllDocuments\AllDocumentsView.xaml.cs">
+      <DependentUpon>AllDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllDocuments\AllDocumentsViewModel.cs" />
+    <Compile Include="Views\AllDocuments\DocumentVM.cs" />
     <Compile Include="Views\BoringBar\BoringBarsViewModel.cs" />
     <Compile Include="Views\BoringBar\BoringBarsView.xaml.cs">
       <DependentUpon>BoringBarsView.xaml</DependentUpon>
@@ -203,6 +208,10 @@
       <DependentUpon>SpindlesView.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\Dictionary1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AllDocuments\AllDocumentsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

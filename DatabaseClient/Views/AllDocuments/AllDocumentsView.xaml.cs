@@ -18,12 +18,12 @@ namespace DatabaseClient
     /// <summary>
     /// Logika interakcji dla klasy BoringBarView.xaml
     /// </summary>
-    public partial class BoringBarsView : UserControl
+    public partial class AllDocumentsView : UserControl
     {
-        public BoringBarsView()
+        public AllDocumentsView()
         {
             InitializeComponent();
-            this.DataContext = new BoringBarsViewModel();
+            this.DataContext = new AllDocumentsViewModel();
 
         }
 
