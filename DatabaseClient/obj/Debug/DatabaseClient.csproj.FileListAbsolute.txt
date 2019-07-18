@@ -75,5 +75,7 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\View
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\AllDocuments\AllDocumentsView.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\AllDocuments\AllDocumentsView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.baml

@@ -21,7 +21,8 @@ namespace DatabaseClient
                 new ViewVM { ViewDisplay="BoringBars", ViewType = typeof(BoringBarsView), ViewModelType = typeof(BoringBarsViewModel)},
                 new ViewVM { ViewDisplay="ScrappedSpindles", ViewType = typeof(ScrappedSpindlesView), ViewModelType = typeof(ScrappedSpindlesViewModel)},
                 new ViewVM { ViewDisplay="ScrappedBoringBars", ViewType = typeof(ScrappedBoringBarsView), ViewModelType = typeof(ScrappedBoringBarsViewModel)},
-                new ViewVM { ViewDisplay="AllDocuments", ViewType = typeof(AllDocumentsView), ViewModelType = typeof(AllDocumentsViewModel)}
+                new ViewVM { ViewDisplay="AllDocuments", ViewType = typeof(AllDocumentsView), ViewModelType = typeof(AllDocumentsViewModel)},
+                new ViewVM { ViewDisplay="DocumentBoringBar", ViewType = typeof(DocumentBoringBarView), ViewModelType = typeof(DocumentBoringBarViewModel)}
 
             };
             Views = views;
