@@ -9,6 +9,7 @@
     {
         Insert,
         Edit,
+        Scrap,
         Delete,
         Commit,
         Refresh,

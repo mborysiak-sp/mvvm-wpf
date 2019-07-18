@@ -48,7 +48,7 @@
                                                     UpdateSourceTrigger=PropertyChanged, 
                                                     NotifyOnSourceUpdated=True,
                                                     NotifyOnValidationError=True,
-                                                    Mode=TwoWay}"  />
+                                                    Mode=TwoWay}"/>
                     </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>

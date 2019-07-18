@@ -127,6 +127,7 @@ namespace DatabaseClient
                 selectedEntity = null;
             }
         }
+
         protected override void Quit()
         {
             if (!EditVM.IsNew)
@@ -147,7 +148,6 @@ namespace DatabaseClient
             //}), DispatcherPriority.ContextIdle);
             IsInEditMode = false;
         }
-
         private int NumberOfAssignedDocuments()
         {
             var count = (from row in db.document_spindle

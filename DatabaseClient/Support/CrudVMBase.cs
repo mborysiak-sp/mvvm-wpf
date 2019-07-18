@@ -98,6 +98,10 @@ namespace Support
         {
 
         }
+        protected virtual void Scrap()
+        {
+
+        }
         protected virtual void EditCurrent()
         {
 
@@ -147,7 +151,6 @@ namespace Support
                 isCurrentView = false;
             }
         }
-        // Used to control showing a pop up to edit an entity in
         private bool isInEditMode = false;
         public bool IsInEditMode
         {
