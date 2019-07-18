@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows;
 
-namespace DatabaseClient.Services
+namespace DatabaseClient
 {
     class TestConnection
     {
@@ -21,10 +22,9 @@ namespace DatabaseClient.Services
                     con.Open();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                Console.WriteLine("duppa błąd połączenia");
+                MessageBox.Show("Wystąpił błąd: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

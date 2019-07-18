@@ -75,8 +75,28 @@
                 <Button Grid.Row="2" Grid.Column="0" Content="Szukaj" x:Name="buttonSearchForItem" Click="SearchForItem"/>
             </Grid>
         </Border>
-        <DataGrid Name="gridSearchResult" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center" Height="auto" Width="auto" RenderTransformOrigin="0.486,0.494">
-            
+        <DataGrid x:Name="dg"
+                AutoGenerateColumns="False"
+                ItemsSource="{Binding }"
+                HeadersVisibility="Column"
+                SelectedItem="{Binding SelectedSpindle, Mode=TwoWay}"
+                SelectionMode="Single"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                IsReadOnly="True">
+            <i:Interaction.Behaviors>
+                <local:ScrollDataGridRowIntoView/>
+            </i:Interaction.Behaviors>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="local:DataGridRowBehavior.IsDataGridRowFocusedWhenSelected" Value="true"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
+                <DataGridTextColumn Binding="{Binding TheEntity.serial_number, Mode=TwoWay}"  Header="Numer seryjny" />
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </UserControl>

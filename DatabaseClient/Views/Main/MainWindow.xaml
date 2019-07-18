@@ -31,15 +31,12 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-
                             <Button Command="{Binding Navigate}" 
                                         BorderThickness="0" Height="32" Width="100" 
                                         Background="{StaticResource LightBrightGradientBrush}"
-                                        Foreground="{StaticResource DarkDullBrush}"
-                                        >
+                                        Foreground="{StaticResource DarkDullBrush}">
                                 <TextBlock Text="{Binding ViewDisplay}" 
-                                           TextAlignment="Center" 
-                                          />
+                                           TextAlignment="Center"/>
                             </Button>
                         </DataTemplate>
                     </ListView.ItemTemplate>

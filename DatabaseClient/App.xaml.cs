@@ -11,6 +11,7 @@ namespace DatabaseClient
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            TestConnection con = new TestConnection();
             FrameworkElement.LanguageProperty.OverrideMetadata(
                 typeof(FrameworkElement),
                 new FrameworkPropertyMetadata(
