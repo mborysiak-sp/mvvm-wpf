@@ -12,14 +12,13 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class document_spindle
+    public partial class all_documents
     {
-        public int id { get; set; }
-        public Nullable<System.DateTime> issue_date { get; set; }
-        public int day_count { get; set; }
-        public string comment { get; set; }
-        public Nullable<int> id_spindle { get; set; }
-    
-        public virtual spindle spindle { get; set; }
+        public Nullable<System.DateTime> data_wydania { get; set; }
+        public int ważne_przez { get; set; }
+        public Nullable<int> pozostałe_dni { get; set; }
+        public Nullable<bool> wymaga_atestu { get; set; }
+        public string model { get; set; }
+        public string numer { get; set; }
     }
 }

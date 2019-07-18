@@ -12,8 +12,9 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class bearing : IEntityWithId
+    public partial class bearing
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public bearing()
         {
             this.boring_bar_bearing = new HashSet<boring_bar_bearing>();
@@ -22,6 +23,7 @@ namespace DatabaseClient.EntityData
         public int id { get; set; }
         public string model { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<boring_bar_bearing> boring_bar_bearing { get; set; }
     }
 }
