@@ -97,6 +97,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EntityData\all_documents.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityData\bearing.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityData\boring_bar_bearing.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityData\boring_bar_with_bearing.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityData\document_boring_bar.cs">
