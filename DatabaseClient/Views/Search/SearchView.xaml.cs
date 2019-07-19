@@ -16,6 +16,7 @@ namespace DatabaseClient
             InitializeComponent();
             DataContext = new SearchViewModel();
         }
+
     }
 }
 
