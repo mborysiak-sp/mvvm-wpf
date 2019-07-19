@@ -34,7 +34,6 @@
                 <DataGridTextColumn Binding="{Binding TheEntity.number, Mode=TwoWay}"  Header="Numer"/>
             </DataGrid.Columns>
         </DataGrid>
-        <local:SearchView/>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>
