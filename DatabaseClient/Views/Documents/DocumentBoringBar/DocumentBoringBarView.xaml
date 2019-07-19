@@ -30,10 +30,57 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding TheEntity.issue_date, Mode=TwoWay}"  Header="Data wydania" />
                 <DataGridTextColumn Binding="{Binding TheEntity.day_count, Mode=TwoWay}"  Header="Ważne przez" />
-                <DataGridTextColumn Binding="{Binding TheEntity.id_boring_bar, Mode=TwoWay}" Header="ID wytaczadła"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.boring_bar.model, Mode=TwoWay}" Header="Model wytaczadła"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.boring_bar.ordinal_number, Mode=TwoWay}" Header="Numer porządkowy"/>
             </DataGrid.Columns>
         </DataGrid>
-
+        <ContentControl Template="{StaticResource EditPopUp}">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ItemsControl>
+                    <spt:EditRow LabelFor="Data wydania:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.issue_date, 
+                                UpdateSourceTrigger=PropertyChanged,  
+                                NotifyOnSourceUpdated=True,
+                                NotifyOnValidationError=True,
+                                Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Ważne przez:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.day_count, 
+                                UpdateSourceTrigger=PropertyChanged,  
+                                NotifyOnSourceUpdated=True,
+                                NotifyOnValidationError=True,
+                                Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Wybrane ID wytaczadła:" >
+                        <TextBox>
+                            <TextBox.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=xd, Path=SelectedValue.Content}">
+                                            <Setter Property="TextBox.Text" Value="dd"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                    </spt:EditRow>
+                    <ComboBox x:Name="xd" ItemsSource="{Binding BoringBars}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="TheEntity.model"/>
+                                            <Binding Path="TheEntity.ordinal_number"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </ItemsControl>
+            </ScrollViewer>
+        </ContentControl>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>

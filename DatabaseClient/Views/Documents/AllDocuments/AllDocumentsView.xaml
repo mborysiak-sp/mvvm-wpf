@@ -26,16 +26,15 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.issue_date, Mode=TwoWay}"  Header="Data wydania" />
-                <DataGridTextColumn Binding="{Binding TheEntity.valid_by, Mode=TwoWay}"  Header="Ważne przez" />
-                <DataGridTextColumn Binding="{Binding TheEntity.day_count, Mode=TwoWay}"  Header="Pozostało dni" />
-                <DataGridTextColumn Binding="{Binding TheEntity.needs_validation, Mode=TwoWay}"  Header="Wymaga atestu" />
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
-                <DataGridTextColumn Binding="{Binding TheEntity.number, Mode=TwoWay}"  Header="Numer" />
-
+                <DataGridTextColumn Binding="{Binding TheEntity.issue_date, Mode=TwoWay}"  Header="Data wydania"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.valid_by, Mode=TwoWay}"  Header="Ważne przez"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.day_count, Mode=TwoWay}"  Header="Pozostało dni"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.needs_validation, Mode=TwoWay}"  Header="Wymaga atestu"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.number, Mode=TwoWay}"  Header="Numer"/>
             </DataGrid.Columns>
         </DataGrid>
-
+        <local:SearchView/>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>

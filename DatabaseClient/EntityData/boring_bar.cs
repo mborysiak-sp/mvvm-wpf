@@ -14,7 +14,6 @@ namespace DatabaseClient.EntityData
     
     public partial class boring_bar
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public boring_bar()
         {
             this.boring_bar_bearing = new HashSet<boring_bar_bearing>();
@@ -26,9 +25,7 @@ namespace DatabaseClient.EntityData
         public Nullable<int> ordinal_number { get; set; }
         public Nullable<System.DateTime> scrapping_date { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<boring_bar_bearing> boring_bar_bearing { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<document_boring_bar> document_boring_bar { get; set; }
     }
 }

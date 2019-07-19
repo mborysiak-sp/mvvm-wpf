@@ -28,7 +28,20 @@ namespace DatabaseClient
                 RaisePropertyChanged();
             }
         }
-
+        private BoringBarVM selectedBoringBar;
+        public BoringBarVM SelectedBoringBar
+        {
+            get
+            {
+                return selectedBoringBar;
+            }
+            set
+            {
+                selectedBoringBar = value;
+                selectedEntity = value;
+                RaisePropertyChanged();
+            }
+        }
         private DocumentBoringBarVM editVM;
         public DocumentBoringBarVM EditVM
         {
@@ -44,6 +57,8 @@ namespace DatabaseClient
             }
         }
         public ObservableCollection<DocumentBoringBarVM> DocumentBoringBars { get; set; }
+        public ObservableCollection<BoringBarVM> BoringBars { get; set; }
+
         public DocumentBoringBarViewModel()
             : base()
         {
@@ -109,7 +124,7 @@ namespace DatabaseClient
         {
                 db.document_boring_bar.Remove(SelectedDocumentBoringBar.TheEntity);
                 DocumentBoringBars.Remove(SelectedDocumentBoringBar);
-                RaisePropertyChanged("BoringBars");
+                RaisePropertyChanged("DocumentBoringBars");
                 CommitUpdates();
                 selectedEntity = null;
         }
@@ -138,16 +153,28 @@ namespace DatabaseClient
             ThrobberVisible = Visibility.Visible;
 
             ObservableCollection<DocumentBoringBarVM> _documentBoringBar = new ObservableCollection<DocumentBoringBarVM>();
+            ObservableCollection<BoringBarVM> _boringBar = new ObservableCollection<BoringBarVM>();
+
             var documentBoringBar = await (from s in db.document_boring_bar
-                                  orderby s.id
-                                  select s).ToListAsync();
+                                            orderby s.id
+                                            select s).ToListAsync();
+
+            var boringBar = await (from s in db.boring_bar
+                                           orderby s.id
+                                           select s).ToListAsync();
 
             foreach (document_boring_bar docbar in documentBoringBar)
             {
                 _documentBoringBar.Add(new DocumentBoringBarVM { IsNew = false, TheEntity = docbar });
             }
+            foreach (boring_bar bar in boringBar)
+            {
+                _boringBar.Add(new BoringBarVM { IsNew = false, TheEntity = bar });
+            }
             DocumentBoringBars = _documentBoringBar;
-            RaisePropertyChanged("AllDocuments");
+            RaisePropertyChanged("DocumentBoringBars");
+            BoringBars = _boringBar;
+            RaisePropertyChanged("BoringBars");
             ThrobberVisible = Visibility.Collapsed;
         }
     }

@@ -23,7 +23,7 @@ namespace DatabaseClient
                 new ViewVM { ViewDisplay="ScrappedBoringBars", ViewType = typeof(ScrappedBoringBarsView), ViewModelType = typeof(ScrappedBoringBarsViewModel)},
                 new ViewVM { ViewDisplay="AllDocuments", ViewType = typeof(AllDocumentsView), ViewModelType = typeof(AllDocumentsViewModel)},
                 new ViewVM { ViewDisplay="DocumentBoringBar", ViewType = typeof(DocumentBoringBarView), ViewModelType = typeof(DocumentBoringBarViewModel)}
-
+            
             };
             Views = views;
             RaisePropertyChanged("Views");
