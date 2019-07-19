@@ -97,6 +97,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EntityData\all_documents.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityData\bearing.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
     <Compile Include="EntityData\boring_bar_bearing.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityData\boring_bar_with_bearing.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityData\DocumentBoringBar.cs" />
     <Compile Include="EntityData\document_boring_bar.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -162,11 +169,21 @@
     <Compile Include="Views\Add\Document\AddDocumentViewModel.cs" />
     <Compile Include="Views\Add\Bearing\AddBearingViewModel.cs" />
     <Compile Include="Views\Add\BoringBar\AddBoringBarViewModel.cs" />
+    <Compile Include="Views\Documents\AllDocuments\AllDocumentsView.xaml.cs">
+      <DependentUpon>AllDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\AllDocuments\AllDocumentsViewModel.cs" />
+    <Compile Include="Views\Documents\AllDocuments\DocumentVM.cs" />
     <Compile Include="Views\BoringBar\BoringBarsViewModel.cs" />
     <Compile Include="Views\BoringBar\BoringBarsView.xaml.cs">
       <DependentUpon>BoringBarsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BoringBar\BoringBarVM.cs" />
+    <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml.cs">
+      <DependentUpon>DocumentBoringBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarViewModel.cs" />
+    <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarVM.cs" />
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">
@@ -200,9 +217,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Documents\AllDocuments\AllDocumentsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BoringBar\BoringBarsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -313,6 +338,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Documents\DocumentSpindle\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

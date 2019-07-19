@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BoringSpindlesModelStoreContainer" CdmEntityContainer="BoringSpindlesEntities">
+  <EntityContainerMapping StorageEntityContainer="BoringSpindlesModelStoreContainer" CdmEntityContainer="BoringSpindlesEntities1">
     <EntitySetMapping Name="bearing">
       <EntityTypeMapping TypeName="BoringSpindlesModel.bearing">
         <MappingFragment StoreEntitySet="bearing">
@@ -56,6 +56,29 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="model" ColumnName="model" />
           <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="all_documents">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.all_documents">
+        <MappingFragment StoreEntitySet="all_documents">
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="valid_by" ColumnName="valid_by" />
+          <ScalarProperty Name="day_count" ColumnName="day_count" />
+          <ScalarProperty Name="needs_validation" ColumnName="needs_validation" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="number" ColumnName="number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boring_bar_with_bearing">
+      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_with_bearing">
+        <MappingFragment StoreEntitySet="boring_bar_with_bearing">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="model_wytaczadła" ColumnName="model_wytaczadła" />
+          <ScalarProperty Name="numer" ColumnName="numer" />
+          <ScalarProperty Name="model_łożyska" ColumnName="model_łożyska" />
           <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
         </MappingFragment>
       </EntityTypeMapping>

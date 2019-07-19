@@ -10,7 +10,7 @@ namespace Support
 {
     public class CrudVMBase : NotifyUIBase
     {
-        protected BoringSpindlesEntities db = new BoringSpindlesEntities();
+        protected BoringSpindlesEntities1 db = new BoringSpindlesEntities1();
         protected object selectedEntity;
         protected object editEntity;
         public CommandVM SaveCmd { get; set; }

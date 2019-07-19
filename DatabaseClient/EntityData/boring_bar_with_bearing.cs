@@ -12,20 +12,12 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class boring_bar
+    public partial class boring_bar_with_bearing
     {
-        public boring_bar()
-        {
-            this.boring_bar_bearing = new HashSet<boring_bar_bearing>();
-            this.document_boring_bar = new HashSet<document_boring_bar>();
-        }
-    
-        public int id { get; set; }
-        public string model { get; set; }
-        public Nullable<int> ordinal_number { get; set; }
+        public int ID { get; set; }
+        public string model_wytaczadła { get; set; }
+        public Nullable<int> numer { get; set; }
+        public string model_łożyska { get; set; }
         public Nullable<System.DateTime> scrapping_date { get; set; }
-    
-        public virtual ICollection<boring_bar_bearing> boring_bar_bearing { get; set; }
-        public virtual ICollection<document_boring_bar> document_boring_bar { get; set; }
     }
 }

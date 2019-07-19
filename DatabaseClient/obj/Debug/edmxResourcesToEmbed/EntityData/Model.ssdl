@@ -53,7 +53,35 @@
     <Property Name="serial_number" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="scrapping_date" Type="datetime" />
   </EntityType>
-  <Association Name="FK__boring_ba__id_be__7EE1CA6C">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="all_documents">
+    <Key>
+      <PropertyRef Name="valid_by" />
+      <PropertyRef Name="model" />
+    </Key>
+    <Property Name="issue_date" Type="date" />
+    <Property Name="valid_by" Type="int" Nullable="false" />
+    <Property Name="day_count" Type="int" />
+    <Property Name="needs_validation" Type="bit" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="number" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="boring_bar_with_bearing">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="model_wytaczadła" />
+      <PropertyRef Name="model_łożyska" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="model_wytaczadła" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="numer" Type="int" />
+    <Property Name="model_łożyska" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="scrapping_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__boring_ba__id_be__770B9E7A">
     <End Role="bearing" Type="Self.bearing" Multiplicity="0..1" />
     <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
     <ReferentialConstraint>
@@ -65,7 +93,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__boring_ba__id_bo__7DEDA633">
+  <Association Name="FK__boring_ba__id_bo__76177A41">
     <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
     <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
     <ReferentialConstraint>
@@ -77,7 +105,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__document___id_bo__049AA3C2">
+  <Association Name="FK__document___id_bo__7CC477D0">
     <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
     <End Role="document_boring_bar" Type="Self.document_boring_bar" Multiplicity="*" />
     <ReferentialConstraint>
@@ -108,15 +136,34 @@
     <EntitySet Name="document_boring_bar" EntityType="Self.document_boring_bar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="document_spindle" EntityType="Self.document_spindle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="spindle" EntityType="Self.spindle" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__boring_ba__id_be__7EE1CA6C" Association="Self.FK__boring_ba__id_be__7EE1CA6C">
+    <EntitySet Name="all_documents" EntityType="Self.all_documents" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [all_documents].[issue_date] AS [issue_date], 
+    [all_documents].[valid_by] AS [valid_by], 
+    [all_documents].[day_count] AS [day_count], 
+    [all_documents].[needs_validation] AS [needs_validation], 
+    [all_documents].[model] AS [model], 
+    [all_documents].[number] AS [number]
+    FROM [dbo].[all_documents] AS [all_documents]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="boring_bar_with_bearing" EntityType="Self.boring_bar_with_bearing" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [boring_bar_with_bearing].[ID] AS [ID], 
+    [boring_bar_with_bearing].[model_wytaczadła] AS [model_wytaczadła], 
+    [boring_bar_with_bearing].[numer] AS [numer], 
+    [boring_bar_with_bearing].[model_łożyska] AS [model_łożyska], 
+    [boring_bar_with_bearing].[scrapping_date] AS [scrapping_date]
+    FROM [dbo].[boring_bar_with_bearing] AS [boring_bar_with_bearing]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__boring_ba__id_be__770B9E7A" Association="Self.FK__boring_ba__id_be__770B9E7A">
       <End Role="bearing" EntitySet="bearing" />
       <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
     </AssociationSet>
-    <AssociationSet Name="FK__boring_ba__id_bo__7DEDA633" Association="Self.FK__boring_ba__id_bo__7DEDA633">
+    <AssociationSet Name="FK__boring_ba__id_bo__76177A41" Association="Self.FK__boring_ba__id_bo__76177A41">
       <End Role="boring_bar" EntitySet="boring_bar" />
       <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
     </AssociationSet>
-    <AssociationSet Name="FK__document___id_bo__049AA3C2" Association="Self.FK__document___id_bo__049AA3C2">
+    <AssociationSet Name="FK__document___id_bo__7CC477D0" Association="Self.FK__document___id_bo__7CC477D0">
       <End Role="boring_bar" EntitySet="boring_bar" />
       <End Role="document_boring_bar" EntitySet="document_boring_bar" />
     </AssociationSet>
