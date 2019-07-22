@@ -81,3 +81,5 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\View
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.baml

@@ -14,15 +14,8 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="ordinal_number" Type="int" />
-    <Property Name="scrapping_date" Type="datetime" />
-  </EntityType>
-  <EntityType Name="boring_bar_bearing">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_boring_bar" Type="int" />
     <Property Name="id_bearing" Type="int" />
+    <Property Name="scrapping_date" Type="datetime" />
   </EntityType>
   <EntityType Name="document_boring_bar">
     <Key>
@@ -67,45 +60,7 @@ warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a 
     <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="number" Type="varchar" MaxLength="255" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="boring_bar_with_bearing">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="model_wytaczadła" />
-      <PropertyRef Name="model_łożyska" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="model_wytaczadła" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="numer" Type="int" />
-    <Property Name="model_łożyska" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="scrapping_date" Type="datetime" />
-  </EntityType>
-  <Association Name="FK__boring_ba__id_be__770B9E7A">
-    <End Role="bearing" Type="Self.bearing" Multiplicity="0..1" />
-    <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="bearing">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="boring_bar_bearing">
-        <PropertyRef Name="id_bearing" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__boring_ba__id_bo__76177A41">
-    <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
-    <End Role="boring_bar_bearing" Type="Self.boring_bar_bearing" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="boring_bar">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="boring_bar_bearing">
-        <PropertyRef Name="id_boring_bar" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__document___id_bo__7CC477D0">
+  <Association Name="FK__document___id_bo__74EE4BDE">
     <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
     <End Role="document_boring_bar" Type="Self.document_boring_bar" Multiplicity="*" />
     <ReferentialConstraint>
@@ -117,7 +72,19 @@ warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does n
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_id">
+  <Association Name="FK_id_bearing">
+    <End Role="bearing" Type="Self.bearing" Multiplicity="0..1" />
+    <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bearing">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="boring_bar">
+        <PropertyRef Name="id_bearing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_id_document_spindle">
     <End Role="spindle" Type="Self.spindle" Multiplicity="0..1" />
     <End Role="document_spindle" Type="Self.document_spindle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,7 +99,6 @@ warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does n
   <EntityContainer Name="BoringSpindlesModelStoreContainer">
     <EntitySet Name="bearing" EntityType="Self.bearing" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="boring_bar" EntityType="Self.boring_bar" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="boring_bar_bearing" EntityType="Self.boring_bar_bearing" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="document_boring_bar" EntityType="Self.document_boring_bar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="document_spindle" EntityType="Self.document_spindle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="spindle" EntityType="Self.spindle" Schema="dbo" store:Type="Tables" />
@@ -146,28 +112,15 @@ warning 6002: The table/view 'BoringSpindles.dbo.boring_bar_with_bearing' does n
     [all_documents].[number] AS [number]
     FROM [dbo].[all_documents] AS [all_documents]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="boring_bar_with_bearing" EntityType="Self.boring_bar_with_bearing" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [boring_bar_with_bearing].[ID] AS [ID], 
-    [boring_bar_with_bearing].[model_wytaczadła] AS [model_wytaczadła], 
-    [boring_bar_with_bearing].[numer] AS [numer], 
-    [boring_bar_with_bearing].[model_łożyska] AS [model_łożyska], 
-    [boring_bar_with_bearing].[scrapping_date] AS [scrapping_date]
-    FROM [dbo].[boring_bar_with_bearing] AS [boring_bar_with_bearing]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK__boring_ba__id_be__770B9E7A" Association="Self.FK__boring_ba__id_be__770B9E7A">
-      <End Role="bearing" EntitySet="bearing" />
-      <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
-    </AssociationSet>
-    <AssociationSet Name="FK__boring_ba__id_bo__76177A41" Association="Self.FK__boring_ba__id_bo__76177A41">
-      <End Role="boring_bar" EntitySet="boring_bar" />
-      <End Role="boring_bar_bearing" EntitySet="boring_bar_bearing" />
-    </AssociationSet>
-    <AssociationSet Name="FK__document___id_bo__7CC477D0" Association="Self.FK__document___id_bo__7CC477D0">
+    <AssociationSet Name="FK__document___id_bo__74EE4BDE" Association="Self.FK__document___id_bo__74EE4BDE">
       <End Role="boring_bar" EntitySet="boring_bar" />
       <End Role="document_boring_bar" EntitySet="document_boring_bar" />
     </AssociationSet>
-    <AssociationSet Name="FK_id" Association="Self.FK_id">
+    <AssociationSet Name="FK_id_bearing" Association="Self.FK_id_bearing">
+      <End Role="bearing" EntitySet="bearing" />
+      <End Role="boring_bar" EntitySet="boring_bar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_id_document_spindle" Association="Self.FK_id_document_spindle">
       <End Role="spindle" EntitySet="spindle" />
       <End Role="document_spindle" EntitySet="document_spindle" />
     </AssociationSet>

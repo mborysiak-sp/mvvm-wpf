@@ -152,28 +152,28 @@ namespace DatabaseClient
         {
             ThrobberVisible = Visibility.Visible;
 
-            ObservableCollection<DocumentSpindleVM> _documentSpindle = new ObservableCollection<DocumentSpindleVM>();
-            ObservableCollection<SpindleVM> _spindle = new ObservableCollection<SpindleVM>();
+            ObservableCollection<DocumentSpindleVM> _documentSpindles = new ObservableCollection<DocumentSpindleVM>();
+            ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
 
             var documentSpindle = await (from s in db.document_spindle
                                             orderby s.id
                                             select s).ToListAsync();
 
-            var Spindle = await (from s in db.spindle
+            var spindles = await (from s in db.spindle
                                            orderby s.id
                                            select s).ToListAsync();
 
             foreach (document_spindle docspin in documentSpindle)
             {
-                _documentSpindle.Add(new DocumentSpindleVM { IsNew = false, TheEntity = docspin });
+                _documentSpindles.Add(new DocumentSpindleVM { IsNew = false, TheEntity = docspin });
             }
-            foreach (spindle spin in Spindle)
+            foreach (spindle spin in spindles)
             {
-                _spindle.Add(new SpindleVM { IsNew = false, TheEntity = spin });
+                _spindles.Add(new SpindleVM { IsNew = false, TheEntity = spin });
             }
-            DocumentSpindles = _documentSpindle;
+            DocumentSpindles = _documentSpindles;
             RaisePropertyChanged("DocumentSpindles");
-            Spindles = _spindle;
+            Spindles = _spindles;
             RaisePropertyChanged("Spindles");
             ThrobberVisible = Visibility.Collapsed;
         }

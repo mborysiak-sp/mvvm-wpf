@@ -12,38 +12,8 @@ using System.Windows.Threading;
 
 namespace DatabaseClient
 {
-    public class BoringBarsViewModel : CrudVMBase
+    public class BearingsViewModel : CrudVMBase
     {
-        private BoringBarVM selectedBoringBar;
-        public BoringBarVM SelectedBoringBar
-        {
-            get
-            {
-                return selectedBoringBar;
-            }
-            set
-            {
-                selectedBoringBar = value;
-                selectedEntity = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private BoringBarVM editVM;
-        public BoringBarVM EditVM
-        {
-            get
-            {
-                return editVM;
-            }
-            set
-            {
-                editVM = value;
-                editEntity = editVM.TheEntity;
-                RaisePropertyChanged();
-            }
-        }
-
         private BearingVM selectedBearing;
         public BearingVM SelectedBearing
         {
@@ -59,21 +29,35 @@ namespace DatabaseClient
             }
         }
 
-        public ObservableCollection<BoringBarVM> BoringBars { get; set; }
+        private BearingVM editVM;
+        public BearingVM EditVM
+        {
+            get
+            {
+                return editVM;
+            }
+            set
+            {
+                editVM = value;
+                editEntity = editVM.TheEntity;
+                RaisePropertyChanged();
+            }
+        }
+
         public ObservableCollection<BearingVM> Bearings { get; set; }
-        public BoringBarsViewModel()
+        public BearingsViewModel()
             : base()
         {
 
         }
         protected override void EditCurrent()
         {
-            EditVM = SelectedBoringBar;
+            EditVM = SelectedBearing;
             IsInEditMode = true;
         }
         protected override void InsertNew()
         {
-            EditVM = new BoringBarVM();
+            EditVM = new BearingVM();
             IsInEditMode = true;
         }
         protected override void CommitUpdates()
@@ -91,8 +75,8 @@ namespace DatabaseClient
                 if (EditVM.IsNew)
                 {
                     EditVM.IsNew = false;
-                    BoringBars.Add(EditVM);
-                    db.boring_bar.Add(EditVM.TheEntity);
+                    Bearings.Add(EditVM);
+                    db.bearing.Add(EditVM.TheEntity);
                     UpdateDB();
                 }
                 else if (db.ChangeTracker.HasChanges())
@@ -124,16 +108,16 @@ namespace DatabaseClient
         }
         protected override void DeleteCurrent()
         {
-            int NumDocs = NumberOfAssignedDocuments();
+            int NumDocs = NumberOfAssignedBoringBars();
             if (NumDocs > 0)
             {
                 ShowUserMessage(string.Format("Cannot delete - there are {0} Orders for this Customer", NumDocs));
             }
             else
             {
-                db.boring_bar.Remove(SelectedBoringBar.TheEntity);
-                BoringBars.Remove(SelectedBoringBar);
-                RaisePropertyChanged("BoringBars");
+                db.bearing.Remove(SelectedBearing.TheEntity);
+                Bearings.Remove(SelectedBearing);
+                RaisePropertyChanged("Bearings");
                 CommitUpdates();
                 selectedEntity = null;
             }
@@ -159,38 +143,27 @@ namespace DatabaseClient
             IsInEditMode = false;
         }
 
-        private int NumberOfAssignedDocuments()
+        private int NumberOfAssignedBoringBars()
         {
-            var count = (from row in db.document_boring_bar
-                         where row.id_boring_bar == SelectedBoringBar.TheEntity.id
+            var count = (from row in db.boring_bar
+                         where row.id_bearing == SelectedBearing.TheEntity.id
                          select row).Count();
             return count;
         }
+
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
 
-            ObservableCollection<BoringBarVM> _boringBars = new ObservableCollection<BoringBarVM>();
             ObservableCollection<BearingVM> _bearings = new ObservableCollection<BearingVM>();
-
-            var boringBars = await (from s in db.boring_bar
+            var bearings = await (from s in db.bearing
                                   orderby s.model
                                   select s).ToListAsync();
 
-            var bearings = await (from b in db.bearing
-                                  orderby b.id
-                                  select b).ToListAsync();
-
-            foreach (boring_bar boring in boringBars)
-            {
-                _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
-            }
             foreach (bearing bear in bearings)
             {
                 _bearings.Add(new BearingVM { IsNew = false, TheEntity = bear });
             }
-            BoringBars = _boringBars;
-            RaisePropertyChanged("BoringBars");
             Bearings = _bearings;
             RaisePropertyChanged("Bearings");
             ThrobberVisible = Visibility.Collapsed;
