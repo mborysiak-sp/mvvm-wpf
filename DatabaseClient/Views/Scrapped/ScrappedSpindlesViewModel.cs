@@ -14,11 +14,17 @@ namespace DatabaseClient
 {
     public class ScrappedSpindlesViewModel : SpindlesViewModel
     {
+        public ObservableCollection<SpindleVM> ScrappedSpindles { get; set; }
+        public ScrappedSpindlesViewModel()
+            : base()
+        {
+
+        }
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
 
-            ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
+            ObservableCollection<SpindleVM> _scrappedSpindles = new ObservableCollection<SpindleVM>();
             var spindles = await (from s in db.spindle
                                    orderby s.model
                                     where s.scrapping_date != null
@@ -26,10 +32,10 @@ namespace DatabaseClient
 
             foreach (spindle spin in spindles)
             {
-                _spindles.Add(new SpindleVM { IsNew = false, TheEntity = spin });
+                _scrappedSpindles.Add(new SpindleVM { IsNew = false, TheEntity = spin });
             }
-            Spindles = _spindles;
-            RaisePropertyChanged("Spindles");
+            ScrappedSpindles = _scrappedSpindles;
+            RaisePropertyChanged("ScrappedSpindles");
             ThrobberVisible = Visibility.Collapsed;
         }
     }

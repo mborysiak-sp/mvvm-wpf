@@ -13,10 +13,10 @@ namespace DatabaseClient.EntityData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BoringSpindlesEntities1 : DbContext
+    public partial class BoringSpindlesConnection : DbContext
     {
-        public BoringSpindlesEntities1()
-            : base("name=BoringSpindlesEntities1")
+        public BoringSpindlesConnection()
+            : base("name=BoringSpindlesConnection")
         {
         }
     
@@ -27,11 +27,9 @@ namespace DatabaseClient.EntityData
     
         public virtual DbSet<bearing> bearing { get; set; }
         public virtual DbSet<boring_bar> boring_bar { get; set; }
-        public virtual DbSet<boring_bar_bearing> boring_bar_bearing { get; set; }
         public virtual DbSet<document_boring_bar> document_boring_bar { get; set; }
         public virtual DbSet<document_spindle> document_spindle { get; set; }
         public virtual DbSet<spindle> spindle { get; set; }
         public virtual DbSet<all_documents> all_documents { get; set; }
-        public virtual DbSet<boring_bar_with_bearing> boring_bar_with_bearing { get; set; }
     }
 }

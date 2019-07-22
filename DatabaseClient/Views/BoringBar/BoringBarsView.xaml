@@ -28,9 +28,9 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
                 <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
                 <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku" />
+                <DataGridTextColumn Binding="{Binding TheEntity.bearing.model, Mode=TwoWay}" Header="Model łożyska" />
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
@@ -50,6 +50,29 @@
                                                     NotifyOnValidationError=True,
                                                     Mode=TwoWay}"  />
                     </spt:EditRow>
+                    <spt:EditRow LabelFor="ID łożyska" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.id_bearing, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Wybrane ID łożyska:">
+                        <Label DataContext="{Binding SelectedBearing}" Content="{Binding TheEntity.id}"/>
+                    </spt:EditRow>
+                    <ComboBox ItemsSource="{Binding Bearings, Mode=OneWay}" SelectedItem="{Binding SelectedBearing}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}">
+                                            <Binding Path="TheEntity.model"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </ItemsControl>
             </ScrollViewer>
         </ContentControl>
