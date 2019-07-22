@@ -117,6 +117,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityData\DocumentBoringBar.cs" />
+    <Compile Include="EntityData\DocumentSpindle.cs" />
     <Compile Include="EntityData\document_boring_bar.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -184,6 +185,11 @@
     </Compile>
     <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarViewModel.cs" />
     <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarVM.cs" />
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleView.xaml.cs">
+      <DependentUpon>DocumentSpindleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleViewModel.cs" />
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleVM.cs" />
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">
@@ -226,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Documents\DocumentSpindle\DocumentSpindleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -339,8 +349,6 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Documents\DocumentSpindle\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
