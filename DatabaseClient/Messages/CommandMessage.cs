@@ -12,6 +12,7 @@
         Delete,
         Commit,
         Refresh,
+        Filter,
         Quit,
         None
     }

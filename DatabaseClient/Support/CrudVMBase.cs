@@ -44,6 +44,11 @@ namespace Support
                         editEntity = null;
                         selectedEntity = null;
                         break;
+                    case CommandType.Filter:
+                        Filter();
+                        editEntity = null;
+                        selectedEntity = null;
+                        break;
                     case CommandType.Quit:
                         Quit();
                         break;
@@ -108,7 +113,10 @@ namespace Support
         protected virtual void DeleteCurrent()
         {
         }
+        protected virtual void Filter()
+        {
 
+        }
         protected virtual void RefreshData()
         {
             GetData();

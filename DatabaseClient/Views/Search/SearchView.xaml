@@ -51,6 +51,6 @@
         </ItemsControl>
         <spt:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GetData}" /> 
+        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Refresh}" /> 
     </Grid>
 </UserControl>

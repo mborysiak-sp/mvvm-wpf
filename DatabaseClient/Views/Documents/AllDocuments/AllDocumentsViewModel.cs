@@ -14,13 +14,20 @@ namespace DatabaseClient
 {
     public class AllDocumentsViewModel : CrudVMBase
     {
-
+        ObservableCollection<DocumentVM> FilteredDocuments = new ObservableCollection<DocumentVM>();
         public ObservableCollection<DocumentVM> AllDocuments { get; set; }
         public AllDocumentsViewModel()
             : base()
         {
+        }
 
-        } 
+        protected override void Filter()
+        {
+                AllDocuments.Where(c => 
+                (Select
+                ))
+        }
+
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
@@ -35,6 +42,7 @@ namespace DatabaseClient
                 _allDocuments.Add(new DocumentVM { IsNew = false, TheEntity = doc });
             }
             AllDocuments = _allDocuments;
+            Filtered
             RaisePropertyChanged("AllDocuments");
             ThrobberVisible = Visibility.Collapsed;
         }

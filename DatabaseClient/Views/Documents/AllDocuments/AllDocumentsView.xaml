@@ -10,31 +10,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
-        <DataGrid x:Name="dg"
+        <Grid>
+            <DataGrid x:Name="dg"
                 AutoGenerateColumns="False"
                 ItemsSource="{Binding AllDocuments}"
                 HeadersVisibility="Column"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
                 IsReadOnly="True">
-            <i:Interaction.Behaviors>
-                <local:ScrollDataGridRowIntoView/>
-            </i:Interaction.Behaviors>
-            <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <Setter Property="local:DataGridRowBehavior.IsDataGridRowFocusedWhenSelected" Value="true"/>
-                </Style>
-            </DataGrid.RowStyle>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.issue_date, Mode=TwoWay}"  Header="Data wydania"/>
-                <DataGridTextColumn Binding="{Binding TheEntity.valid_by, Mode=TwoWay}"  Header="Ważne przez"/>
-                <DataGridTextColumn Binding="{Binding TheEntity.day_count, Mode=TwoWay}"  Header="Pozostało dni"/>
-                <DataGridTextColumn Binding="{Binding TheEntity.needs_validation, Mode=TwoWay}"  Header="Wymaga atestu"/>
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model"/>
-                <DataGridTextColumn Binding="{Binding TheEntity.number, Mode=TwoWay}"  Header="Numer"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                <i:Interaction.Behaviors>
+                    <local:ScrollDataGridRowIntoView/>
+                </i:Interaction.Behaviors>
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="local:DataGridRowBehavior.IsDataGridRowFocusedWhenSelected" Value="true"/>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding TheEntity.issue_date, Mode=TwoWay}"  Header="Data wydania"/>
+                    <DataGridTextColumn Binding="{Binding TheEntity.valid_by, Mode=TwoWay}"  Header="Ważne przez"/>
+                    <DataGridTextColumn Binding="{Binding TheEntity.day_count, Mode=TwoWay}"  Header="Pozostało dni"/>
+                    <DataGridTextColumn Binding="{Binding TheEntity.needs_validation, Mode=TwoWay}"  Header="Wymaga atestu"/>
+                    <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model"/>
+                    <DataGridTextColumn Binding="{Binding TheEntity.number, Mode=TwoWay}"  Header="Numer"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Text="" Background="Aqua" Margin="532,40,82,438"/>
+        <TextBox Text="" Background="Aqua" Margin="532,67,82,411"/>
     </Grid>
 </UserControl>
