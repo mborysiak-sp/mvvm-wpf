@@ -23,9 +23,7 @@ namespace DatabaseClient
 
         protected override void Filter()
         {
-                AllDocuments.Where(c => 
-                (Select
-                ))
+
         }
 
         protected async override void GetData()
