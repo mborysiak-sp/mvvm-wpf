@@ -103,29 +103,25 @@
     <Compile Include="EntityData\bearing.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityData\BoringBar.metadata.cs" />
-    <Compile Include="Converters\BindingErrorEventArgsConverter.cs" />
-    <Compile Include="Converters\BindingSourcePropertyConverter.cs" />
-    <Compile Include="Converters\ErrorCollectionConverter.cs" />
     <Compile Include="EntityData\boring_bar.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityData\boring_bar_bearing.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityData\boring_bar_with_bearing.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityData\DocumentBoringBar.cs" />
     <Compile Include="EntityData\document_boring_bar.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityData\document_spindle.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityData\MetaData\BoringBar.metadata.cs" />
+    <Compile Include="Converters\BindingErrorEventArgsConverter.cs" />
+    <Compile Include="Converters\BindingSourcePropertyConverter.cs" />
+    <Compile Include="Converters\ErrorCollectionConverter.cs" />
+    <Compile Include="EntityData\MetaData\DocumentBoringBar.metadata.cs" />
+    <Compile Include="EntityData\MetaData\DocumentSpindle.metadata.cs" />
     <Compile Include="EntityData\IEntityWithId.cs" />
     <Compile Include="EntityData\AnError.cs" />
     <Compile Include="EntityData\BaseEntity.cs" />
+    <Compile Include="EntityData\MetaData\Bearing.metadata.cs" />
     <Compile Include="EntityData\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,10 +138,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="EntityData\PropertyError.cs" />
+    <Compile Include="EntityData\MetaData\Spindle.metadata.cs" />
     <Compile Include="EntityData\spindle.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityData\Spindle.metadata.cs" />
     <Compile Include="ExcludeChar.cs" />
     <Compile Include="Helpers\RoutedEventTrigger.cs" />
     <Compile Include="Messages\CommandMessage.cs" />
@@ -169,6 +165,11 @@
     <Compile Include="Views\Add\Document\AddDocumentViewModel.cs" />
     <Compile Include="Views\Add\Bearing\AddBearingViewModel.cs" />
     <Compile Include="Views\Add\BoringBar\AddBoringBarViewModel.cs" />
+    <Compile Include="Views\Bearing\BearingsView.xaml.cs">
+      <DependentUpon>BearingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bearing\BearingsViewModel.cs" />
+    <Compile Include="Views\Bearing\BearingVM.cs" />
     <Compile Include="Views\Documents\AllDocuments\AllDocumentsView.xaml.cs">
       <DependentUpon>AllDocumentsView.xaml</DependentUpon>
     </Compile>
@@ -184,6 +185,11 @@
     </Compile>
     <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarViewModel.cs" />
     <Compile Include="Views\Documents\DocumentBoringBar\DocumentBoringBarVM.cs" />
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleView.xaml.cs">
+      <DependentUpon>DocumentSpindleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleViewModel.cs" />
+    <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleVM.cs" />
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">
@@ -217,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Bearing\BearingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Documents\AllDocuments\AllDocumentsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -226,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Documents\DocumentSpindle\DocumentSpindleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -338,9 +352,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Documents\DocumentSpindle\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

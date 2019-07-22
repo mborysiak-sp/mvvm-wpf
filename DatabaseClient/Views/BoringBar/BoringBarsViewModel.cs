@@ -44,7 +44,23 @@ namespace DatabaseClient
             }
         }
 
+        private BearingVM selectedBearing;
+        public BearingVM SelectedBearing
+        {
+            get
+            {
+                return selectedBearing;
+            }
+            set
+            {
+                selectedBearing = value;
+                selectedEntity = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ObservableCollection<BoringBarVM> BoringBars { get; set; }
+        public ObservableCollection<BearingVM> Bearings { get; set; }
         public BoringBarsViewModel()
             : base()
         {
@@ -155,16 +171,28 @@ namespace DatabaseClient
             ThrobberVisible = Visibility.Visible;
 
             ObservableCollection<BoringBarVM> _boringBars = new ObservableCollection<BoringBarVM>();
+            ObservableCollection<BearingVM> _bearings = new ObservableCollection<BearingVM>();
+
             var boringBars = await (from s in db.boring_bar
                                   orderby s.model
                                   select s).ToListAsync();
+
+            var bearings = await (from b in db.bearing
+                                  orderby b.id
+                                  select b).ToListAsync();
 
             foreach (boring_bar boring in boringBars)
             {
                 _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
             }
+            foreach (bearing bear in bearings)
+            {
+                _bearings.Add(new BearingVM { IsNew = false, TheEntity = bear });
+            }
             BoringBars = _boringBars;
             RaisePropertyChanged("BoringBars");
+            Bearings = _bearings;
+            RaisePropertyChanged("Bearings");
             ThrobberVisible = Visibility.Collapsed;
         }
     }

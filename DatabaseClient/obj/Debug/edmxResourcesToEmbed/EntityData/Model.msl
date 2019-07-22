@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BoringSpindlesModelStoreContainer" CdmEntityContainer="BoringSpindlesEntities1">
+  <EntityContainerMapping StorageEntityContainer="BoringSpindlesModelStoreContainer" CdmEntityContainer="BoringSpindlesConnection">
     <EntitySetMapping Name="bearing">
       <EntityTypeMapping TypeName="BoringSpindlesModel.bearing">
         <MappingFragment StoreEntitySet="bearing">
@@ -15,16 +15,8 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="model" ColumnName="model" />
           <ScalarProperty Name="ordinal_number" ColumnName="ordinal_number" />
-          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="boring_bar_bearing">
-      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_bearing">
-        <MappingFragment StoreEntitySet="boring_bar_bearing">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="id_boring_bar" ColumnName="id_boring_bar" />
           <ScalarProperty Name="id_bearing" ColumnName="id_bearing" />
+          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -69,17 +61,6 @@
           <ScalarProperty Name="needs_validation" ColumnName="needs_validation" />
           <ScalarProperty Name="model" ColumnName="model" />
           <ScalarProperty Name="number" ColumnName="number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="boring_bar_with_bearing">
-      <EntityTypeMapping TypeName="BoringSpindlesModel.boring_bar_with_bearing">
-        <MappingFragment StoreEntitySet="boring_bar_with_bearing">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="model_wytaczadła" ColumnName="model_wytaczadła" />
-          <ScalarProperty Name="numer" ColumnName="numer" />
-          <ScalarProperty Name="model_łożyska" ColumnName="model_łożyska" />
-          <ScalarProperty Name="scrapping_date" ColumnName="scrapping_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
