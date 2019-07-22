@@ -12,9 +12,8 @@
     <Grid>
         <DataGrid x:Name="dg"
                 AutoGenerateColumns="False"
-                ItemsSource="{Binding BoringBars}"
+                ItemsSource="{Binding ScrappedBoringBars}"
                 HeadersVisibility="Column"
-                SelectedItem="{Binding SelectedBoringBar, Mode=TwoWay}"
                 SelectionMode="Single"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"

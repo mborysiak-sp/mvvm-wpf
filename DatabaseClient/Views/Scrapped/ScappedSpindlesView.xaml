@@ -12,9 +12,8 @@
     <Grid>
         <DataGrid x:Name="dg"
                 AutoGenerateColumns="False"
-                ItemsSource="{Binding Spindles}"
+                ItemsSource="{Binding ScrappedSpindles}"
                 HeadersVisibility="Column"
-                SelectedItem="{Binding SelectedSpindle, Mode=TwoWay}"
                 SelectionMode="Single"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"

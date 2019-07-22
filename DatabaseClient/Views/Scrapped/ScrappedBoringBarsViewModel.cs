@@ -14,22 +14,28 @@ namespace DatabaseClient
 {
     public class ScrappedBoringBarsViewModel : BoringBarsViewModel
     {
+        public ObservableCollection<BoringBarVM> ScrappedBoringBars { get; set; }
+        public ScrappedBoringBarsViewModel()
+            : base()
+        {
+
+        }
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
 
-            ObservableCollection<BoringBarVM> _boringBars = new ObservableCollection<BoringBarVM>();
-            var boringBars = await (from s in db.boring_bar
+            ObservableCollection<BoringBarVM> _scrappedBoringBars = new ObservableCollection<BoringBarVM>();
+            var scrappedBoringBars = await (from s in db.boring_bar
                                   orderby s.model
                                   where s.scrapping_date != null
                                   select s).ToListAsync();
 
-            foreach (boring_bar boring in boringBars)
+            foreach (boring_bar scrappedBoring in scrappedBoringBars)
             {
-                _boringBars.Add(new BoringBarVM { IsNew = false, TheEntity = boring });
+                _scrappedBoringBars.Add(new BoringBarVM { IsNew = false, TheEntity = scrappedBoring });
             }
-            BoringBars = _boringBars;
-            RaisePropertyChanged("BoringBars");
+            ScrappedBoringBars = _scrappedBoringBars;
+            RaisePropertyChanged("ScrappedBoringBars");
             ThrobberVisible = Visibility.Collapsed;
         }
     }
