@@ -3,5 +3,5 @@
 .vs/DatabaseClient/v15/Server/sqlite3/storage.ide
 .vs/DatabaseClient/v15/Server/sqlite3/storage.ide-shm
 .vs/DatabaseClient/v15/Server/sqlite3/storage.ide-wal
-/bin
-/obj
+bin/
+obj/
