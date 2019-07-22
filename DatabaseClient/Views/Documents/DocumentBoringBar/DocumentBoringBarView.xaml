@@ -42,29 +42,26 @@
                                 UpdateSourceTrigger=PropertyChanged,  
                                 NotifyOnSourceUpdated=True,
                                 NotifyOnValidationError=True,
-                                Mode=TwoWay}"  />
+                                Mode=TwoWay}"/>
                     </spt:EditRow>
                     <spt:EditRow LabelFor="Ważne przez:" >
-                        <TextBox Text="{Binding  EditVM.TheEntity.day_count, 
+                        <TextBox Text="{Binding EditVM.TheEntity.day_count, 
                                 UpdateSourceTrigger=PropertyChanged,  
                                 NotifyOnSourceUpdated=True,
                                 NotifyOnValidationError=True,
-                                Mode=TwoWay}"  />
+                                Mode=TwoWay}"/>
                     </spt:EditRow>
-                    <spt:EditRow LabelFor="Wybrane ID wytaczadła:" >
-                        <TextBox>
-                            <TextBox.Style>
-                                <Style>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=xd, Path=SelectedValue.Content}">
-                                            <Setter Property="TextBox.Text" Value="dd"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBox.Style>
-                        </TextBox>
+                    <spt:EditRow LabelFor="ID wytaczadła:" >
+                        <TextBox Text="{Binding EditVM.TheEntity.id_boring_bar, 
+                                UpdateSourceTrigger=PropertyChanged,  
+                                NotifyOnSourceUpdated=True,
+                                NotifyOnValidationError=True,
+                                Mode=TwoWay}"/>
                     </spt:EditRow>
-                    <ComboBox x:Name="xd" ItemsSource="{Binding BoringBars}">
+                    <spt:EditRow LabelFor="Wybrane ID wytaczadła:">
+                        <Label DataContext="{Binding SelectedBoringBar}" Content="{Binding TheEntity.id}"/>
+                    </spt:EditRow>
+                    <ComboBox x:Name="xd" ItemsSource="{Binding BoringBars, Mode=OneWay}" SelectedItem="{Binding SelectedBoringBar}">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock>
