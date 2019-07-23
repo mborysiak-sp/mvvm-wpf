@@ -18,7 +18,7 @@
                 SelectionMode="Single"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
-                IsReadOnly="True">
+                IsReadOnly="True" Background="#FF111111" BorderBrush="#FF9A9B9C">
             <i:Interaction.Behaviors>
                 <local:ScrollDataGridRowIntoView/>
             </i:Interaction.Behaviors>

@@ -39,6 +39,25 @@ namespace DatabaseClient
             }
         }
 
+        //public const string TextFilterNumberPropertyName = "TextFilterNumber";
+
+        //private string _TextFilterNumber;
+        //public string TextFilterNumber
+        //{
+        //    get
+        //    {
+        //        return _TextFilterNumber;
+        //    }
+        //    set
+        //    {
+        //        if (_TextFilterNumber == value)
+        //            return;
+        //        _TextFilterNumber = value;
+        //        RaisePropertyChanged(TextFilterNumberPropertyName);
+        //        Filter();
+        //    }
+        //}
+
         public const string MyItemListPropertyName = "MyItemList";
 
         private ObservableCollection<DocumentVM> _filtered = new ObservableCollection<DocumentVM>();
@@ -64,10 +83,13 @@ namespace DatabaseClient
                 _filtered.Clear();
             foreach(var item in AllDocuments)
             {
-                if (item.TheEntity.model.Contains(TextFilter))
+                //if (item.TheEntity.model.Contains(TextFilter) && item.TheEntity.number.Contains(TextFilter))
+                //    _filtered.Add(item);
+                if ((item.TheEntity.model + " " + item.TheEntity.number) == TextFilter)
                     _filtered.Add(item);
             }
         }
+
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
