@@ -24,8 +24,7 @@ namespace DatabaseClient
                 new ViewVM { ViewDisplay="ScrappedBoringBars", ViewType = typeof(ScrappedBoringBarsView), ViewModelType = typeof(ScrappedBoringBarsViewModel)},
                 new ViewVM { ViewDisplay="AllDocuments", ViewType = typeof(AllDocumentsView), ViewModelType = typeof(AllDocumentsViewModel)},
                 new ViewVM { ViewDisplay="DocumentBoringBar", ViewType = typeof(DocumentBoringBarView), ViewModelType = typeof(DocumentBoringBarViewModel)},
-                new ViewVM { ViewDisplay="DocumentSpindle", ViewType = typeof(DocumentSpindleView), ViewModelType = typeof(DocumentSpindleViewModel)},
-                new ViewVM { ViewDisplay="Search", ViewType = typeof(SearchView), ViewModelType = typeof(SearchViewModel)}
+                new ViewVM { ViewDisplay="DocumentSpindle", ViewType = typeof(DocumentSpindleView), ViewModelType = typeof(DocumentSpindleViewModel)}
             };
             Views = views;
             RaisePropertyChanged("Views");

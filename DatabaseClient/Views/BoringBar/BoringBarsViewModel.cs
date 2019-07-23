@@ -61,21 +61,25 @@ namespace DatabaseClient
 
         public ObservableCollection<BoringBarVM> BoringBars { get; set; }
         public ObservableCollection<BearingVM> Bearings { get; set; }
+
         public BoringBarsViewModel()
             : base()
         {
 
         }
+
         protected override void EditCurrent()
         {
             EditVM = SelectedBoringBar;
             IsInEditMode = true;
         }
+
         protected override void InsertNew()
         {
             EditVM = new BoringBarVM();
             IsInEditMode = true;
         }
+
         protected override void CommitUpdates()
         {
             if (EditVM == null || EditVM.TheEntity == null)
@@ -109,6 +113,7 @@ namespace DatabaseClient
                 ShowUserMessage("There are problems with the data entered");
             }
         }
+
         private async void UpdateDB()
         {
             try
@@ -116,56 +121,36 @@ namespace DatabaseClient
                 await db.SaveChangesAsync();
                 ShowUserMessage("Database Updated");
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    ErrorMessage = e.InnerException.GetBaseException().ToString();
+                }
                 ShowUserMessage("There was a problem updating the database");
             }
             ReFocusRow();
         }
+
         protected override void DeleteCurrent()
         {
-            int NumDocs = NumberOfAssignedDocuments();
-            if (NumDocs > 0)
-            {
-                ShowUserMessage(string.Format("Cannot delete - there are {0} Orders for this Customer", NumDocs));
-            }
-            else
-            {
-                db.boring_bar.Remove(SelectedBoringBar.TheEntity);
-                BoringBars.Remove(SelectedBoringBar);
-                RaisePropertyChanged("BoringBars");
-                CommitUpdates();
-                selectedEntity = null;
-            }
+            db.boring_bar.Remove(SelectedBoringBar.TheEntity);
+            BoringBars.Remove(SelectedBoringBar);
+            RaisePropertyChanged("BoringBars");
+            CommitUpdates();
+            selectedEntity = null;
         }
+
         protected override void Quit()
         {
-            if (!EditVM.IsNew)
-            {
-                ReFocusRow();
-            }
+            ReFocusRow();
         }
         protected void ReFocusRow(bool withReload = true)
         {
-            //int id = EditVM.TheEntity.id;
-            //SelectedBoringBar = null;
-            //await db.Entry(EditVM.TheEntity).ReloadAsync();
-            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            //{
-            //    SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
-            //    SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
-            //    SelectedBoringBar.TheEntity.ClearErrors();
-            //}), DispatcherPriority.ContextIdle);
+            SelectedBoringBar = null;
             IsInEditMode = false;
         }
 
-        private int NumberOfAssignedDocuments()
-        {
-            var count = (from row in db.document_boring_bar
-                         where row.id_boring_bar == SelectedBoringBar.TheEntity.id
-                         select row).Count();
-            return count;
-        }
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
@@ -174,8 +159,9 @@ namespace DatabaseClient
             ObservableCollection<BearingVM> _bearings = new ObservableCollection<BearingVM>();
 
             var boringBars = await (from s in db.boring_bar
-                                  orderby s.model
-                                  select s).ToListAsync();
+                                    orderby s.model
+                                    where s.scrapping_date == null
+                                    select s).ToListAsync();
 
             var bearings = await (from b in db.bearing
                                   orderby b.id

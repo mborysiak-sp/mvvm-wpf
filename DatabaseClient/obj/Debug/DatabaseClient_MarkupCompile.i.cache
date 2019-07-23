@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
-16-444460372
+12-1852871983
 2677356452
-79-1378688559
+711742395187
 79-1097405964
-Resources\Dictionary1.xaml;Views\Bearing\BearingsView.xaml;Views\Documents\AllDocuments\AllDocumentsView.xaml;Views\BoringBar\BoringBarsView.xaml;Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml;Views\Documents\DocumentSpindle\DocumentSpindleView.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Add\Document\AddDocumentView.xaml;Views\Add\Bearing\AddBearingView.xaml;Views\Add\BoringBar\AddBoringBarView.xaml;Views\Scrapped\ScrappedBoringBarsView.xaml;Views\Scrapped\ScappedSpindlesView.xaml;Views\Search\SearchView.xaml;Views\Spindle\SpindlesView.xaml;
+Resources\Dictionary1.xaml;Views\Bearing\BearingsView.xaml;Views\Documents\AllDocuments\AllDocumentsView.xaml;Views\BoringBar\BoringBarsView.xaml;Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml;Views\Documents\DocumentSpindle\DocumentSpindleView.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Scrapped\ScrappedBoringBarsView.xaml;Views\Scrapped\ScrappedSpindlesView.xaml;Views\Spindle\SpindlesView.xaml;
 
 True
 

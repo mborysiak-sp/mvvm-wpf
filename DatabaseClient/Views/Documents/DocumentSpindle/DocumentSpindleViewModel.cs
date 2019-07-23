@@ -130,22 +130,11 @@ namespace DatabaseClient
         }
         protected override void Quit()
         {
-            if (!EditVM.IsNew)
-            {
-                ReFocusRow();
-            }
+            ReFocusRow();
         }
         protected void ReFocusRow(bool withReload = true)
         {
-            //int id = EditVM.TheEntity.id;
-            //SelectedSpindle = null;
-            //await db.Entry(EditVM.TheEntity).ReloadAsync();
-            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            //{
-            //    SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
-            //    SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
-            //    SelectedSpindle.TheEntity.ClearErrors();
-            //}), DispatcherPriority.ContextIdle);
+            SelectedDocumentSpindle = null;
             IsInEditMode = false;
         }
         protected async override void GetData()

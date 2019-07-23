@@ -122,24 +122,14 @@ namespace DatabaseClient
                 selectedEntity = null;
             }
         }
+
         protected override void Quit()
         {
-            if (!EditVM.IsNew)
-            {
-                ReFocusRow();
-            }
+            ReFocusRow();
         }
         protected void ReFocusRow(bool withReload = true)
         {
-            //int id = EditVM.TheEntity.id;
-            //SelectedBoringBar = null;
-            //await db.Entry(EditVM.TheEntity).ReloadAsync();
-            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            //{
-            //    SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
-            //    SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
-            //    SelectedBoringBar.TheEntity.ClearErrors();
-            //}), DispatcherPriority.ContextIdle);
+            SelectedBearing = null;
             IsInEditMode = false;
         }
 

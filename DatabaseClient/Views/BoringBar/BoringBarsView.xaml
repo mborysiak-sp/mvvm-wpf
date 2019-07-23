@@ -28,9 +28,9 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
-                <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku" />
-                <DataGridTextColumn Binding="{Binding TheEntity.bearing.model, Mode=TwoWay}" Header="Model łożyska" />
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.bearing.model, Mode=TwoWay}" Header="Model łożyska"/>
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
@@ -73,6 +73,13 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                    <spt:EditRow LabelFor="Data złomowania:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.scrapping_date, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"/>
+                    </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>
         </ContentControl>

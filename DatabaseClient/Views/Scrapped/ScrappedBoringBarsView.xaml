@@ -32,6 +32,56 @@
                 <DataGridTextColumn Binding="{Binding TheEntity.scrapping_date, Mode=TwoWay}"  Header="Data złomowania" />
             </DataGrid.Columns>
         </DataGrid>
+        <ContentControl Template="{StaticResource EditPopUp}">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ItemsControl>
+                    <spt:EditRow LabelFor="Model:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.model, 
+                                UpdateSourceTrigger=PropertyChanged,  
+                                NotifyOnSourceUpdated=True,
+                                NotifyOnValidationError=True,
+                                Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Numer rysunku:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.ordinal_number, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="ID łożyska" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.id_bearing, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"  />
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Wybrane ID łożyska:">
+                        <Label DataContext="{Binding SelectedBearing}" Content="{Binding TheEntity.id}"/>
+                    </spt:EditRow>
+                    <ComboBox ItemsSource="{Binding Bearings, Mode=OneWay}" SelectedItem="{Binding SelectedBearing}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}">
+                                            <Binding Path="TheEntity.model"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <spt:EditRow LabelFor="Data złomowania:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.scrapping_date, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"/>
+                    </spt:EditRow>
+                </ItemsControl>
+            </ScrollViewer>
+        </ContentControl>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>

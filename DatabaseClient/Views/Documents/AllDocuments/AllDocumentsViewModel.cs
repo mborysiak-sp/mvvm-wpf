@@ -41,22 +41,6 @@ namespace DatabaseClient
 
         public const string MyItemListPropertyName = "MyItemList";
 
-        //private ObservableCollection<DocumentVM> _MyItemList;
-        //public ObservableCollection<DocumentVM> MyItemList
-        //{
-        //    get
-        //    {
-        //        return _MyItemList;
-        //    }
-        //    set
-        //    {
-        //        if (_MyItemList == value)
-        //            return;
-
-        //        _MyItemList = value;
-        //        RaisePropertyChanged(MyItemListPropertyName);
-        //    }
-        //}
         private ObservableCollection<DocumentVM> _filtered = new ObservableCollection<DocumentVM>();
         public ObservableCollection<DocumentVM> FilteredList
         {

@@ -50,16 +50,19 @@ namespace DatabaseClient
         {
 
         }
+
         protected override void EditCurrent()
         {
             EditVM = SelectedSpindle;
             IsInEditMode = true;
         }
+
         protected override void InsertNew()
         {
             EditVM = new SpindleVM();
             IsInEditMode = true;
         }
+
         protected override void CommitUpdates()
         {
             if (EditVM == null || EditVM.TheEntity == null)
@@ -94,6 +97,7 @@ namespace DatabaseClient
                 ShowUserMessage("There are problems with the data entered");
             }
         }
+
         private async void UpdateDB()
         {
             try
@@ -111,6 +115,7 @@ namespace DatabaseClient
             }
             ReFocusRow();
         }
+
         protected override void DeleteCurrent()
         {
             int NumDocs = NumberOfAssignedDocuments();
@@ -127,24 +132,15 @@ namespace DatabaseClient
                 selectedEntity = null;
             }
         }
+
         protected override void Quit()
         {
-            if (!EditVM.IsNew)
-            {
                 ReFocusRow();
-            }
         }
+
         protected void ReFocusRow(bool withReload = true)
         {
-            //int id = EditVM.TheEntity.id;
-            //SelectedSpindle = null;
-            ////await db.Entry(EditVM.TheEntity).ReloadAsync();
-            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            //{
-            //    SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
-            //    SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
-            //    SelectedSpindle.TheEntity.ClearErrors();
-            //}), DispatcherPriority.ContextIdle);
+            SelectedSpindle = null;
             IsInEditMode = false;
         }
 
@@ -162,7 +158,7 @@ namespace DatabaseClient
             ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
             var spindles = await (from s in db.spindle
                                    orderby s.model
-                                   where s.scrapping_date == null
+                                  where s.scrapping_date == null
                                    select s).ToListAsync();
 
             foreach (spindle spin in spindles)

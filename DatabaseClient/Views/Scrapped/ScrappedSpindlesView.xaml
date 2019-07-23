@@ -27,12 +27,38 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
                 <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
                 <DataGridTextColumn Binding="{Binding TheEntity.serial_number, Mode=TwoWay}"  Header="Numer seryjny" />
                 <DataGridTextColumn Binding="{Binding TheEntity.scrapping_date, Mode=TwoWay}"  Header="Data złomowania" />
             </DataGrid.Columns>
         </DataGrid>
+        <ContentControl Template="{StaticResource EditPopUp}">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ItemsControl>
+                    <spt:EditRow LabelFor="Model:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.model, 
+                                UpdateSourceTrigger=PropertyChanged,  
+                                NotifyOnSourceUpdated=True,
+                                NotifyOnValidationError=True,
+                                Mode=TwoWay}"/>
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Numer seryjny:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.serial_number, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"/>
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Data złomowania:">
+                        <TextBox Text="{Binding  EditVM.TheEntity.scrapping_date, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"/>
+                    </spt:EditRow>
+                </ItemsControl>
+            </ScrollViewer>
+        </ContentControl>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>

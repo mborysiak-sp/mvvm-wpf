@@ -162,9 +162,6 @@
       <DependentUpon>Throbber.xaml</DependentUpon>
     </Compile>
     <Compile Include="Support\VMBase.cs" />
-    <Compile Include="Views\Add\Document\AddDocumentViewModel.cs" />
-    <Compile Include="Views\Add\Bearing\AddBearingViewModel.cs" />
-    <Compile Include="Views\Add\BoringBar\AddBoringBarViewModel.cs" />
     <Compile Include="Views\Bearing\BearingsView.xaml.cs">
       <DependentUpon>BearingsView.xaml</DependentUpon>
     </Compile>
@@ -196,26 +193,13 @@
       <DependentUpon>ScrappedBoringBarsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Scrapped\ScrappedBoringBarsViewModel.cs" />
-    <Compile Include="Views\Scrapped\ScappedSpindlesView.xaml.cs">
-      <DependentUpon>ScappedSpindlesView.xaml</DependentUpon>
+    <Compile Include="Views\Scrapped\ScrappedSpindlesView.xaml.cs">
+      <DependentUpon>ScrappedSpindlesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Scrapped\ScrappedSpindlesViewModel.cs" />
     <Compile Include="Views\Spindle\SpindleVM.cs" />
     <Compile Include="Views\Main\ViewVM.cs" />
-    <Compile Include="Views\Search\SearchViewModel.cs" />
     <Compile Include="Views\Spindle\SpindlesViewModel.cs" />
-    <Compile Include="Views\Add\Document\AddDocumentView.xaml.cs">
-      <DependentUpon>AddDocumentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Add\Bearing\AddBearingView.xaml.cs">
-      <DependentUpon>AddBearingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Add\BoringBar\AddBoringBarView.xaml.cs">
-      <DependentUpon>AddBoringBarView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Search\SearchView.xaml.cs">
-      <DependentUpon>SearchView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Spindle\SpindlesView.xaml.cs">
       <DependentUpon>SpindlesView.xaml</DependentUpon>
     </Compile>
@@ -263,29 +247,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Add\Document\AddDocumentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Add\Bearing\AddBearingView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Add\BoringBar\AddBoringBarView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Scrapped\ScrappedBoringBarsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Scrapped\ScappedSpindlesView.xaml">
+    <Page Include="Views\Scrapped\ScrappedSpindlesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Search\SearchView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Spindle\SpindlesView.xaml">
       <SubType>Designer</SubType>
