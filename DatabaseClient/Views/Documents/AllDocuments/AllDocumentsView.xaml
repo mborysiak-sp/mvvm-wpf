@@ -13,7 +13,7 @@
         <Grid>
             <DataGrid x:Name="dg"
                 AutoGenerateColumns="False"
-                ItemsSource="{Binding AllDocuments}"
+                ItemsSource="{Binding FilteredList}"
                 HeadersVisibility="Column"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
@@ -38,7 +38,6 @@
         </Grid>
         <support:Throbber x:Name="Throbber" Visibility="{Binding ThrobberVisible}"/>
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox Text="" Background="Aqua" Margin="532,40,82,438"/>
-        <TextBox Text="" Background="Aqua" Margin="532,67,82,411"/>
+        <TextBox Text="{Binding TextFilter, Mode=TwoWay}" Background="Aqua" Margin="532,40,82,438"/>
     </Grid>
 </UserControl>

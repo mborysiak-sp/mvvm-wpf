@@ -14,18 +14,76 @@ namespace DatabaseClient
 {
     public class AllDocumentsViewModel : CrudVMBase
     {
-        ObservableCollection<DocumentVM> FilteredDocuments = new ObservableCollection<DocumentVM>();
         public ObservableCollection<DocumentVM> AllDocuments { get; set; }
         public AllDocumentsViewModel()
             : base()
         {
         }
 
-        protected override void Filter()
-        {
+        public const string TextFilterPropertyName = "TextFilter";
 
+        private string _TextFilter;
+        public string TextFilter
+        {
+            get
+            {
+                return _TextFilter;
+            }
+            set
+            {
+                if (_TextFilter == value)
+                    return;
+                _TextFilter = value;
+                RaisePropertyChanged(TextFilterPropertyName);
+                Filter();
+            }
         }
 
+        public const string MyItemListPropertyName = "MyItemList";
+
+        //private ObservableCollection<DocumentVM> _MyItemList;
+        //public ObservableCollection<DocumentVM> MyItemList
+        //{
+        //    get
+        //    {
+        //        return _MyItemList;
+        //    }
+        //    set
+        //    {
+        //        if (_MyItemList == value)
+        //            return;
+
+        //        _MyItemList = value;
+        //        RaisePropertyChanged(MyItemListPropertyName);
+        //    }
+        //}
+        private ObservableCollection<DocumentVM> _filtered = new ObservableCollection<DocumentVM>();
+        public ObservableCollection<DocumentVM> FilteredList
+        {
+            get
+            {
+                return _filtered;
+            }
+            set
+            {
+                if (_filtered == value)
+                    return;
+
+                _filtered = value;
+                RaisePropertyChanged("FilteredList");
+            }
+        }
+
+        public void Filter()
+        {
+            if(!(_filtered is null))
+                _filtered.Clear();
+            foreach(var item in AllDocuments)
+            {
+                if (item.TheEntity.model.Contains(TextFilter))
+                    _filtered.Add(item);
+            }
+        }
         protected async override void GetData()
         {
             ThrobberVisible = Visibility.Visible;
@@ -40,7 +98,7 @@ namespace DatabaseClient
                 _allDocuments.Add(new DocumentVM { IsNew = false, TheEntity = doc });
             }
             AllDocuments = _allDocuments;
-            Filtered
+            
             RaisePropertyChanged("AllDocuments");
             ThrobberVisible = Visibility.Collapsed;
         }
