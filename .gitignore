@@ -9,3 +9,4 @@
 *.ide
 *.shm
 *.ide-shm
+*.cache
