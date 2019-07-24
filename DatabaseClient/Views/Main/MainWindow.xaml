@@ -20,10 +20,9 @@
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
         <TabControl HorizontalAlignment="Left" x:Name="CommandTab">
-            <TabItem Header="Navigate" FontSize="10">
+            <TabItem Header="Nawiguj" FontSize="10">
                 <ListView ItemsSource="{Binding Views}" BorderBrush="Transparent" FontSize="12" FontWeight="Bold" 
-                          ScrollViewer.CanContentScroll="False"
-                          >
+                          ScrollViewer.CanContentScroll="False">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"></StackPanel>
@@ -42,7 +41,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </TabItem>
-            <TabItem Header="Edit" x:Name="EditTabItem" FontSize="10">
+            <TabItem Header="Edytuj" x:Name="EditTabItem" FontSize="10">
                 <ListView ItemsSource="{Binding Commands}" BorderBrush="Transparent" FontSize="12" FontWeight="Bold" 
                           ScrollViewer.CanContentScroll="False">
                     <ListView.ItemsPanel>
