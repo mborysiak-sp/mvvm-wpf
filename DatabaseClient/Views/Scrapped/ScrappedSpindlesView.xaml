@@ -50,7 +50,11 @@
                                                     Mode=TwoWay}"/>
                     </spt:EditRow>
                     <spt:EditRow LabelFor="Data złomowania:">
-                        <DatePicker Text="{Binding EditVM.TheEntity.scrapping_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding  EditVM.TheEntity.scrapping_date, 
+                                                    UpdateSourceTrigger=PropertyChanged, 
+                                                    NotifyOnSourceUpdated=True,
+                                                    NotifyOnValidationError=True,
+                                                    Mode=TwoWay}"/>
                     </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>

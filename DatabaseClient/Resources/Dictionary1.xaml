@@ -72,8 +72,9 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <Style TargetType="{x:Type Window}">
         <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="Background" Value="DimGray"/>
+        <Setter Property="Background" Value="Black"/>
     </Style>
     <Style  x:Key="PathOpacityStyle" TargetType="Path">
         <Style.Triggers>
@@ -94,7 +95,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
 
     <ControlTemplate x:Key="EditPopUp" TargetType="ContentControl">
         <ControlTemplate.Resources>
@@ -120,9 +120,9 @@
                                                     PassEventArgsToCommand="True" />
                 </local:RoutedEventTrigger>
             </i:Interaction.Triggers>
-            <Grid Background="#99A8A7A7" >
-                <Border BorderBrush="Gray"  Padding="1" Margin="6" CornerRadius="4" BorderThickness="2,2,4,4"  Width="400">
-                    <Grid Background="DimGray"
+            <Grid Background="DimGray" >
+                <Border BorderBrush="WhiteSmoke"  Padding="1" Margin="6" CornerRadius="4" BorderThickness="2,2,4,4"  Width="400">
+                    <Grid Background="Black"
                           >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*" />
@@ -154,11 +154,10 @@
                                  DataContext="{Binding QuitCmd}"
                                  Command="{Binding Send}" 
                                  BorderThickness="0" 
-                                 Margin="0" Padding="0" 
-                                        >
+                                 Margin="0" Padding="0" >
                             <Path Data="{Binding IconGeometry}" Stretch="Uniform" 
                                         Style="{StaticResource PathOpacityStyle}"
-                                        Fill="Red" />
+                                        Fill="Red"/>
                             <Button.ToolTip>
                                 <TextBlock Text="{Binding CommandDisplay}"/>
                             </Button.ToolTip>
@@ -188,7 +187,6 @@
                 <ControlTemplate TargetType="{x:Type spt:EditRow}">
                     <Grid Height="Auto">
                         <Grid.ColumnDefinitions>
-
                             <ColumnDefinition Width="{Binding RelativeSource={
                                           RelativeSource FindAncestor,
                                           AncestorType=spt:EditRow}, 
@@ -198,9 +196,7 @@
                                           RelativeSource FindAncestor,
                                           AncestorType=spt:EditRow}, 
                                           Path=PropertyWidth, TargetNullValue=3*}"/>
-
                         </Grid.ColumnDefinitions>
-
                         <TextBlock Text="{Binding RelativeSource={
                                           RelativeSource FindAncestor,
                                           AncestorType=spt:EditRow}, 
@@ -223,8 +219,8 @@
         </Setter>
     </Style>
     <LinearGradientBrush x:Key="Brush_DataGridHeaderBackground" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#FF1C7CB1" Offset="0" />
-        <GradientStop Color="#FF004A83" Offset="1" />
+        <GradientStop Color="Yellow" Offset="0" />
+        <GradientStop Color="Black" Offset="1" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="Brush_DataGridHeaderMouseOverBackground" StartPoint="0,0" EndPoint="0,1">
@@ -248,17 +244,19 @@
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="Brush_DataGridSelected" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFF50808" Offset="1"/>
+        <GradientStop Color="Blue" Offset="1"/>
         <GradientStop Color="#FF5D6570"/>
     </LinearGradientBrush>
 
     <SolidColorBrush x:Key="Brush_DataGridSelectedForeground" Color="#FFFFFF" />
 
     <LinearGradientBrush x:Key="Brush_DataGridAltRowBackground" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FF5B5B5B" Offset="0"/>
-        <GradientStop Color="#FF585950" Offset="0.5"/>
+        <GradientStop Color="DimGray" Offset="0.25"/>
+        <GradientStop Color="Black" Offset="0.5"/>
     </LinearGradientBrush>
-
+    <LinearGradientBrush x:Key="Brush_DataGridRowBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3C3C3C" Offset="0.25"/>
+    </LinearGradientBrush>
     <Style x:Key="Style_HeaderGripper" TargetType="{x:Type Thumb}">
         <Setter Property="Width" Value="8"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -324,16 +322,7 @@
     </Style>
 
     <Style TargetType="{x:Type DataGridCell}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type DataGridCell}">
-                    <Border x:Name="BackgroundBorder" Background="Transparent">
-                        <ContentPresenter VerticalAlignment="Center" Margin="4,0,6,0" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="BorderBrush" Value="Yellow"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="Yellow"/>
@@ -347,7 +336,7 @@
     </Style>
 
     <Style x:Key="{x:Type DataGridRow}" TargetType="{x:Type DataGridRow}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="Background" Value="DimGray" />
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -375,7 +364,7 @@
               SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"  
               Grid.RowSpan="2"
               Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=HeadersVisibility, Converter={x:Static DataGrid.HeadersVisibilityConverter}, ConverterParameter={x:Static DataGridHeadersVisibility.Row}}"/>
-                            <Grid Grid.Column="1" Grid.Row="1" Name="Details" Visibility="Collapsed" Background="Gray">
+                            <Grid Grid.Column="1" Grid.Row="1" Name="Details" Visibility="Collapsed" Background="DimGray">
                                 <DataGridDetailsPresenter x:Name="dataGridDetailsPresenter" />
                             </Grid>
                         </SelectiveScrollingGrid>
@@ -390,6 +379,7 @@
     <Style x:Key="{x:Type DataGrid}" TargetType="{x:Type DataGrid}">
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="RowBackground" Value="{StaticResource Brush_DataGridRowBackground}"/>
         <Setter Property="AlternatingRowBackground" Value="{StaticResource Brush_DataGridAltRowBackground}" />
         <Setter Property="Template">
             <Setter.Value>

@@ -33,10 +33,10 @@
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
-            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <ItemsControl>
                     <spt:EditRow LabelFor="Model:" >
-                        <TextBox Text="{Binding  EditVM.TheEntity.model, 
+                        <TextBox Text="{Binding EditVM.TheEntity.model, 
                                 UpdateSourceTrigger=PropertyChanged,  
                                 NotifyOnSourceUpdated=True,
                                 NotifyOnValidationError=True,
