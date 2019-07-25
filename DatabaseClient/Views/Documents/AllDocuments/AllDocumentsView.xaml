@@ -60,7 +60,7 @@
         <TextBlock Text="{Binding ErrorMessage}"  HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Height="16" Width="0"/>
         <Grid>
             <spt:EditRow LabelFor="Filtrowanie [model] [spacja] [numer]">
-                <TextBox Text="{Binding TextFilter, Mode=TwoWay}" Background="Aqua"/>
+                <TextBox Text="{Binding TextFilter, Mode=TwoWay}"/>
             </spt:EditRow>
         </Grid>
     </Grid>
