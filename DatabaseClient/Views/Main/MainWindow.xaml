@@ -23,20 +23,13 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-<<<<<<< Updated upstream
-        <TabControl HorizontalAlignment="Left" x:Name="CommandTab">
-            <TabItem Header="Navigate" FontSize="10">
-                <ListView ItemsSource="{Binding Views}" BorderBrush="Transparent" FontSize="12" FontWeight="Bold" 
-                          ScrollViewer.CanContentScroll="False"
-                          >
-=======
+        
         <dragablz:TabablzControl HorizontalAlignment="Left" x:Name="CommandTab">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Nawiguj">
                 <ListView ItemsSource="{Binding Views}" ScrollViewer.CanContentScroll="False">
->>>>>>> Stashed changes
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -44,34 +37,15 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-<<<<<<< Updated upstream
-
-                            <Button Command="{Binding Navigate}" 
-                                        BorderThickness="0" Height="32" Width="100" 
-                                        Background="{StaticResource LightBrightGradientBrush}"
-                                        Foreground="{StaticResource DarkDullBrush}"
-                                        >
-                                <TextBlock Text="{Binding ViewDisplay}" 
-                                           TextAlignment="Center" 
-                                          />
-=======
                             <Button Command="{Binding Navigate}" Height="48" MinWidth="100">
                                 <TextBlock Text="{Binding ViewDisplay}" TextAlignment="Center"/>
->>>>>>> Stashed changes
                             </Button>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </TabItem>
-<<<<<<< Updated upstream
-            <TabItem Header="Edit" x:Name="EditTabItem" FontSize="10">
-                <ListView ItemsSource="{Binding Commands}" BorderBrush="Transparent" FontSize="12" FontWeight="Bold" 
-                          ScrollViewer.CanContentScroll="False" 
-                          >
-=======
             <TabItem Header="Edytuj" x:Name="EditTabItem">
                 <ListView ItemsSource="{Binding Commands}">
->>>>>>> Stashed changes
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -79,14 +53,7 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-<<<<<<< Updated upstream
-                            <Button Command="{Binding Send}" 
-                                        BorderThickness="0" 
-                                        Margin="0" Padding="0" 
-                                        >
-=======
                             <Button Command="{Binding Send}" BorderThickness="0" Margin="0" Padding="0" Width="48" Height="48">
->>>>>>> Stashed changes
                                 <Path Data="{Binding IconGeometry}" Stretch="Uniform" 
                                             Style="{StaticResource PathOpacityStyle}"
                                             Fill="GhostWhite" Width="48" Height="48"/>
@@ -94,7 +61,6 @@
                                     <TextBlock Text="{Binding CommandDisplay}"/>
                                 </Button.ToolTip>
                             </Button>
-
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

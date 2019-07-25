@@ -16,5 +16,5 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
 82529680296
 Resources\Dictionary1.xaml;Views\Bearing\BearingsView.xaml;Views\Documents\AllDocuments\AllDocumentsView.xaml;Views\BoringBar\BoringBarsView.xaml;Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml;Views\Documents\DocumentSpindle\DocumentSpindleView.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Scrapped\ScrappedBoringBarsView.xaml;Views\Scrapped\ScrappedSpindlesView.xaml;Views\Spindle\SpindlesView.xaml;
 
-False
+True
 
