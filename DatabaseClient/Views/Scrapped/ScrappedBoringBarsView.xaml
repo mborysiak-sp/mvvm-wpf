@@ -73,7 +73,7 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <spt:EditRow LabelFor="Data złomowania:" >
-                        <DatePicker Text="{Binding EditVM.TheEntity.scrapping_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DatePicker SelectedDate="{Binding EditVM.TheEntity.scrapping_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
                     </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>

@@ -51,7 +51,7 @@ namespace DatabaseClient.EntityData
             [StringLength(80, MinimumLength = 1, ErrorMessage = "Nieporawna nazwa modelu")]
             public string model { get; set; }
             [Required]
-            [RegularExpression(@"^[a-zA-Z0-9]{1,20}$",
+            [RegularExpression(@"^.{1,20}$",
             ErrorMessage = "Niepoprawny numer seryjny")]
             public string serial_number { get; set; }
             private SpindleMetadata()
