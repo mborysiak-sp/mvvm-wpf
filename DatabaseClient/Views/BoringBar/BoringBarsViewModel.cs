@@ -105,12 +105,12 @@ namespace DatabaseClient
                 }
                 else
                 {
-                    ShowUserMessage("No changes to save");
+                    ShowUserMessage("Brak zmian do zapisania");
                 }
             }
             else
             {
-                ShowUserMessage("There are problems with the data entered");
+                ShowUserMessage("Problem z wprowadzonymi danymi");
             }
         }
 
@@ -119,7 +119,7 @@ namespace DatabaseClient
             try
             {
                 await db.SaveChangesAsync();
-                ShowUserMessage("Database Updated");
+                ShowUserMessage("Baza danych zaktualizowana");
             }
             catch (Exception e)
             {
@@ -127,20 +127,35 @@ namespace DatabaseClient
                 {
                     ErrorMessage = e.InnerException.GetBaseException().ToString();
                 }
-                ShowUserMessage("There was a problem updating the database");
+                ShowUserMessage("Wystąpił problem z aktualizacją bazy danych");
             }
             ReFocusRow();
         }
-
+        
         protected override void DeleteCurrent()
         {
-            db.boring_bar.Remove(SelectedBoringBar.TheEntity);
-            BoringBars.Remove(SelectedBoringBar);
-            RaisePropertyChanged("BoringBars");
-            CommitUpdates();
-            selectedEntity = null;
+            int NumDocs = NumberOfAssignedDocuments();
+            if (NumDocs > 0)
+            {
+                ShowUserMessage(string.Format("Nie można usunąć. Powiązane z {0} świadectwami", NumDocs));
+            }
+            else
+            {
+                db.boring_bar.Remove(SelectedBoringBar.TheEntity);
+                BoringBars.Remove(SelectedBoringBar);
+                RaisePropertyChanged("BoringBars");
+                CommitUpdates();
+                selectedEntity = null;
+            }
         }
 
+        private int NumberOfAssignedDocuments()
+        {
+            var count = (from row in db.document_boring_bar
+                         where row.id_boring_bar == SelectedBoringBar.TheEntity.id
+                         select row).Count();
+            return count;
+        }
         protected override void Quit()
         {
             ReFocusRow();

@@ -53,10 +53,10 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Button Command="{Binding Send}" BorderThickness="0" Margin="0" Padding="0" Width="48" Height="48">
+                            <Button Command="{Binding Send}" BorderThickness="1" Margin="0" Padding="4" Width="48" Height="48">
                                 <Path Data="{Binding IconGeometry}" Stretch="Uniform" 
                                             Style="{StaticResource PathOpacityStyle}"
-                                            Fill="GhostWhite" Width="48" Height="48"/>
+                                            Fill="GhostWhite" />
                                 <Button.ToolTip>
                                     <TextBlock Text="{Binding CommandDisplay}"/>
                                 </Button.ToolTip>

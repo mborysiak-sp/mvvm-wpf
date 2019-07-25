@@ -55,12 +55,12 @@ namespace DatabaseClient
                 }
                 else
                 {
-                    ShowUserMessage("No changes to save");
+                    ShowUserMessage("Brak zmian do zapisania");
                 }
             }
             else
             {
-                ShowUserMessage("There are problems with the data entered");
+                ShowUserMessage("Problem z wprowadzonymi danymi");
             }
         }
         private async void UpdateDB()
@@ -68,7 +68,7 @@ namespace DatabaseClient
             try
             {
                 await db.SaveChangesAsync();
-                ShowUserMessage("Database Updated");
+                ShowUserMessage("Baza danych zaktualizowana");
             }
             catch (Exception e)
             {
@@ -76,7 +76,7 @@ namespace DatabaseClient
                 {
                     ErrorMessage = e.InnerException.GetBaseException().ToString();
                 }
-                ShowUserMessage("There was a problem updating the database");
+                ShowUserMessage("Wystąpił problem z aktualizacją bazy danych");
             }
             ReFocusRow();
         }
