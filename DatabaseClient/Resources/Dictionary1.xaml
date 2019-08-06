@@ -112,7 +112,70 @@
             </Grid>
         </Grid>
     </ControlTemplate>
-
+    
+    <ControlTemplate x:Key="LoginPopUp" TargetType="ContentControl">
+        <ControlTemplate.Resources>
+            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource ErrorToolTip}">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            </Style>
+        </ControlTemplate.Resources>
+        <Grid Visibility="Visible"
+               Width="{Binding ElementName=dg, Path=ActualWidth}"
+               Height="{Binding ElementName=dg, Path=ActualHeight}">
+            <i:Interaction.Triggers>
+                <local:RoutedEventTrigger RoutedEvent="{x:Static Validation.ErrorEvent}">
+                    <e2c:EventToCommand Command="{Binding EditVM.TheEntity.ConversionErrorCommand, Mode=OneWay}"
+                                        EventArgsConverter="{StaticResource BindingErrorEventArgsConverter}"
+                                        PassEventArgsToCommand="True"/>
+                </local:RoutedEventTrigger>
+                <local:RoutedEventTrigger RoutedEvent="{x:Static Binding.SourceUpdatedEvent}">
+                    <e2c:EventToCommand Command="{Binding EditVM.TheEntity.SourceUpdatedCommand, Mode=OneWay}"
+                                        EventArgsConverter="{StaticResource BindingSourcePropertyConverter}"
+                                        PassEventArgsToCommand="True"/>
+                </local:RoutedEventTrigger>
+            </i:Interaction.Triggers>
+            <Grid Background="GhostWhite">
+                <Border BorderBrush="DarkViolet" Padding="1" Margin="6" CornerRadius="4" BorderThickness="2,2,4,4"  Width="400">
+                    <Grid Background="WhiteSmoke">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                        </Grid.RowDefinitions>
+                        <!--  ItemsControl will go in the ContentPresenter   -->
+                        <ContentPresenter    Grid.Row="0" Grid.ColumnSpan="2"  Margin="0,12,12,0"/>
+                        <!-- Validation Errors list -->
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Grid.ColumnSpan="2">
+                            <ItemsControl ItemsSource="{Binding EditVM.TheEntity.ErrorList}" Margin="8" Foreground="Red">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Error}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                        <Button Grid.Row="2" Grid.Column="0" Width="32" Height="32"
+                                 DataContext="{Binding QuitCmd}"
+                                 Command="{Binding Send}" 
+                                 BorderThickness="1" 
+                                 Margin="4" Padding="4" >
+                            <Path Data="{Binding IconGeometry}" Stretch="Uniform" 
+                                        Style="{StaticResource PathOpacityStyle}"
+                                        Fill="GhostWhite"/>
+                            <Button.ToolTip>
+                                <TextBlock Text="{Binding CommandDisplay}"/>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
     <Style TargetType="{x:Type spt:EditRow}">
         <Setter Property="Template">
             <Setter.Value>
