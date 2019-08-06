@@ -205,6 +205,10 @@
     </Compile>
     <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleViewModel.cs" />
     <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleVM.cs" />
+    <Compile Include="Views\Login\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginViewModel.cs" />
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">
@@ -244,6 +248,10 @@
     <Page Include="Views\Documents\DocumentSpindle\DocumentSpindleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

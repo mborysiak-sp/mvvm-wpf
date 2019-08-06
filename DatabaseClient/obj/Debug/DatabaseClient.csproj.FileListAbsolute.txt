@@ -88,3 +88,5 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahA
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.pdb
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.pdb
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.g.cs
