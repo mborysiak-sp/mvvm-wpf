@@ -20,43 +20,22 @@ namespace DatabaseClient
         {
         }
 
-        public const string TextFilterPropertyName = "TextFilter";
-
-        private string _TextFilter;
-        public string TextFilter
+        private DocumentVM selectedDocument;
+        public DocumentVM SelectedDocument
         {
             get
             {
-                return _TextFilter;
+                return selectedDocument;
             }
             set
             {
-                if (_TextFilter == value)
-                    return;
-                _TextFilter = value;
-                RaisePropertyChanged(TextFilterPropertyName);
+                selectedDocument = value;
+                selectedEntity = value;
+                RaisePropertyChanged("SelectedDocument");
                 Filter();
             }
         }
-
-        //public const string TextFilterNumberPropertyName = "TextFilterNumber";
-
-        //private string _TextFilterNumber;
-        //public string TextFilterNumber
-        //{
-        //    get
-        //    {
-        //        return _TextFilterNumber;
-        //    }
-        //    set
-        //    {
-        //        if (_TextFilterNumber == value)
-        //            return;
-        //        _TextFilterNumber = value;
-        //        RaisePropertyChanged(TextFilterNumberPropertyName);
-        //        Filter();
-        //    }
-        //}
+        public DocumentVM emptyDocument;
 
         public const string MyItemListPropertyName = "MyItemList";
 
@@ -81,12 +60,12 @@ namespace DatabaseClient
         {
             if(!(_filtered is null))
                 _filtered.Clear();
-            foreach(var item in AllDocuments)
+            foreach(var doc in AllDocuments)
             {
-                //if (item.TheEntity.model.Contains(TextFilter) && item.TheEntity.number.Contains(TextFilter))
-                //    _filtered.Add(item);
-                if ((item.TheEntity.model + " " + item.TheEntity.number) == TextFilter)
-                    _filtered.Add(item);
+                if (SelectedDocument.TheEntity.model == null)
+                    _filtered.Add(doc);
+                else if ((doc.TheEntity.model + doc.TheEntity.number).Equals(SelectedDocument.TheEntity.model + SelectedDocument.TheEntity.number))
+                    _filtered.Add(doc);
             }
         }
 
@@ -103,6 +82,7 @@ namespace DatabaseClient
             {
                 _allDocuments.Add(new DocumentVM { IsNew = false, TheEntity = doc });
             }
+            
             AllDocuments = _allDocuments;
             
             RaisePropertyChanged("AllDocuments");

@@ -46,9 +46,9 @@ namespace DatabaseClient.EntityData
         internal sealed class BoringBarMetadata
         {
 
-            [Required(ErrorMessage="Model name required")]
+            [Required(ErrorMessage="Nazwa modelu wymagana")]
             //[ExcludeChar("X", )]
-            [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid model name")]
+            [StringLength(80, MinimumLength = 1, ErrorMessage = "Niepoprawna nazwa modelu")]
             public string model { get; set; }
 
             private BoringBarMetadata()
