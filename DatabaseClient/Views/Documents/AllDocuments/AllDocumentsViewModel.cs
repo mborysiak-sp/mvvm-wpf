@@ -23,6 +23,21 @@ namespace DatabaseClient
 
         protected override void Filter()
         {
+<<<<<<< Updated upstream
+=======
+            get
+            {
+                return selectedDocument;
+            }
+            set
+            {
+                selectedDocument = value;
+                selectedEntity = value;
+                RaisePropertyChanged("SelectedDocument");
+                Filter();
+            }
+        }
+>>>>>>> Stashed changes
 
         }
 

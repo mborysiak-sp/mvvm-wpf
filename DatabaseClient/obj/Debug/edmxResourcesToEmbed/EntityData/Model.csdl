@@ -119,5 +119,16 @@
       <End Role="spindle" EntitySet="spindle" />
       <End Role="document_spindle" EntitySet="document_spindle" />
     </AssociationSet>
+    <EntitySet Name="person" EntityType="BoringSpindlesModel.person" />
   </EntityContainer>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -37,6 +37,18 @@
     <Property Name="comment" Type="varchar" MaxLength="255" />
     <Property Name="id_spindle" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BoringSpindles.dbo.person' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="64" Nullable="false" />
+  </EntityType>
   <EntityType Name="spindle">
     <Key>
       <PropertyRef Name="id" />
@@ -60,7 +72,7 @@ warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a 
     <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="number" Type="varchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__document___id_bo__74EE4BDE">
+  <Association Name="FK__document___id_bo__25918339">
     <End Role="boring_bar" Type="Self.boring_bar" Multiplicity="0..1" />
     <End Role="document_boring_bar" Type="Self.document_boring_bar" Multiplicity="*" />
     <ReferentialConstraint>
@@ -102,6 +114,13 @@ warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a 
     <EntitySet Name="document_boring_bar" EntityType="Self.document_boring_bar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="document_spindle" EntityType="Self.document_spindle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="spindle" EntityType="Self.spindle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="person" EntityType="Self.person" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [person].[id] AS [id], 
+    [person].[username] AS [username], 
+    [person].[password] AS [password]
+    FROM [dbo].[person] AS [person]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="all_documents" EntityType="Self.all_documents" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [all_documents].[issue_date] AS [issue_date], 
@@ -112,7 +131,7 @@ warning 6002: The table/view 'BoringSpindles.dbo.all_documents' does not have a 
     [all_documents].[number] AS [number]
     FROM [dbo].[all_documents] AS [all_documents]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__document___id_bo__74EE4BDE" Association="Self.FK__document___id_bo__74EE4BDE">
+    <AssociationSet Name="FK__document___id_bo__25918339" Association="Self.FK__document___id_bo__25918339">
       <End Role="boring_bar" EntitySet="boring_bar" />
       <End Role="document_boring_bar" EntitySet="document_boring_bar" />
     </AssociationSet>

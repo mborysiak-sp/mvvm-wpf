@@ -12,7 +12,7 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class document_boring_bar : IEntityWithId
+    public partial class document_boring_bar
     {
         public int id { get; set; }
         public Nullable<System.DateTime> issue_date { get; set; }
