@@ -7,6 +7,7 @@
             <Label Content="Login" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
             <Label Content="Username" Foreground="White"/>
+LoginPage
             <TextBox Background="#545d6a" Foreground="White" FontSize="18" Text="{Binding SelectedPerson}"/>
             <Label Content="Password" Foreground="White"/>
             <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" Background="#545d6a" Foreground="White" FontSize="18"/>

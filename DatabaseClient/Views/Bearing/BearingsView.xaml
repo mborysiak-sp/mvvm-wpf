@@ -28,13 +28,13 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model łożyska" />
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ItemsControl>
-                    <spt:EditRow LabelFor="Model:" >
+                    <spt:EditRow LabelFor="Model łożyska:" >
                         <TextBox Text="{Binding  EditVM.TheEntity.model, 
                                 UpdateSourceTrigger=PropertyChanged,  
                                 NotifyOnSourceUpdated=True,

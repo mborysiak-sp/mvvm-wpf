@@ -50,16 +50,19 @@ namespace DatabaseClient
         {
 
         }
+
         protected override void EditCurrent()
         {
             EditVM = SelectedSpindle;
             IsInEditMode = true;
         }
+
         protected override void InsertNew()
         {
             EditVM = new SpindleVM();
             IsInEditMode = true;
         }
+
         protected override void CommitUpdates()
         {
             if (EditVM == null || EditVM.TheEntity == null)
@@ -86,20 +89,21 @@ namespace DatabaseClient
                 }
                 else
                 {
-                    ShowUserMessage("No changes to save");
+                    ShowUserMessage("Brak zmian do zapisania");
                 }
             }
             else
             {
-                ShowUserMessage("There are problems with the data entered");
+                ShowUserMessage("Problem z wprowadzonymi danymi");
             }
         }
+
         private async void UpdateDB()
         {
             try
             {
                 await db.SaveChangesAsync();
-                ShowUserMessage("Database Updated");
+                ShowUserMessage("Baza danych zaktualizowana");
             }
             catch (Exception e)
             {
@@ -107,16 +111,17 @@ namespace DatabaseClient
                 {
                     ErrorMessage = e.InnerException.GetBaseException().ToString();
                 }
-                ShowUserMessage("There was a problem updating the database");
+                ShowUserMessage("Wystąpił problem z aktualizacją bazy danych");
             }
             ReFocusRow();
         }
+
         protected override void DeleteCurrent()
         {
             int NumDocs = NumberOfAssignedDocuments();
             if (NumDocs > 0)
             {
-                ShowUserMessage(string.Format("Cannot delete - there are {0} Orders for this Customer", NumDocs));
+                ShowUserMessage(string.Format("Nie można usunąć. Powiązane z {0} świadectwami:", NumDocs));
             }
             else
             {
@@ -127,24 +132,15 @@ namespace DatabaseClient
                 selectedEntity = null;
             }
         }
+
         protected override void Quit()
         {
-            if (!EditVM.IsNew)
-            {
                 ReFocusRow();
-            }
         }
+
         protected void ReFocusRow(bool withReload = true)
         {
-            //int id = EditVM.TheEntity.id;
-            //SelectedSpindle = null;
-            ////await db.Entry(EditVM.TheEntity).ReloadAsync();
-            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
-            //{
-            //    SelectedSpindle = Spindles.Where(e => e.TheEntity.id == id).FirstOrDefault();
-            //    SelectedSpindle.TheEntity = SelectedSpindle.TheEntity;
-            //    SelectedSpindle.TheEntity.ClearErrors();
-            //}), DispatcherPriority.ContextIdle);
+            SelectedSpindle = null;
             IsInEditMode = false;
         }
 
@@ -162,7 +158,7 @@ namespace DatabaseClient
             ObservableCollection<SpindleVM> _spindles = new ObservableCollection<SpindleVM>();
             var spindles = await (from s in db.spindle
                                    orderby s.model
-                                   where s.scrapping_date == null
+                                  where s.scrapping_date == null
                                    select s).ToListAsync();
 
             foreach (spindle spin in spindles)

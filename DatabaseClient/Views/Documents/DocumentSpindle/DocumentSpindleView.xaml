@@ -38,11 +38,7 @@
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ItemsControl>
                     <spt:EditRow LabelFor="Data wydania:" >
-                        <TextBox Text="{Binding  EditVM.TheEntity.issue_date, 
-                                UpdateSourceTrigger=PropertyChanged,  
-                                NotifyOnSourceUpdated=True,
-                                NotifyOnValidationError=True,
-                                Mode=TwoWay}"/>
+                        <DatePicker SelectedDate="{Binding EditVM.TheEntity.issue_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
                     </spt:EditRow>
                     <spt:EditRow LabelFor="Ważne przez:" >
                         <TextBox Text="{Binding EditVM.TheEntity.day_count,

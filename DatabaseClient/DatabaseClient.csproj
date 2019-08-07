@@ -49,9 +49,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Bez tytułu.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -68,6 +77,15 @@
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -77,7 +95,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -166,9 +184,6 @@
       <DependentUpon>Throbber.xaml</DependentUpon>
     </Compile>
     <Compile Include="Support\VMBase.cs" />
-    <Compile Include="Views\Add\Document\AddDocumentViewModel.cs" />
-    <Compile Include="Views\Add\Bearing\AddBearingViewModel.cs" />
-    <Compile Include="Views\Add\BoringBar\AddBoringBarViewModel.cs" />
     <Compile Include="Views\Bearing\BearingsView.xaml.cs">
       <DependentUpon>BearingsView.xaml</DependentUpon>
     </Compile>
@@ -194,40 +209,24 @@
     </Compile>
     <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleViewModel.cs" />
     <Compile Include="Views\Documents\DocumentSpindle\DocumentSpindleVM.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="Views\Login\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\LoginViewModel.cs" />
     <Compile Include="Views\Login\PersonVM.cs" />
->>>>>>> Stashed changes
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">
       <DependentUpon>ScrappedBoringBarsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Scrapped\ScrappedBoringBarsViewModel.cs" />
-    <Compile Include="Views\Scrapped\ScappedSpindlesView.xaml.cs">
-      <DependentUpon>ScappedSpindlesView.xaml</DependentUpon>
+    <Compile Include="Views\Scrapped\ScrappedSpindlesView.xaml.cs">
+      <DependentUpon>ScrappedSpindlesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Scrapped\ScrappedSpindlesViewModel.cs" />
     <Compile Include="Views\Spindle\SpindleVM.cs" />
     <Compile Include="Views\Main\ViewVM.cs" />
-    <Compile Include="Views\Search\SearchViewModel.cs" />
     <Compile Include="Views\Spindle\SpindlesViewModel.cs" />
-    <Compile Include="Views\Add\Document\AddDocumentView.xaml.cs">
-      <DependentUpon>AddDocumentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Add\Bearing\AddBearingView.xaml.cs">
-      <DependentUpon>AddBearingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Add\BoringBar\AddBoringBarView.xaml.cs">
-      <DependentUpon>AddBoringBarView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Search\SearchView.xaml.cs">
-      <DependentUpon>SearchView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Spindle\SpindlesView.xaml.cs">
       <DependentUpon>SpindlesView.xaml</DependentUpon>
     </Compile>
@@ -255,6 +254,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -275,29 +278,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Add\Document\AddDocumentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Add\Bearing\AddBearingView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Add\BoringBar\AddBoringBarView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Scrapped\ScrappedBoringBarsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Scrapped\ScappedSpindlesView.xaml">
+    <Page Include="Views\Scrapped\ScrappedSpindlesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Search\SearchView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Spindle\SpindlesView.xaml">
       <SubType>Designer</SubType>
@@ -354,6 +341,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Bez tytułu.ico" />
     <Content Include="EntityData\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
