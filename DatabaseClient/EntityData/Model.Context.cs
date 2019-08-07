@@ -31,5 +31,6 @@ namespace DatabaseClient.EntityData
         public virtual DbSet<document_spindle> document_spindle { get; set; }
         public virtual DbSet<spindle> spindle { get; set; }
         public virtual DbSet<all_documents> all_documents { get; set; }
+        public virtual DbSet<person> person { get; set; }
     }
 }

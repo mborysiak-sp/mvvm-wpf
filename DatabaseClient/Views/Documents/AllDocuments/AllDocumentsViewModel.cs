@@ -35,7 +35,6 @@ namespace DatabaseClient
                 Filter();
             }
         }
-        public DocumentVM emptyDocument;
 
         public const string MyItemListPropertyName = "MyItemList";
 

@@ -140,6 +140,7 @@
     <Compile Include="EntityData\AnError.cs" />
     <Compile Include="EntityData\BaseEntity.cs" />
     <Compile Include="EntityData\MetaData\Bearing.metadata.cs" />
+    <Compile Include="EntityData\MetaData\Person.metadata.cs" />
     <Compile Include="EntityData\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityData\person.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityData\PropertyError.cs" />
     <Compile Include="EntityData\MetaData\Spindle.metadata.cs" />
@@ -209,6 +213,7 @@
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\LoginViewModel.cs" />
+    <Compile Include="Views\Login\PersonVM.cs" />
     <Compile Include="Views\Main\MainWindowViewModel.cs" />
     <Compile Include="Views\Main\CommandVM.cs" />
     <Compile Include="Views\Scrapped\ScrappedBoringBarsView.xaml.cs">

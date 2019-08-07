@@ -12,13 +12,10 @@ DEBUG;TRACE
 C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\App.xaml
 131882762154
 2677356452
-<<<<<<< Updated upstream
-69909672821
-=======
-70-1610574614
->>>>>>> Stashed changes
-84575856007
-Resources\Dictionary1.xaml;Views\Bearing\BearingsView.xaml;Views\Documents\AllDocuments\AllDocumentsView.xaml;Views\BoringBar\BoringBarsView.xaml;Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml;Views\Documents\DocumentSpindle\DocumentSpindleView.xaml;Views\Login\LoginView.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Scrapped\ScrappedBoringBarsView.xaml;Views\Scrapped\ScrappedSpindlesView.xaml;Views\Spindle\SpindlesView.xaml;
+751292876554
+79-1097405964
+Resources\Dictionary1.xaml;Views\Bearing\BearingsView.xaml;Views\Documents\AllDocuments\AllDocumentsView.xaml;Views\BoringBar\BoringBarsView.xaml;Views\Documents\DocumentBoringBar\DocumentBoringBarView.xaml;Views\Documents\DocumentSpindle\DocumentSpindleView.xaml;Views\Main\MainWindow.xaml;Support\HourGlass.xaml;Support\Throbber.xaml;Views\Add\Document\AddDocumentView.xaml;Views\Add\Bearing\AddBearingView.xaml;Views\Add\BoringBar\AddBoringBarView.xaml;Views\Scrapped\ScrappedBoringBarsView.xaml;Views\Scrapped\ScappedSpindlesView.xaml;Views\Search\SearchView.xaml;Views\Spindle\SpindlesView.xaml;
+
 
 True
 
