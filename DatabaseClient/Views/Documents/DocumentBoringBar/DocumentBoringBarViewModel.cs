@@ -99,12 +99,12 @@ namespace DatabaseClient
                 }
                 else
                 {
-                    ShowUserMessage("Brak zmian do zapisania");
+                    ShowUserMessage("No changes to save");
                 }
             }
             else
             {
-                ShowUserMessage("Problem z wprowadzonymi danymi");
+                ShowUserMessage("There are problems with the data entered");
             }
         }
         private async void UpdateDB()
@@ -112,11 +112,11 @@ namespace DatabaseClient
             try
             {
                 await db.SaveChangesAsync();
-                ShowUserMessage("Baza danych zaktualizowana");
+                ShowUserMessage("Database Updated");
             }
             catch (Exception)
             {
-                ShowUserMessage("Wystąpił problem z aktualizacją bazy danych");
+                ShowUserMessage("There was a problem updating the database");
             }
             ReFocusRow();
         }
@@ -130,11 +130,22 @@ namespace DatabaseClient
         }
         protected override void Quit()
         {
+            if (!EditVM.IsNew)
+            {
                 ReFocusRow();
+            }
         }
         protected void ReFocusRow(bool withReload = true)
         {
-            SelectedDocumentBoringBar = null;
+            //int id = EditVM.TheEntity.id;
+            //SelectedBoringBar = null;
+            //await db.Entry(EditVM.TheEntity).ReloadAsync();
+            //await Application.Current.Dispatcher.InvokeAsync(new Action(() =>
+            //{
+            //    SelectedBoringBar = BoringBars.Where(e => e.TheEntity.id == id).FirstOrDefault();
+            //    SelectedBoringBar.TheEntity = SelectedBoringBar.TheEntity;
+            //    SelectedBoringBar.TheEntity.ClearErrors();
+            //}), DispatcherPriority.ContextIdle);
             IsInEditMode = false;
         }
         protected async override void GetData()

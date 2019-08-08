@@ -14,15 +14,17 @@ namespace DatabaseClient
 {
     public class AllDocumentsViewModel : CrudVMBase
     {
+        ObservableCollection<DocumentVM> FilteredDocuments = new ObservableCollection<DocumentVM>();
         public ObservableCollection<DocumentVM> AllDocuments { get; set; }
         public AllDocumentsViewModel()
             : base()
         {
         }
 
-        private DocumentVM selectedDocument;
-        public DocumentVM SelectedDocument
+        protected override void Filter()
         {
+<<<<<<< Updated upstream
+=======
             get
             {
                 return selectedDocument;
@@ -35,38 +37,8 @@ namespace DatabaseClient
                 Filter();
             }
         }
-        public DocumentVM emptyDocument;
+>>>>>>> Stashed changes
 
-        public const string MyItemListPropertyName = "MyItemList";
-
-        private ObservableCollection<DocumentVM> _filtered = new ObservableCollection<DocumentVM>();
-        public ObservableCollection<DocumentVM> FilteredList
-        {
-            get
-            {
-                return _filtered;
-            }
-            set
-            {
-                if (_filtered == value)
-                    return;
-
-                _filtered = value;
-                RaisePropertyChanged("FilteredList");
-            }
-        }
-
-        public void Filter()
-        {
-            if(!(_filtered is null))
-                _filtered.Clear();
-            foreach(var doc in AllDocuments)
-            {
-                if (SelectedDocument.TheEntity.model == null)
-                    _filtered.Add(doc);
-                else if ((doc.TheEntity.model + doc.TheEntity.number).Equals(SelectedDocument.TheEntity.model + SelectedDocument.TheEntity.number))
-                    _filtered.Add(doc);
-            }
         }
 
         protected async override void GetData()
@@ -82,9 +54,8 @@ namespace DatabaseClient
             {
                 _allDocuments.Add(new DocumentVM { IsNew = false, TheEntity = doc });
             }
-            
             AllDocuments = _allDocuments;
-            
+            Filtered
             RaisePropertyChanged("AllDocuments");
             ThrobberVisible = Visibility.Collapsed;
         }

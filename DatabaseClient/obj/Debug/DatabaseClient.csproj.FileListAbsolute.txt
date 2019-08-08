@@ -83,10 +83,3 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\View
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.baml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.dll
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.dll
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.pdb
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.pdb
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.xml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.baml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.g.cs
