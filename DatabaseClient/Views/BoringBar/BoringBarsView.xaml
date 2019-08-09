@@ -18,7 +18,7 @@
                 SelectionMode="Single"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
-                IsReadOnly="True">
+                IsReadOnly="True" Background="White" BorderBrush="#FF1D8EFF">
             <i:Interaction.Behaviors>
                 <local:ScrollDataGridRowIntoView/>
             </i:Interaction.Behaviors>
@@ -28,15 +28,15 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
-                <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku" />
-                <DataGridTextColumn Binding="{Binding TheEntity.bearing.model, Mode=TwoWay}" Header="Model łożyska" />
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model wytaczadła"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.ordinal_number, Mode=TwoWay}"  Header="Numer rysunku"/>
+                <DataGridTextColumn Binding="{Binding TheEntity.bearing.model, Mode=TwoWay}" Header="Model łożyska"/>
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ItemsControl>
-                    <spt:EditRow LabelFor="Model:" >
+                    <spt:EditRow LabelFor="Model wytaczadła:" >
                         <TextBox Text="{Binding  EditVM.TheEntity.model, 
                                 UpdateSourceTrigger=PropertyChanged,  
                                 NotifyOnSourceUpdated=True,
@@ -73,6 +73,10 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                    <spt:EditRow LabelFor="Data złomowania:" >
+                        <DatePicker SelectedDate="{Binding EditVM.TheEntity.scrapping_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}">
+                        </DatePicker>
+                    </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>
         </ContentControl>

@@ -1,6 +1,0 @@
-﻿namespace DatabaseClient
-{
-    class AddBearingViewModel
-    {
-    }
-}

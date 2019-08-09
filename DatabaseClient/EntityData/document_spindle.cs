@@ -12,7 +12,7 @@ namespace DatabaseClient.EntityData
     using System;
     using System.Collections.Generic;
     
-    public partial class document_spindle
+    public partial class document_spindle : IEntityWithId
     {
         public int id { get; set; }
         public Nullable<System.DateTime> issue_date { get; set; }

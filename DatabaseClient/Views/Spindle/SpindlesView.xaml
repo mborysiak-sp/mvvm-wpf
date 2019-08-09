@@ -7,6 +7,14 @@
              xmlns:spt="clr-namespace:Support"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:support="clr-namespace:Support"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
@@ -28,27 +36,21 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <!-- <DataGridTextColumn Binding="{Binding TheEntity.id, Mode=TwoWay}"  Header="ID" /> -->
-                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model" />
+                <DataGridTextColumn Binding="{Binding TheEntity.model, Mode=TwoWay}"  Header="Model wrzeciona" />
                 <DataGridTextColumn Binding="{Binding TheEntity.serial_number, Mode=TwoWay}"  Header="Numer seryjny" />
             </DataGrid.Columns>
         </DataGrid>
         <ContentControl Template="{StaticResource EditPopUp}">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ItemsControl>
-                    <spt:EditRow LabelFor="Model:" >
-                        <TextBox Text="{Binding  EditVM.TheEntity.model, 
-                                UpdateSourceTrigger=PropertyChanged,  
-                                NotifyOnSourceUpdated=True,
-                                NotifyOnValidationError=True,
-                                Mode=TwoWay}"  />
+                    <spt:EditRow LabelFor="Model wrzeciona:" >
+                        <TextBox Text="{Binding  EditVM.TheEntity.model, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, Mode=TwoWay}"/>
                     </spt:EditRow>
                     <spt:EditRow LabelFor="Numer seryjny:" >
-                        <TextBox Text="{Binding  EditVM.TheEntity.serial_number, 
-                                                    UpdateSourceTrigger=PropertyChanged, 
-                                                    NotifyOnSourceUpdated=True,
-                                                    NotifyOnValidationError=True,
-                                                    Mode=TwoWay}"  />
+                        <TextBox Text="{Binding  EditVM.TheEntity.serial_number, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, Mode=TwoWay}"/>
+                    </spt:EditRow>
+                    <spt:EditRow LabelFor="Data złomowania:">
+                        <DatePicker SelectedDate="{Binding EditVM.TheEntity.scrapping_date, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
                     </spt:EditRow>
                 </ItemsControl>
             </ScrollViewer>

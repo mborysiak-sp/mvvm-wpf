@@ -22,18 +22,10 @@ c:\Users\borysm77\source\repos\DatabaseClient\DatabaseClient\obj\Debug\DatabaseC
 c:\Users\borysm77\source\repos\DatabaseClient\DatabaseClient\obj\Debug\DatabaseClient.pdb
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Main\MainWindow.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Support\HourGlass.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\Document\AddDocumentView.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\Bearing\AddBearingView.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\BoringBar\AddBoringBarView.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Search\SearchView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\App.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Main\MainWindow.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Support\HourGlass.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Support\Throbber.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\Document\AddDocumentView.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\Bearing\AddBearingView.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Add\BoringBar\AddBoringBarView.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Search\SearchView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Spindle\SpindlesView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\App.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\DatabaseClient_Content.g.cs
@@ -72,9 +64,7 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Data
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.g.cs
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.baml
-c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScappedSpindlesView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.baml
@@ -83,10 +73,90 @@ c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\View
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.baml
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.g.cs
 c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.baml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.dll
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.dll
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.pdb
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.pdb
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.xml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.baml
-C:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedSpindlesView.g.cs
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedSpindlesView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MaterialDesignColors.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MaterialDesignColors.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\Dragablz.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\Dragablz.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\Dragablz.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.dll
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\ControlzEx.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.pdb
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\bin\Debug\MahApps.Metro.xml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.baml
+c:\Users\borysm77\source\repos\DatabaseClientCopy2\DatabaseClient\obj\Debug\Views\Login\LoginView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.csprojAssemblyReference.cache
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.exe
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Login\LoginView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Main\MainWindow.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Support\HourGlass.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\App.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Login\LoginView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Main\MainWindow.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Support\HourGlass.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Support\Throbber.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedSpindlesView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Spindle\SpindlesView.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\App.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient_Content.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient_MarkupCompile.cache
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient_MarkupCompile.lref
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\DatabaseClient.exe.config
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\DatabaseClient.exe
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\DatabaseClient.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\CommonServiceLocator.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\ControlzEx.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\Dragablz.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\EntityFramework.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MahApps.Metro.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MaterialDesignColors.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\System.Windows.Interactivity.dll
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\ControlzEx.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\Dragablz.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\Dragablz.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\EntityFramework.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MahApps.Metro.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MahApps.Metro.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MaterialDesignColors.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.pdb
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\bin\Debug\MaterialDesignThemes.Wpf.xml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Resources\Dictionary1.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Bearing\BearingsView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\AllDocuments\AllDocumentsView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\BoringBar\BoringBarsView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\DocumentBoringBar\DocumentBoringBarView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Documents\DocumentSpindle\DocumentSpindleView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Support\Throbber.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedBoringBarsView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Scrapped\ScrappedSpindlesView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\Views\Spindle\SpindlesView.baml
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.g.resources
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.Properties.Resources.resources
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.csproj.GenerateResource.cache
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.csproj.CoreCompileInputs.cache
+c:\Users\borysm77\source\repos\Backups\DatabaseClientCopy2 - master\DatabaseClient\obj\Debug\DatabaseClient.csproj.CopyComplete

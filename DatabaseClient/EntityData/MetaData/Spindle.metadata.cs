@@ -45,15 +45,13 @@ namespace DatabaseClient.EntityData
         }
         internal sealed class SpindleMetadata
         {
-
             [Required]
             //[ExcludeChar("X", ErrorMessage="No X please")]
-            [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid model name")]
+            [StringLength(80, MinimumLength = 1, ErrorMessage = "Nieporawna nazwa modelu")]
             public string model { get; set; }
             [Required]
-            [StringLength(80, MinimumLength = 1, ErrorMessage = "Invalid serial number")]
+            [StringLength(80, MinimumLength = 1, ErrorMessage = "Nieporawny numer seryjny")]
             public string serial_number { get; set; }
-           
             private SpindleMetadata()
             { }
         }
