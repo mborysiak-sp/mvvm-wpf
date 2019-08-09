@@ -23,8 +23,6 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <ContentControl Template="{StaticResource LoginPopUp}">
-        </ContentControl>
         <dragablz:TabablzControl HorizontalAlignment="Left" x:Name="CommandTab">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />

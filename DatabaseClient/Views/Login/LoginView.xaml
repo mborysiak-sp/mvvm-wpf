@@ -9,8 +9,8 @@
             <Label Content="Username" Foreground="White"/>
             <TextBox Background="#545d6a" Text="{Binding SelectedPerson}"  Foreground="White" FontSize="18"/>
             <Label Content="Password" Foreground="White"/>
-            <PasswordBox PasswordChanged="{Binding Password}" Background="#545d6a" Foreground="White" FontSize="18"/>
-            <Button Content="Submit" Margin="60 10" Background="#545d6a" Foreground="White" FontSize="18"/>
+            <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" Background="#545d6a" Foreground="White" FontSize="18"/>
+            <Button Content="Submit" Click="{Binding Login}" Margin="60 10" Background="#545d6a" Foreground="White" FontSize="18"/>
         </StackPanel>
     </Border>
 </Window>
